@@ -14,7 +14,7 @@ Dev Server 5: dev5.notes-n-things.tk<br />
 ## Server set up
 This part of the readme is for reference on how to properly set up the environment. Once the environment is finalized this information will not be strictly necessary and will function more for back up purposes (ie. if we lose the server image or something). For proper setup use the server image to create the server instace.
 
-Server image: [insert image here when complete]
+Server image: ami-ba83e08a<br />
 [User and keypair stuff here]
 
 Get an instance:
