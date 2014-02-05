@@ -4,12 +4,12 @@ notes-n-things is the group Software Development project for Group 6
 
 [insert super awesome description here]
 
-Production Server: www.notes-n-things.tk
-Dev Server 1: [being used for...]
-Dev Server 2: [being used for...]
-Dev Server 3: [being used for...]
-Dev Server 4: [being used for...]
-Dev Server 5: [being used for...]
+Production Server: www.notes-n-things.tk<br  />
+Dev Server 1: dev1.notes-n-things.tk<br />
+Dev Server 2: dev2.notes-n-things.tk<br />
+Dev Server 3: dev3.notes-n-things.tk<br />
+Dev Server 4: dev4.notes-n-things.tk<br />
+Dev Server 5: dev5.notes-n-things.tk<br />
 
 ## Server set up
 This part of the readme is for reference on how to properly set up the environment. Once the environment is finalized this information will not be strictly necessary and will function more for back up purposes (ie. if we lose the server image or something). For proper setup use the server image to create the server instace.
