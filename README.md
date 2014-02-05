@@ -67,6 +67,37 @@ postgres# means the command is run from within the postgres rdbms
    #yum install git
 </code></pre>
 
+###Python, Flask and plugins
+<pre><code>
+   #yum install gcc gcc-c++ python-setuptools python-pip python-devel
+   #easy_install virtualenv
+   #mkdir /opt/apps
+   #chown ec2-user:ec2-user /opt/apps
+   $ cd /opt/apps
+   $ virtualenv --no-site-packages notes-n-things-env
+   $ cd notes-n-things-env
+   $ source bin/activate
+   (notes-n-things-env)$ pip install flask
+   (notes-n-things-env)$ git clone git://github.com/jasonpharder/notes-n-things
+   (notes-n-things-env)$ deactivate
+   #pip install uwsgi
+</code></pre>
+
+###uWSGI and upstart
+<pre><code>
+  #vim /etc/init/uwsgi.conf
+</code></pre>
+Paste the following into the the file
+<pre><code>
+# simple uWSGI script
+
+description "uwsgi tiny instance"
+start on runlevel [2345]
+stop on runlevel [06]
+
+exec uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
+</code></pre>
+
 ###nginx
 <pre><code>
    #yum install nginx
@@ -76,15 +107,6 @@ postgres# means the command is run from within the postgres rdbms
    [write something like ‘OMG it works’]
    #vim /etc/nginx/nginx.conf
    [change line 52 (the root in location /) to be root /srv/html]
-   #service start nginx
+   #service nginx start
    //add python stuff here
-</code></pre>
-
-###Flask and plugins
-<pre><code>
-   #yum install gcc
-   #yum install python-pip
-   #pip install flask
-   
-   
 </code></pre>
