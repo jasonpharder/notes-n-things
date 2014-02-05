@@ -47,17 +47,9 @@ postgres# means the command is run from within the postgres rdbms
 ###postgres sql
 
 <pre><code>
-  #yum install postgresql9 postgresql9-server postgresql9-devel postgresql9-contrib postgresql9-docs
-  #service postgresql initdb
-  #vim /var/lib/pgsql/data/postgresql.conf
-  uncomment the line listen_addresses = 'localhost'
-  #exit
-  #service postgresql start
+  #yum install postgresql postgresql-contrib
   #su postgres
-  $psql postgres
-  postgres# \password postgres
-  [enter pw twice] %we should have a unified password across servers for this
-  postgres# \q
+  $createuser --pwprompt
   //add in how to load the schema here
   $exit
 </code></pre>
