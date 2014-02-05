@@ -69,10 +69,10 @@ postgres# means the command is run from within the postgres rdbms
 
 ###Python, Flask and plugins
 <pre><code>
-   #yum install gcc gcc-c++ python-setuptools python-pip python-devel
+   #yum install gcc python-setuptools python-pip python-devel
    #easy_install virtualenv
    #mkdir /opt/apps
-   #chown ec2-user:ec2-user /opt/apps
+   #chown ubuntu:ubuntu /opt/apps
    $ cd /opt/apps
    $ virtualenv --no-site-packages notes-n-things-env
    $ cd notes-n-things-env
@@ -80,11 +80,11 @@ postgres# means the command is run from within the postgres rdbms
    (notes-n-things-env)$ pip install flask
    (notes-n-things-env)$ git clone git://github.com/jasonpharder/notes-n-things
    (notes-n-things-env)$ deactivate
-   #pip install uwsgi
 </code></pre>
 
 ###uWSGI and upstart
 <pre><code>
+  #pip install uwsgi
   #vim /etc/init/uwsgi.conf
 </code></pre>
 Paste the following into the the file
@@ -101,12 +101,7 @@ exec uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
 ###nginx
 <pre><code>
    #yum install nginx
-   #mkdir /srv
-   #mkdir /srv/html
-   #vim /srv/html/index.html
-   [write something like ‘OMG it works’]
-   #vim /etc/nginx/nginx.conf
-   [change line 52 (the root in location /) to be root /srv/html]
+   [get ngnix config]
+   #uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
    #service nginx start
-   //add python stuff here
 </code></pre>
