@@ -11,6 +11,16 @@ Dev Server 3: dev3.notes-n-things.tk<br />
 Dev Server 4: dev4.notes-n-things.tk<br />
 Dev Server 5: dev5.notes-n-things.tk<br />
 
+## Server Maintenance
+
+###Adding python modules
+<pre><code>
+  $cd /opt/apps/notes-n-things-env
+  $source bin/activate
+  $pip install [python module]
+  $deactivate
+</code></pre>
+
 ## Server set up
 This part of the readme is for reference on how to properly set up the environment. Once the environment is finalized this information will not be strictly necessary and will function more for back up purposes (ie. if we lose the server image or something). For proper setup use the server image to create the server instace.
 
