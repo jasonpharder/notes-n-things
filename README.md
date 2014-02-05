@@ -21,6 +21,13 @@ Dev Server 5: dev5.notes-n-things.tk<br />
   $deactivate
 </code></pre>
 
+###Resarting Web Server
+<pre><code>
+  # killall -9 uwsgi
+  # service nginx restart
+  # uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
+</code></pre>
+
 ## Server set up
 This part of the readme is for reference on how to properly set up the environment. Once the environment is finalized this information will not be strictly necessary and will function more for back up purposes (ie. if we lose the server image or something). For proper setup use the server image to create the server instace.
 
@@ -57,7 +64,7 @@ postgres# means the command is run from within the postgres rdbms
 ###postgres sql
 
 <pre><code>
-  #yum install postgresql postgresql-contrib
+  #apt-get install postgresql postgresql-contrib
   #su postgres
   $createuser --pwprompt
   //add in how to load the schema here
@@ -71,7 +78,7 @@ postgres# means the command is run from within the postgres rdbms
 
 ###Python, Flask and plugins
 <pre><code>
-   #yum install gcc python-setuptools python-pip python-devel
+   #apt-get install gcc python-setuptools python-pip python-devel
    #easy_install virtualenv
    #mkdir /opt/apps
    #chown ubuntu:ubuntu /opt/apps
@@ -102,7 +109,7 @@ exec uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
 
 ###nginx
 <pre><code>
-   #yum install nginx
+   #apt-get install nginx
    [get ngnix config]
    #uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
    #service nginx start
