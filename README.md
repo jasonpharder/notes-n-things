@@ -114,3 +114,8 @@ exec uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
    #uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
    #service nginx start
 </code></pre>
+
+###updating instance security rules
+<pre><code>
+   <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html#Add_IG_Security_Groups">Updating the Security Group Rules | AWS Documentation</a>
+</code></pre>
