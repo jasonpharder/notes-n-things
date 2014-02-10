@@ -104,7 +104,7 @@ description "uwsgi tiny instance"
 start on runlevel [2345]
 stop on runlevel [06]
 
-exec uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
+exec uwsgi /opt/apps/notes-n-things-env/notes-n-things/config/uwsgi-settings.ini
 </code></pre>
 
 ###nginx
