@@ -4,69 +4,68 @@ CREATE TABLE `users` (
 	password CHAR(64) NOT NULL,
 	salt BLOB(512) NOT NULL,
 	email VARCHAR(64),
-	admin INT(1),
-	other user info (eg. name)
+	admin INT(1)
 );
 
-//assess how to handle copying notes
 CREATE TABLE `notes` (
-	uid (ie what its saved as)
-file name (ie human readable name),
-original author?, //is something like this important?,
-owner,
-ratings, //do we only want aggregate ratings, or store each rating individually
-tags,
-etc. figure this all out
+    uid INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	stored_as VARCHAR(64),
+    file_name VARCHAR(32),
+    owner INT UNSIGNED FOREIGN KEY REFERENCES users.uid,
+    rating INT
 );
-
-//deal with permissions somehow
 
 CREATE TABLE `note_ratings` (
-	noteID,
-	userID,
-	rating
-); primary key (noteID, userID)
+    noteID INT NOT NULL UNSIGNED FOREIGN KEY REFERENCES notes.uid,
+	userID INT NOT NULL UNSIGNED FOREIGN KEY REFERENCES users.uid,
+	rating INT,
+    UNIQUE (noteID, userID)
+);
 
 CREATE TABLE `tags_to_notes` (
-	tagID,
-	notesID,
-)
-
-CREATE TABLE `tags` ( //how exactly to handle this
-	name
+	tag VARCHAR(32) NOT NULL,
+	noteID INT UNSIGNED NOT NULL FOREIGN KEY REFERENCES notes.uid,
+    UNIQUE (noteID, tag)
 )
 
 CREATE TABLE `subscriptions` (
-	userID INT FOREIGN KEY REFERENCES users.userID ,
-	courseID INT FOREIGN KEY REFERENCES courses.courseID
-); primary key userID, courseID
+	userID INT NOT NULL FOREIGN KEY REFERENCES users.userID ,
+	courseID INT NOT NULL FOREIGN KEY REFERENCES courses.courseID,
+    UNIQUE (userID, courseID)
+);
 
 CREATE TABLE `courses` (
-	courseID primary key,
-	term,
-	name,
-	alt_name?,
+	courseID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	term INT UNSIGNED FOREIGN KEY REFERENCES terms.termID,
+	name VARCHAR(9),
+	alt_name VARCHAR(255),
 	professor INT FOREIGN KEY REFERENCES users.userID
 );
 
+CREATE TABLES `terms` (
+    termID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    termName VARCHAR(32),
+    termYear INT
+);
+
 CREATE TABLE `dates` (
-	eventID, primary key
-	courseID, foreign key
-	start,
-	end, //this necessary?
-	title,
-	description
+    eventID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	courseID INT UNSIGNED FOREIGN KEY REFERENCES coures.courseID,
+	startDate TIMESTAMP,
+	endDate TIMESTAMP,
+	title VARCHAR(32),
+	description VARCHAR(255)
 );
 
 CREATE TABLE `todo` (
-	itemID primary key,
-	userID,
-	description
+	itemID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	userID INT UNSIGNED FOREIGN KEY REFERENCES users.uid,
+	description VARCHAR(255)
 );
 
 CREATE TABLE `comments` (
-	commentID, (primarykey)
-	userID, (ie the poster)
-	postTime,
-	associated with, (ie a note, class, or date)
+	commentID UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	userID INT NOT NULL UNSIGNED FOREIGN KEY REFERENCES users.uid,
+	postTime NOT NULL TIMESTAMP,
+    courseID INT NOT NULL UNSIGNED FOREIGN KEY REFERENCES courses.courseID
 );
