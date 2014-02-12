@@ -25,7 +25,7 @@ Dev Server 5: dev5.notes-n-things.tk<br />
 <pre><code>
   # killall -9 uwsgi
   # service nginx restart
-  # uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
+  # uwsgi /opt/apps/notes-n-things-env/notes-n-things/config/uwsgi-settings.ini
 </code></pre>
 
 ## Server set up
@@ -110,7 +110,26 @@ exec uwsgi /opt/apps/notes-n-things-env/notes-n-things/config/uwsgi-settings.ini
 ###nginx
 <pre><code>
    #apt-get install nginx
-   [get ngnix config]
+   #vim /etc/nginx/sites-available/default
+</pre></code>
+Delete the contents of the file and make them:
+<pre><code>
+  server {
+        listen 80 default_server;
+
+        root /opt/apps/notes-n-things-env/notes-n-things;
+        index index.html index.htm;
+
+        location / { try_files /public/$uri @notes; }
+
+        location @notes {
+                uwsgi_pass     127.0.0.1:49152;
+                include        uwsgi_params;
+        }
+}
+</pre></code>
+finnish by running
+<pre><code>
    #uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
    #service nginx start
 </code></pre>
