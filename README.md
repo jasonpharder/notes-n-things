@@ -25,7 +25,7 @@ Dev Server 5: dev5.notes-n-things.tk<br />
 <pre><code>
   # killall -9 uwsgi
   # service nginx restart
-  # uwsgi /opt/apps/notes-n-things-env/notes-n-things/uwsgi-settings.ini
+  # uwsgi /opt/apps/notes-n-things-env/notes-n-things/config/uwsgi-settings.ini
 </code></pre>
 
 ## Server set up
