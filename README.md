@@ -69,7 +69,7 @@ postgres# means the command is run from within the postgres rdbms
   $psql
   postgres# create table notes_n_things;
   postgres# \q
-  $psql notes_n_things < /opt/apps/notes-n-things-env/notes-n-things/config/schemapostgres.sql
+  $psql notes_n_things &lt; /opt/apps/notes-n-things-env/notes-n-things/config/schemapostgres.sql
   $exit
 </code></pre>
 
