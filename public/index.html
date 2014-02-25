@@ -8,19 +8,61 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Login to Notes</title>
+    <title>Notes-n-Things</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/signin.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
   </head>
 
   <body>
+    <script type="text/x-handlebars">
+      <div class="site-wrapper">
 
-    <div class="container">
+        <div class="site-wrapper-inner">
 
+          <div class="cover-container">
+
+            <div class="masthead clearfix">
+              <div class="inner">
+                <h3 class="masthead-brand">Notes-n-Things</h3>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href='#/notes'>Notes</a></li>
+                  <li><a href='#/courses'>Courses</a></li>
+                  <li><a href='#/login'>Sign In/Register</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="inner cover">
+              {{outlet}}
+            </div>
+
+            <div class="mastfoot">
+              <div class="inner">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <!--Notes Template-->
+    <script type="text/x-handlebars" id="notes">
+      
+      This is a notes test
+      
+    </script>
+
+    <!--Courses Template-->
+    <script type="text/x-handlebars" id="courses">
+      This is a courses test 
+    </script>
+
+    <!--Login Template-->
+    <script type="text/x-handlebars" id="login">
       <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="email" class="form-control" placeholder="Email address" required autofocus>
@@ -30,14 +72,15 @@
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
+    </script>
 
-    </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
+    <!-- Bootstrap, Handlebars, and EmberJS core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery-1.11.0.js"></script>
+    <script src="js/lib/jquery-1.11.0.js"></script>
+    <script src="js/lib/handlebars-1.1.2.js"></script>
+    <script src="js/lib/ember-1.4.0.js"></script>
+  	<script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
