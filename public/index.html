@@ -51,9 +51,13 @@
 
     <!--Notes Template-->
     <script type="text/x-handlebars" id="notes">
-      
-      This is a notes test
-      
+      <div class="bs-sidebar affix">
+        <ul class="nav bs-sidenav" id="notes-list">
+          {{#each}}
+            <li><a href="#">{{title}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
     </script>
 
     <!--Courses Template-->
