@@ -7,147 +7,158 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F9F88A9218BE5E0C00045786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88A9118BE5E0C00045786 /* UIKit.framework */; };
-		F9F88A9418BE5E0C00045786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88A9318BE5E0C00045786 /* Foundation.framework */; };
-		F9F88A9618BE5E0C00045786 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88A9518BE5E0C00045786 /* CoreGraphics.framework */; };
-		F9F88A9C18BE5E0C00045786 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F88A9A18BE5E0C00045786 /* InfoPlist.strings */; };
-		F9F88A9E18BE5E0C00045786 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F88A9D18BE5E0C00045786 /* main.m */; };
-		F9F88AA218BE5E0C00045786 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F88AA118BE5E0C00045786 /* AppDelegate.m */; };
-		F9F88AA418BE5E0C00045786 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AA318BE5E0C00045786 /* Default.png */; };
-		F9F88AA618BE5E0C00045786 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AA518BE5E0C00045786 /* Default@2x.png */; };
-		F9F88AA818BE5E0C00045786 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AA718BE5E0C00045786 /* Default-568h@2x.png */; };
-		F9F88AB018BE5E0C00045786 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AAF18BE5E0C00045786 /* SenTestingKit.framework */; };
-		F9F88AB118BE5E0C00045786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88A9118BE5E0C00045786 /* UIKit.framework */; };
-		F9F88AB218BE5E0C00045786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88A9318BE5E0C00045786 /* Foundation.framework */; };
-		F9F88ABA18BE5E0C00045786 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AB818BE5E0C00045786 /* InfoPlist.strings */; };
-		F9F88ABD18BE5E0C00045786 /* notes_n_thingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F88ABC18BE5E0C00045786 /* notes_n_thingsTests.m */; };
+		F9F88AD518BE743600045786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD418BE743600045786 /* UIKit.framework */; };
+		F9F88AD718BE743600045786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD618BE743600045786 /* Foundation.framework */; };
+		F9F88AD918BE743600045786 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD818BE743600045786 /* CoreGraphics.framework */; };
+		F9F88ADF18BE743600045786 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F88ADD18BE743600045786 /* InfoPlist.strings */; };
+		F9F88AE118BE743600045786 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F88AE018BE743600045786 /* main.m */; };
+		F9F88AE518BE743600045786 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F88AE418BE743600045786 /* AppDelegate.m */; };
+		F9F88AE718BE743600045786 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AE618BE743600045786 /* Default.png */; };
+		F9F88AE918BE743600045786 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AE818BE743600045786 /* Default@2x.png */; };
+		F9F88AEB18BE743600045786 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AEA18BE743600045786 /* Default-568h@2x.png */; };
+		F9F88AEE18BE743600045786 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AEC18BE743600045786 /* MainStoryboard_iPhone.storyboard */; };
+		F9F88AF118BE743600045786 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F88AEF18BE743600045786 /* MainStoryboard_iPad.storyboard */; };
+		F9F88AF418BE743600045786 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F88AF318BE743600045786 /* ViewController.m */; };
+		F9F88AFC18BE743700045786 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AFB18BE743700045786 /* SenTestingKit.framework */; };
+		F9F88AFD18BE743700045786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD418BE743600045786 /* UIKit.framework */; };
+		F9F88AFE18BE743700045786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD618BE743600045786 /* Foundation.framework */; };
+		F9F88B0618BE743700045786 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F88B0418BE743700045786 /* InfoPlist.strings */; };
+		F9F88B0918BE743700045786 /* notes_n_thingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F88B0818BE743700045786 /* notes_n_thingsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F9F88AB318BE5E0C00045786 /* PBXContainerItemProxy */ = {
+		F9F88AFF18BE743700045786 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F9F88A8618BE5E0C00045786 /* Project object */;
+			containerPortal = F9F88AC918BE743600045786 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F9F88A8D18BE5E0C00045786;
+			remoteGlobalIDString = F9F88AD018BE743600045786;
 			remoteInfo = "notes-n-things";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F9F88A8E18BE5E0C00045786 /* notes-n-things.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "notes-n-things.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9F88A9118BE5E0C00045786 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		F9F88A9318BE5E0C00045786 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		F9F88A9518BE5E0C00045786 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F9F88A9918BE5E0C00045786 /* notes-n-things-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "notes-n-things-Info.plist"; sourceTree = "<group>"; };
-		F9F88A9B18BE5E0C00045786 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F9F88A9D18BE5E0C00045786 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F9F88A9F18BE5E0C00045786 /* notes-n-things-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notes-n-things-Prefix.pch"; sourceTree = "<group>"; };
-		F9F88AA018BE5E0C00045786 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F9F88AA118BE5E0C00045786 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F9F88AA318BE5E0C00045786 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		F9F88AA518BE5E0C00045786 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F9F88AA718BE5E0C00045786 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		F9F88AAE18BE5E0C00045786 /* notes-n-thingsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "notes-n-thingsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F9F88AAF18BE5E0C00045786 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		F9F88AB718BE5E0C00045786 /* notes-n-thingsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "notes-n-thingsTests-Info.plist"; sourceTree = "<group>"; };
-		F9F88AB918BE5E0C00045786 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F9F88ABB18BE5E0C00045786 /* notes_n_thingsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = notes_n_thingsTests.h; sourceTree = "<group>"; };
-		F9F88ABC18BE5E0C00045786 /* notes_n_thingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = notes_n_thingsTests.m; sourceTree = "<group>"; };
+		F9F88AD118BE743600045786 /* notes-n-things.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "notes-n-things.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9F88AD418BE743600045786 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F9F88AD618BE743600045786 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F9F88AD818BE743600045786 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F9F88ADC18BE743600045786 /* notes-n-things-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "notes-n-things-Info.plist"; sourceTree = "<group>"; };
+		F9F88ADE18BE743600045786 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9F88AE018BE743600045786 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9F88AE218BE743600045786 /* notes-n-things-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notes-n-things-Prefix.pch"; sourceTree = "<group>"; };
+		F9F88AE318BE743600045786 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F9F88AE418BE743600045786 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F9F88AE618BE743600045786 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F9F88AE818BE743600045786 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F9F88AEA18BE743600045786 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F9F88AED18BE743600045786 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		F9F88AF018BE743600045786 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		F9F88AF218BE743600045786 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F9F88AF318BE743600045786 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F9F88AFA18BE743700045786 /* notes-n-thingsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "notes-n-thingsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9F88AFB18BE743700045786 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F9F88B0318BE743700045786 /* notes-n-thingsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "notes-n-thingsTests-Info.plist"; sourceTree = "<group>"; };
+		F9F88B0518BE743700045786 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9F88B0718BE743700045786 /* notes_n_thingsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = notes_n_thingsTests.h; sourceTree = "<group>"; };
+		F9F88B0818BE743700045786 /* notes_n_thingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = notes_n_thingsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F9F88A8B18BE5E0C00045786 /* Frameworks */ = {
+		F9F88ACE18BE743600045786 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F88A9218BE5E0C00045786 /* UIKit.framework in Frameworks */,
-				F9F88A9418BE5E0C00045786 /* Foundation.framework in Frameworks */,
-				F9F88A9618BE5E0C00045786 /* CoreGraphics.framework in Frameworks */,
+				F9F88AD518BE743600045786 /* UIKit.framework in Frameworks */,
+				F9F88AD718BE743600045786 /* Foundation.framework in Frameworks */,
+				F9F88AD918BE743600045786 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F9F88AAA18BE5E0C00045786 /* Frameworks */ = {
+		F9F88AF618BE743700045786 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F88AB018BE5E0C00045786 /* SenTestingKit.framework in Frameworks */,
-				F9F88AB118BE5E0C00045786 /* UIKit.framework in Frameworks */,
-				F9F88AB218BE5E0C00045786 /* Foundation.framework in Frameworks */,
+				F9F88AFC18BE743700045786 /* SenTestingKit.framework in Frameworks */,
+				F9F88AFD18BE743700045786 /* UIKit.framework in Frameworks */,
+				F9F88AFE18BE743700045786 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F9F88A8518BE5E0C00045786 = {
+		F9F88AC818BE743600045786 = {
 			isa = PBXGroup;
 			children = (
-				F9F88A9718BE5E0C00045786 /* notes-n-things */,
-				F9F88AB518BE5E0C00045786 /* notes-n-thingsTests */,
-				F9F88A9018BE5E0C00045786 /* Frameworks */,
-				F9F88A8F18BE5E0C00045786 /* Products */,
+				F9F88ADA18BE743600045786 /* notes-n-things */,
+				F9F88B0118BE743700045786 /* notes-n-thingsTests */,
+				F9F88AD318BE743600045786 /* Frameworks */,
+				F9F88AD218BE743600045786 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F9F88A8F18BE5E0C00045786 /* Products */ = {
+		F9F88AD218BE743600045786 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F9F88A8E18BE5E0C00045786 /* notes-n-things.app */,
-				F9F88AAE18BE5E0C00045786 /* notes-n-thingsTests.octest */,
+				F9F88AD118BE743600045786 /* notes-n-things.app */,
+				F9F88AFA18BE743700045786 /* notes-n-thingsTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F9F88A9018BE5E0C00045786 /* Frameworks */ = {
+		F9F88AD318BE743600045786 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F9F88A9118BE5E0C00045786 /* UIKit.framework */,
-				F9F88A9318BE5E0C00045786 /* Foundation.framework */,
-				F9F88A9518BE5E0C00045786 /* CoreGraphics.framework */,
-				F9F88AAF18BE5E0C00045786 /* SenTestingKit.framework */,
+				F9F88AD418BE743600045786 /* UIKit.framework */,
+				F9F88AD618BE743600045786 /* Foundation.framework */,
+				F9F88AD818BE743600045786 /* CoreGraphics.framework */,
+				F9F88AFB18BE743700045786 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F9F88A9718BE5E0C00045786 /* notes-n-things */ = {
+		F9F88ADA18BE743600045786 /* notes-n-things */ = {
 			isa = PBXGroup;
 			children = (
-				F9F88AA018BE5E0C00045786 /* AppDelegate.h */,
-				F9F88AA118BE5E0C00045786 /* AppDelegate.m */,
-				F9F88A9818BE5E0C00045786 /* Supporting Files */,
+				F9F88AE318BE743600045786 /* AppDelegate.h */,
+				F9F88AE418BE743600045786 /* AppDelegate.m */,
+				F9F88AEC18BE743600045786 /* MainStoryboard_iPhone.storyboard */,
+				F9F88AEF18BE743600045786 /* MainStoryboard_iPad.storyboard */,
+				F9F88AF218BE743600045786 /* ViewController.h */,
+				F9F88AF318BE743600045786 /* ViewController.m */,
+				F9F88ADB18BE743600045786 /* Supporting Files */,
 			);
 			path = "notes-n-things";
 			sourceTree = "<group>";
 		};
-		F9F88A9818BE5E0C00045786 /* Supporting Files */ = {
+		F9F88ADB18BE743600045786 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F9F88A9918BE5E0C00045786 /* notes-n-things-Info.plist */,
-				F9F88A9A18BE5E0C00045786 /* InfoPlist.strings */,
-				F9F88A9D18BE5E0C00045786 /* main.m */,
-				F9F88A9F18BE5E0C00045786 /* notes-n-things-Prefix.pch */,
-				F9F88AA318BE5E0C00045786 /* Default.png */,
-				F9F88AA518BE5E0C00045786 /* Default@2x.png */,
-				F9F88AA718BE5E0C00045786 /* Default-568h@2x.png */,
+				F9F88ADC18BE743600045786 /* notes-n-things-Info.plist */,
+				F9F88ADD18BE743600045786 /* InfoPlist.strings */,
+				F9F88AE018BE743600045786 /* main.m */,
+				F9F88AE218BE743600045786 /* notes-n-things-Prefix.pch */,
+				F9F88AE618BE743600045786 /* Default.png */,
+				F9F88AE818BE743600045786 /* Default@2x.png */,
+				F9F88AEA18BE743600045786 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F9F88AB518BE5E0C00045786 /* notes-n-thingsTests */ = {
+		F9F88B0118BE743700045786 /* notes-n-thingsTests */ = {
 			isa = PBXGroup;
 			children = (
-				F9F88ABB18BE5E0C00045786 /* notes_n_thingsTests.h */,
-				F9F88ABC18BE5E0C00045786 /* notes_n_thingsTests.m */,
-				F9F88AB618BE5E0C00045786 /* Supporting Files */,
+				F9F88B0718BE743700045786 /* notes_n_thingsTests.h */,
+				F9F88B0818BE743700045786 /* notes_n_thingsTests.m */,
+				F9F88B0218BE743700045786 /* Supporting Files */,
 			);
 			path = "notes-n-thingsTests";
 			sourceTree = "<group>";
 		};
-		F9F88AB618BE5E0C00045786 /* Supporting Files */ = {
+		F9F88B0218BE743700045786 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F9F88AB718BE5E0C00045786 /* notes-n-thingsTests-Info.plist */,
-				F9F88AB818BE5E0C00045786 /* InfoPlist.strings */,
+				F9F88B0318BE743700045786 /* notes-n-thingsTests-Info.plist */,
+				F9F88B0418BE743700045786 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,13 +166,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F9F88A8D18BE5E0C00045786 /* notes-n-things */ = {
+		F9F88AD018BE743600045786 /* notes-n-things */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9F88AC018BE5E0C00045786 /* Build configuration list for PBXNativeTarget "notes-n-things" */;
+			buildConfigurationList = F9F88B0C18BE743700045786 /* Build configuration list for PBXNativeTarget "notes-n-things" */;
 			buildPhases = (
-				F9F88A8A18BE5E0C00045786 /* Sources */,
-				F9F88A8B18BE5E0C00045786 /* Frameworks */,
-				F9F88A8C18BE5E0C00045786 /* Resources */,
+				F9F88ACD18BE743600045786 /* Sources */,
+				F9F88ACE18BE743600045786 /* Frameworks */,
+				F9F88ACF18BE743600045786 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -169,79 +180,81 @@
 			);
 			name = "notes-n-things";
 			productName = "notes-n-things";
-			productReference = F9F88A8E18BE5E0C00045786 /* notes-n-things.app */;
+			productReference = F9F88AD118BE743600045786 /* notes-n-things.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F9F88AAD18BE5E0C00045786 /* notes-n-thingsTests */ = {
+		F9F88AF918BE743700045786 /* notes-n-thingsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9F88AC318BE5E0C00045786 /* Build configuration list for PBXNativeTarget "notes-n-thingsTests" */;
+			buildConfigurationList = F9F88B0F18BE743700045786 /* Build configuration list for PBXNativeTarget "notes-n-thingsTests" */;
 			buildPhases = (
-				F9F88AA918BE5E0C00045786 /* Sources */,
-				F9F88AAA18BE5E0C00045786 /* Frameworks */,
-				F9F88AAB18BE5E0C00045786 /* Resources */,
-				F9F88AAC18BE5E0C00045786 /* ShellScript */,
+				F9F88AF518BE743700045786 /* Sources */,
+				F9F88AF618BE743700045786 /* Frameworks */,
+				F9F88AF718BE743700045786 /* Resources */,
+				F9F88AF818BE743700045786 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F9F88AB418BE5E0C00045786 /* PBXTargetDependency */,
+				F9F88B0018BE743700045786 /* PBXTargetDependency */,
 			);
 			name = "notes-n-thingsTests";
 			productName = "notes-n-thingsTests";
-			productReference = F9F88AAE18BE5E0C00045786 /* notes-n-thingsTests.octest */;
+			productReference = F9F88AFA18BE743700045786 /* notes-n-thingsTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F9F88A8618BE5E0C00045786 /* Project object */ = {
+		F9F88AC918BE743600045786 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Comp4350;
 			};
-			buildConfigurationList = F9F88A8918BE5E0C00045786 /* Build configuration list for PBXProject "notes-n-things" */;
+			buildConfigurationList = F9F88ACC18BE743600045786 /* Build configuration list for PBXProject "notes-n-things" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F9F88A8518BE5E0C00045786;
-			productRefGroup = F9F88A8F18BE5E0C00045786 /* Products */;
+			mainGroup = F9F88AC818BE743600045786;
+			productRefGroup = F9F88AD218BE743600045786 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F9F88A8D18BE5E0C00045786 /* notes-n-things */,
-				F9F88AAD18BE5E0C00045786 /* notes-n-thingsTests */,
+				F9F88AD018BE743600045786 /* notes-n-things */,
+				F9F88AF918BE743700045786 /* notes-n-thingsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F9F88A8C18BE5E0C00045786 /* Resources */ = {
+		F9F88ACF18BE743600045786 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F88A9C18BE5E0C00045786 /* InfoPlist.strings in Resources */,
-				F9F88AA418BE5E0C00045786 /* Default.png in Resources */,
-				F9F88AA618BE5E0C00045786 /* Default@2x.png in Resources */,
-				F9F88AA818BE5E0C00045786 /* Default-568h@2x.png in Resources */,
+				F9F88ADF18BE743600045786 /* InfoPlist.strings in Resources */,
+				F9F88AE718BE743600045786 /* Default.png in Resources */,
+				F9F88AE918BE743600045786 /* Default@2x.png in Resources */,
+				F9F88AEB18BE743600045786 /* Default-568h@2x.png in Resources */,
+				F9F88AEE18BE743600045786 /* MainStoryboard_iPhone.storyboard in Resources */,
+				F9F88AF118BE743600045786 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F9F88AAB18BE5E0C00045786 /* Resources */ = {
+		F9F88AF718BE743700045786 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F88ABA18BE5E0C00045786 /* InfoPlist.strings in Resources */,
+				F9F88B0618BE743700045786 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F9F88AAC18BE5E0C00045786 /* ShellScript */ = {
+		F9F88AF818BE743700045786 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,46 +270,63 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F9F88A8A18BE5E0C00045786 /* Sources */ = {
+		F9F88ACD18BE743600045786 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F88A9E18BE5E0C00045786 /* main.m in Sources */,
-				F9F88AA218BE5E0C00045786 /* AppDelegate.m in Sources */,
+				F9F88AE118BE743600045786 /* main.m in Sources */,
+				F9F88AE518BE743600045786 /* AppDelegate.m in Sources */,
+				F9F88AF418BE743600045786 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F9F88AA918BE5E0C00045786 /* Sources */ = {
+		F9F88AF518BE743700045786 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F88ABD18BE5E0C00045786 /* notes_n_thingsTests.m in Sources */,
+				F9F88B0918BE743700045786 /* notes_n_thingsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F9F88AB418BE5E0C00045786 /* PBXTargetDependency */ = {
+		F9F88B0018BE743700045786 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F9F88A8D18BE5E0C00045786 /* notes-n-things */;
-			targetProxy = F9F88AB318BE5E0C00045786 /* PBXContainerItemProxy */;
+			target = F9F88AD018BE743600045786 /* notes-n-things */;
+			targetProxy = F9F88AFF18BE743700045786 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F9F88A9A18BE5E0C00045786 /* InfoPlist.strings */ = {
+		F9F88ADD18BE743600045786 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F9F88A9B18BE5E0C00045786 /* en */,
+				F9F88ADE18BE743600045786 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		F9F88AB818BE5E0C00045786 /* InfoPlist.strings */ = {
+		F9F88AEC18BE743600045786 /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F9F88AB918BE5E0C00045786 /* en */,
+				F9F88AED18BE743600045786 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		F9F88AEF18BE743600045786 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9F88AF018BE743600045786 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		F9F88B0418BE743700045786 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9F88B0518BE743700045786 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -304,7 +334,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F9F88ABE18BE5E0C00045786 /* Debug */ = {
+		F9F88B0A18BE743700045786 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -336,7 +366,7 @@
 			};
 			name = Debug;
 		};
-		F9F88ABF18BE5E0C00045786 /* Release */ = {
+		F9F88B0B18BE743700045786 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -362,7 +392,7 @@
 			};
 			name = Release;
 		};
-		F9F88AC118BE5E0C00045786 /* Debug */ = {
+		F9F88B0D18BE743700045786 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -373,7 +403,7 @@
 			};
 			name = Debug;
 		};
-		F9F88AC218BE5E0C00045786 /* Release */ = {
+		F9F88B0E18BE743700045786 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -384,7 +414,7 @@
 			};
 			name = Release;
 		};
-		F9F88AC418BE5E0C00045786 /* Debug */ = {
+		F9F88B1018BE743700045786 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/notes-n-things.app/notes-n-things";
@@ -401,7 +431,7 @@
 			};
 			name = Debug;
 		};
-		F9F88AC518BE5E0C00045786 /* Release */ = {
+		F9F88B1118BE743700045786 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/notes-n-things.app/notes-n-things";
@@ -421,32 +451,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F9F88A8918BE5E0C00045786 /* Build configuration list for PBXProject "notes-n-things" */ = {
+		F9F88ACC18BE743600045786 /* Build configuration list for PBXProject "notes-n-things" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F9F88ABE18BE5E0C00045786 /* Debug */,
-				F9F88ABF18BE5E0C00045786 /* Release */,
+				F9F88B0A18BE743700045786 /* Debug */,
+				F9F88B0B18BE743700045786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F9F88AC018BE5E0C00045786 /* Build configuration list for PBXNativeTarget "notes-n-things" */ = {
+		F9F88B0C18BE743700045786 /* Build configuration list for PBXNativeTarget "notes-n-things" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F9F88AC118BE5E0C00045786 /* Debug */,
-				F9F88AC218BE5E0C00045786 /* Release */,
+				F9F88B0D18BE743700045786 /* Debug */,
+				F9F88B0E18BE743700045786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		F9F88AC318BE5E0C00045786 /* Build configuration list for PBXNativeTarget "notes-n-thingsTests" */ = {
+		F9F88B0F18BE743700045786 /* Build configuration list for PBXNativeTarget "notes-n-thingsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F9F88AC418BE5E0C00045786 /* Debug */,
-				F9F88AC518BE5E0C00045786 /* Release */,
+				F9F88B1018BE743700045786 /* Debug */,
+				F9F88B1118BE743700045786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F9F88A8618BE5E0C00045786 /* Project object */;
+	rootObject = F9F88AC918BE743600045786 /* Project object */;
 }
