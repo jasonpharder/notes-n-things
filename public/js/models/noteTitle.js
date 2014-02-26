@@ -1,9 +1,9 @@
-App.Note = DS.Model.extend({
-	title: DS.attr('string'),
-	uid: DS.attr('string')
+App.NoteTitle = DS.Model.extend({
+	title:   DS.attr('string'),
+	uid:     DS.attr('string')
 })
 
-App.Note.FIXTURES = [
+App.NoteTitle.FIXTURES = [
 	{
 		uid: "1",
 		id : 1,
