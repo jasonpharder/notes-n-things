@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F9F88A8D18BE5E0C00045786"
+               BlueprintIdentifier = "F9F88AD018BE743600045786"
                BuildableName = "notes-n-things.app"
                BlueprintName = "notes-n-things"
                ReferencedContainer = "container:notes-n-things.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F9F88AAD18BE5E0C00045786"
+               BlueprintIdentifier = "F9F88AF918BE743700045786"
                BuildableName = "notes-n-thingsTests.octest"
                BlueprintName = "notes-n-thingsTests"
                ReferencedContainer = "container:notes-n-things.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F9F88A8D18BE5E0C00045786"
+            BlueprintIdentifier = "F9F88AD018BE743600045786"
             BuildableName = "notes-n-things.app"
             BlueprintName = "notes-n-things"
             ReferencedContainer = "container:notes-n-things.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F9F88A8D18BE5E0C00045786"
+            BlueprintIdentifier = "F9F88AD018BE743600045786"
             BuildableName = "notes-n-things.app"
             BlueprintName = "notes-n-things"
             ReferencedContainer = "container:notes-n-things.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F9F88A8D18BE5E0C00045786"
+            BlueprintIdentifier = "F9F88AD018BE743600045786"
             BuildableName = "notes-n-things.app"
             BlueprintName = "notes-n-things"
             ReferencedContainer = "container:notes-n-things.xcodeproj">
