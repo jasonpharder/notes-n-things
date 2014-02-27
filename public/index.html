@@ -64,7 +64,8 @@
     </script>
 
     <script type="text/x-handlebars" id="note">
-      {{contents}}
+      Test title:{{file_name}}<br />
+	content:{{contents}}
     </script>
 
     <!--Courses Template-->
@@ -72,7 +73,7 @@
       <div class="bs-sidebar affix">
         <ul class="nav bs-sidenav" id="courses-list">
           {{#each}}
-            <li>{{#link-to 'course' this.uid}}{{title}}{{/link-to}}</li>
+            <li>{{#link-to 'course' this.id}}{{name}}{{/link-to}}</li>
           {{/each}}
         </ul>
       </div>
@@ -82,7 +83,7 @@
     </script>
 
     <script type="text/x-handlebars" id="course">
-      {{contents}}
+      {{alt_name}}
     </script>
 
     <!--Login Template-->

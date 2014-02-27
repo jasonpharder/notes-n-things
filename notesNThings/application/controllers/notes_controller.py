@@ -5,10 +5,10 @@ class NotesController:
 	
 	@staticmethod
 	def getAll():
-		stubNotes = [ {'noteID': 0, 'stored_as': "placeholder data", "file_name": "someFile", "owner": None, "rating": 4}, {"noteID": 1, "stored_as": "placeholder data", "file_name": "myOtherFile", "owner": None, "rating": 5} ]
+		stubNotes = { 'notes': [ {'id' : 0, 'noteID': '0', "file_name": "someFile", "contents": "test content please ignore"}, { 'id': 1,  "noteID": '1', "file_name": "myOtherFile", "contents": "the other test content"} ]}
 		return json.dumps(stubNotes)
 
 	@staticmethod
 	def getByName(name):
-		stubNote = {'noteID': 0, 'stored_as': "placeholder data", "file_name": "someFile", "owner": None, "rating": 4}
+		stubNote =  { 'notes': [ {'id': '0', 'noteID': '0', "file_name": "someFile", "contents": "test content please ignore"} ]}
 		return json.dumps(stubNote)

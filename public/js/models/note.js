@@ -8,7 +8,7 @@ App.Note = DS.Model.extend({
 });
 
 //Stub data for notes
-App.Note.FIXTURES = [
+/*App.Note.FIXTURES = [
 	{
 		noteID:    1,
 		id :       1,
@@ -27,4 +27,4 @@ App.Note.FIXTURES = [
 		file_name: "Test Note 3",
 		contents:  "test content 3"
 	},
-];
+];*/

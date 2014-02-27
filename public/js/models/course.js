@@ -1,10 +1,14 @@
 App.Course = DS.Model.extend({
-	title:    DS.attr('string'),
-	uid:      DS.attr('string'),
-	contents: DS.attr('string')
+	name:      DS.attr('string'),
+	alt_name:  DS.attr('string'),
+	term:      DS.attr(),
+	proffesor: DS.attr(),
+	uid:       DS.attr('string'),
+	contents:  DS.attr('string')
 })
 
 //stub Data for courses
+/*
 App.Course.FIXTURES = [
 	{
 		uid:      "1",
@@ -24,4 +28,4 @@ App.Course.FIXTURES = [
 		title:    "Test Course 3",
 		contents: "test content 3"
 	},
-]
+]*/
