@@ -1,6 +1,8 @@
+from sys import path
 from flask import Flask
 from flask import redirect, request
-'''from controllers import notes'''
+from application.controllers.courses_controller import CoursesController
+from application.controllers.notes_controller import NotesController
 
 app = Flask(__name__)
 
@@ -13,10 +15,18 @@ def login():
 	return 'login'#if request.method == 'POST':
 		#do login stuff here
 
-@app.route('/note/<name>')
-def show_notes(name):
-	return notes.test(name)
+@app.route('/courses')
+def course_index():
+	return CoursesController.getAll()
 
-@app.route('/course/<name>')
+@app.route('/notes')
+def note_index():
+	return NotesController.getAll()
+
+@app.route('/notes/<name>')
+def show_note(name):
+	return NotesController.getByName(name)
+
+@app.route('/courses/<name>')
 def show_course(name):
-	return 'courses'#courses stuff here
+	return CoursesController.getByName(name)
