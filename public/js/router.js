@@ -11,3 +11,9 @@ App.NotesRoute = Ember.Route.extend({
 		return this.store.find('note');
 	}
 });
+
+App.NoteRoute = Ember.Route.extend({
+	model: function(params) {
+		return this.store.find('note', params.note_id);
+	}
+})
