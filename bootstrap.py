@@ -1,2 +1,2 @@
-from notes-n-things import app
+from notesNThings import app
 app.run()

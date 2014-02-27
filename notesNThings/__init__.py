@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import redirect, request
-from controlers import notes
+'''from controllers import notes'''
 
 app = Flask(__name__)
 
@@ -10,7 +10,7 @@ def index():
 
 @app.route('/login', methods=['POST'])
 def login():
-	if request.method == 'POST':
+	return 'login'#if request.method == 'POST':
 		#do login stuff here
 
 @app.route('/note/<name>')
@@ -19,4 +19,4 @@ def show_notes(name):
 
 @app.route('/course/<name>')
 def show_course(name):
-	#courses stuff here
+	return 'courses'#courses stuff here
