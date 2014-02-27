@@ -86,9 +86,10 @@ body {
   background-color: transparent;
   border-bottom-color: rgba(255,255,255,.25);
 }
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
+
+.masthead-nav > li > .active,
+.masthead-nav > li > .active:hover,
+.masthead-nav > li > .active:focus {
   color: #fff;
   border-bottom-color: #fff;
 }
