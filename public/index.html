@@ -54,7 +54,7 @@
       <div class="bs-sidebar affix">
         <ul class="nav bs-sidenav" id="notes-list">
           {{#each}}
-            <li>{{#link-to 'note' this.uid}}{{title}}{{/link-to}}</li>
+            <li>{{#link-to 'note' this.noteID}}{{file_name}}{{/link-to}}</li>
           {{/each}}
         </ul>
       </div>

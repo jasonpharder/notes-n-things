@@ -1,27 +1,30 @@
 App.Note = DS.Model.extend({
-	title:    DS.attr('string'),
-	uid:      DS.attr('string'),
-	contents: DS.attr('string')
+	file_name: DS.attr('string'),
+	stored_as: DS.attr('string'),
+	rating:    DS.attr(),
+	noteID:    DS.attr(),
+	owner:     DS.attr(),
+	contents:  DS.attr('string')
 });
 
 //Stub data for notes
 App.Note.FIXTURES = [
 	{
-		uid:      "1",
-		id :      1,
-		title:    "Test Note",
-		contents: "test content"
+		noteID:    1,
+		id :       1,
+		file_name: "Test Note",
+		contents:  "test content"
 	},
 	{
-		uid:      "2",
-		id :      2,
-		title:    "Test Note 2",
-		contents: "test content 2"
+		noteID:    2,
+		id :       2,
+		file_name: "Test Note 2",
+		contents:  "test content 2"
 	},
 	{
-		uid:      "3",
-		id :      3,
-		title:    "Test Note 3",
-		contents: "test content 3"
+		noteID:    3,
+		id :       3,
+		file_name: "Test Note 3",
+		contents:  "test content 3"
 	},
 ];
