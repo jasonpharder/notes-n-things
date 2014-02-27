@@ -28,10 +28,10 @@
               <div class="inner">
                 <h3 class="masthead-brand">Notes-n-Things</h3>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href='#/notes'>Notes</a></li>
-                  <li><a href='#/courses'>Courses</a></li>
-                  <li><a href='#/login'>Sign In/Register</a></li>
+                  <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+                  <li>{{#link-to 'notes'}}Notes{{/link-to}}</li>
+                  <li>{{#link-to 'courses'}}Courses{{/link-to}}</li>
+                  <li>{{#link-to 'login'}}Sign In/Register{{/link-to}}</li>
                 </ul>
               </div>
             </div>
@@ -54,13 +54,17 @@
       <div class="bs-sidebar affix">
         <ul class="nav bs-sidenav" id="notes-list">
           {{#each}}
-            <li><a href="#">{{title}}</a></li>
+            <li>{{#link-to 'note' this}}{{title}}{{/link-to}}</li>
           {{/each}}
         </ul>
       </div>
       <div id="note-container">
-
+        {{outlet}}
       </div>
+    </script>
+
+    <script type="text/x-handlebars" id="note">
+      {{content}}
     </script>
 
     <!--Courses Template-->

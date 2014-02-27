@@ -1,5 +1,7 @@
 App.Router.map(function() {
-  this.resource('notes');
+  this.resource('notes', function() {
+  	this.resource('note', {path : ':note_id'} );
+  });
   this.resource('courses');
   this.resource('login');
 });
