@@ -54,7 +54,7 @@
       <div class="bs-sidebar affix">
         <ul class="nav bs-sidenav" id="notes-list">
           {{#each}}
-            <li>{{#link-to 'note' this}}{{title}}{{/link-to}}</li>
+            <li>{{#link-to 'note' this.uid}}{{title}}{{/link-to}}</li>
           {{/each}}
         </ul>
       </div>
@@ -69,7 +69,20 @@
 
     <!--Courses Template-->
     <script type="text/x-handlebars" id="courses">
-      This is a courses test 
+      <div class="bs-sidebar affix">
+        <ul class="nav bs-sidenav" id="courses-list">
+          {{#each}}
+            <li>{{#link-to 'course' this.uid}}{{title}}{{/link-to}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div id="course-container">
+        {{outlet}}
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="course">
+      {{contents}}
     </script>
 
     <!--Login Template-->
@@ -96,5 +109,7 @@
     <script src="js/app.js"></script>
     <script src="js/router.js"></script>
     <script src="js/models/note.js"></script>
+    <script src="js/models/noteTitle.js"></script>
+    <script src="js/models/course.js"></script>
   </body>
 </html>
