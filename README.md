@@ -66,9 +66,7 @@ postgres# means the command is run from within the postgres rdbms
 <pre><code>
   #apt-get install postgresql postgresql-contrib
   #su postgres
-  $psql
-  postgres# create table notes_n_things;
-  postgres# \q
+  $createdb notes_n_things
   $psql notes_n_things &lt; /opt/apps/notes-n-things-env/notes-n-things/config/schemapostgres.sql
   $exit
 </code></pre>
