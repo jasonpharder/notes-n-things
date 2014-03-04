@@ -1,4 +1,5 @@
 from flask import Flask
+from notesNThings.application.models import notes_model
 import json
 
 class NotesController:

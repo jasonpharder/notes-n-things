@@ -71,6 +71,18 @@ postgres# means the command is run from within the postgres rdbms
   $exit
 </code></pre>
 
+###SqlALchemy
+
+<pre><code>
+  sudo apt-get install libpq-dev
+  . /opt/apps/notes-n-things-env/bin/activate
+  pip install flask-sqlalchemy
+  pip install psycopg2
+  deactivate
+
+  restart postgresql server
+</code></pre>
+
 ###git
 <pre><code>
    #yum install git
