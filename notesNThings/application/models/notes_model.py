@@ -22,4 +22,4 @@ class Note (db.Model):
         self.rating = rating
 
 def getAllNotes():
-    return stubNotes
+    return json.dumps(stubNotes)

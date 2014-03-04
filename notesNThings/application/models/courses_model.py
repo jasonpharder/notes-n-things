@@ -25,8 +25,8 @@ class Course (db.Model):
 def getAllCourses():
     #courses = Course.query.all()
     #jsonTest = "{'test': { "
-    #print 'courses model reached'
+    print 'courses model reached'
     #for t in courses:
     #   jsonTest = jsonTest + json.dumps(t.name)
     #return jsonTest
-    return stubCourses
+    return json.dumps(stubCourses)

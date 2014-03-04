@@ -30,4 +30,4 @@ class User (db.Model):
         return check_password_hash(self.pwdhash, password)
 
 def getAllUsers():
-    return stubUsers
+    return json.dumps(stubUsers)
