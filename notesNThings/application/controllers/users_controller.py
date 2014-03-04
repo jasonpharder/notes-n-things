@@ -1,5 +1,5 @@
 from flask import Flask
-from notesNThings.application.models import notes_model
+from notesNThings.application.models import users_model
 import json
 
 class NotesController:
