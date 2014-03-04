@@ -1,9 +1,11 @@
 from flask.ext.sqlalchemy import SQLAlchemy
+from notesNThings.application.models.stub_database import stubNotes
+
 import json
 
 db = SQLAlchemy()
 
-class Notes (db.Model):
+class Note (db.Model):
     # Setting the table name and
     # creating columns for various fields
     __tablename__ = 'notes' 
@@ -20,9 +22,4 @@ class Notes (db.Model):
         self.rating = rating
 
 def getAllNotes():
-    notes = Notes.query.all()
-    jsonTest = "{'test': { "
-    print jsonTest
-    for t in tests:
-       jsonTest = jsonTest + json.dumps(t.file_name)
-    return jsonTest
+    return stubNotes

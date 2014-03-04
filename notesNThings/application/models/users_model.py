@@ -1,4 +1,6 @@
 from flask.ext.sqlalchemy import SQLAlchemy
+from notesNThings.application.models.stub_database import stubUsers
+
 import json
 
 db = SQLAlchemy()
@@ -28,9 +30,4 @@ class User (db.Model):
         return check_password_hash(self.pwdhash, password)
 
 def getAllUsers():
-    users = User.query.all()
-    jsonTest = "{'test': { "
-    print jsonTest
-    for t in users:
-       jsonTest = jsonTest + json.dumps(t.username)
-    return jsonTest
+    return stubUsers

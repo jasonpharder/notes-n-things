@@ -6,8 +6,8 @@ class NotesController:
 
 	@staticmethod
 	def getAll():
-		return json.dumps(stubNotes)
+		return notes_model.getAllNotes()
 
 	@staticmethod
 	def getByName(name):
-		return json.dumps(stubNote)
+		return notes_model.getAllNotes()

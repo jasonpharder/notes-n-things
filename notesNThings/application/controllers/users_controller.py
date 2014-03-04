@@ -2,12 +2,12 @@ from flask import Flask
 from notesNThings.application.models import users_model
 import json
 
-class NotesController:
+class UsersController:
 
 	@staticmethod
 	def getAll():
-		return json.dumps(stubNotes)
+		return users_model.getAllUsers()
 
 	@staticmethod
 	def getByName(name):
-		return json.dumps(stubNote)
+		return users_model.getAllUsers()

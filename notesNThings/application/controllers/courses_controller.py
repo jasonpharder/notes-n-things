@@ -6,8 +6,8 @@ class CoursesController:
 	
 	@staticmethod
 	def getAll():
-		return json.dumps(stubCourses)
+		return courses_model.getAllCourses()
 
 	@staticmethod
 	def getByName(name):
-		return json.dumps(stubCourse)
+		return courses_model.getAllCourses()
