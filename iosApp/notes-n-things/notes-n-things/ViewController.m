@@ -14,17 +14,21 @@
 
 @implementation ViewController
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        // Initialize self.
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    NSURL *url = [NSURL URLWithString:@"http://www.notes-n-things.tk"];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    [webView loadRequest:request];
-    
+       
+
 }
 
 - (void)didReceiveMemoryWarning

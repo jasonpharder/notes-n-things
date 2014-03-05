@@ -11,7 +11,7 @@
 @interface ViewController : UIViewController
 
 {
-    IBOutlet UIWebView *webView;
+
 }
 
 @end
