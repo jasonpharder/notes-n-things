@@ -1,8 +1,7 @@
 CREATE TABLE users (
         uid serial PRIMARY KEY NOT NULL,
         username VARCHAR(32) NOT NULL,
-        password CHAR(64) NOT NULL,
-        salt bit(512) NOT NULL,
+        password CHAR(32) NOT NULL,
         email VARCHAR(64),
         admin boolean
 );
@@ -24,22 +23,23 @@ CREATE TABLE note_ratings (
 
 CREATE TABLE tags_to_notes (
         tag VARCHAR(32) NOT NULL,
-        noteID integer NOT NULL REFERENCES notes(uid),
+        noteID integer NOT NULL REFERENCES notes(noteID),
         UNIQUE (noteID, tag)
-);
-
-CREATE TABLE terms (
-        termID serial PRIMARY KEY,
-        termName VARCHAR(32),
-        termYear integer
 );
 
 CREATE TABLE courses (
         courseID serial PRIMARY KEY,
-        term integer REFERENCES terms(termID),
         name VARCHAR(9),
         alt_name VARCHAR(255),
         professor integer REFERENCES users(uid)
+);
+
+CREATE TABLE messages (
+        messageID serial PRIMARY KEY,
+        message VARCHAR(455) NOT NULL,
+        postTime TIMESTAMP NOT NULL,
+        courseID integer NOT NULL REFERENCES courses(courseID),
+        userID integer NOT NULL REFERENCES users(uid)
 );
 
 CREATE TABLE subscriptions (
@@ -65,7 +65,8 @@ CREATE TABLE todo (
 
 CREATE TABLE comments (
         commentID serial PRIMARY KEY,
+        comment VARCHAR(255),
         userID integer NOT NULL REFERENCES users(uid),
         postTime TIMESTAMP NOT NULL,
-        courseID integer NOT NULL REFERENCES courses(courseID)
+        messageID integer NOT NULL REFERENCES messages(messageID)
 );

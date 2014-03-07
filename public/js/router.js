@@ -6,7 +6,40 @@ App.Router.map(function() {
 	this.resource('courses', function() {
 		this.resource('course', { path : ':course_id' } );
 	});
+	this.resource('users', function() {
+		this.resource('user', { path : ':user_id' } );
+	});
 	this.resource('login');
+});
+
+var tests = [
+	{
+		id :       1,
+		uid: "1",
+		name: "Test Note"
+	},
+	{
+		id :       2,
+		uid: "2",
+		name: "Test Note 2"
+	},
+	{
+		id :       3,
+		uid: "3",
+		name: "Test Note 3"
+	}
+];
+
+App.UsersRoute = Ember.Route.extend({
+	model: function() {
+		return this.store.find('user');
+	}
+});
+
+App.UserRoute = Ember.Route.extend({
+	model: function(params) {
+		return this.store.find('user', params.user_id);
+	}
 });
 
 App.CoursesRoute = Ember.Route.extend({

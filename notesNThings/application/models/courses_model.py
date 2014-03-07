@@ -1,5 +1,6 @@
 from flask.ext.sqlalchemy import SQLAlchemy
 from notesNThings.application.models.stub_database import stubCourses
+from notesNThings.application.models.stub_database import stubTests
 
 import json
 
@@ -23,10 +24,7 @@ class Course (db.Model):
         self.professor = professor
 
 def getAllCourses():
-    #courses = Course.query.all()
-    #jsonTest = "{'test': { "
-    print 'courses model reached'
-    #for t in courses:
-    #   jsonTest = jsonTest + json.dumps(t.name)
-    #return jsonTest
     return json.dumps(stubCourses)
+
+def getAllTests():
+    return json.dumps(stubTests)
