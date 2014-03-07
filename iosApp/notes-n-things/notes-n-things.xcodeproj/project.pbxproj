@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17DDE07518C58374006C7622 /* coursesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DDE07418C58374006C7622 /* coursesController.m */; };
+		17DDE07E18C58624006C7622 /* notesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DDE07D18C58624006C7622 /* notesController.m */; };
 		F9F88AD518BE743600045786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD418BE743600045786 /* UIKit.framework */; };
 		F9F88AD718BE743600045786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD618BE743600045786 /* Foundation.framework */; };
 		F9F88AD918BE743600045786 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD818BE743600045786 /* CoreGraphics.framework */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17DDE07318C58374006C7622 /* coursesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coursesController.h; sourceTree = "<group>"; };
+		17DDE07418C58374006C7622 /* coursesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = coursesController.m; sourceTree = "<group>"; };
+		17DDE07C18C58624006C7622 /* notesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notesController.h; sourceTree = "<group>"; };
+		17DDE07D18C58624006C7622 /* notesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notesController.m; sourceTree = "<group>"; };
 		F9F88AD118BE743600045786 /* notes-n-things.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "notes-n-things.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F88AD418BE743600045786 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9F88AD618BE743600045786 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +129,10 @@
 				F9F88AF218BE743600045786 /* ViewController.h */,
 				F9F88AF318BE743600045786 /* ViewController.m */,
 				F9F88ADB18BE743600045786 /* Supporting Files */,
+				17DDE07318C58374006C7622 /* coursesController.h */,
+				17DDE07418C58374006C7622 /* coursesController.m */,
+				17DDE07C18C58624006C7622 /* notesController.h */,
+				17DDE07D18C58624006C7622 /* notesController.m */,
 			);
 			path = "notes-n-things";
 			sourceTree = "<group>";
@@ -272,6 +282,8 @@
 			files = (
 				F9F88AE118BE743600045786 /* main.m in Sources */,
 				F9F88AE518BE743600045786 /* AppDelegate.m in Sources */,
+				17DDE07E18C58624006C7622 /* notesController.m in Sources */,
+				17DDE07518C58374006C7622 /* coursesController.m in Sources */,
 				F9F88AF418BE743600045786 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +467,7 @@
 				F9F88B0E18BE743700045786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9F88B0F18BE743700045786 /* Build configuration list for PBXNativeTarget "notes-n-thingsTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +476,7 @@
 				F9F88B1118BE743700045786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
