@@ -25,6 +25,3 @@ class Course (db.Model):
 
 def getAllCourses():
     return json.dumps(stubCourses)
-
-def getAllTests():
-    return json.dumps(stubTests)
