@@ -1,9 +1,7 @@
-from flask.ext.sqlalchemy import SQLAlchemy
+from notesNThings.application.models import db
 from notesNThings.application.models.stub_database import stubNotes
 
 import json
-
-db = SQLAlchemy()
 
 class Note (db.Model):
     # Setting the table name and
@@ -15,7 +13,8 @@ class Note (db.Model):
     owner = db.Column(db.Integer)
     rating = db.Column(db.Integer)
 
-    def __init__(self, stored_as, file_name, owner, rating):
+    def __init__(self, uid, stored_as, file_name, owner, rating):
+        self.uid = uid
         self.stored_as = stored_as
         self.file_name = file_name
         self.owner = owner

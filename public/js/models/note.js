@@ -1,10 +1,9 @@
 App.Note = DS.Model.extend({
-	file_name: DS.attr('string'),
+	uid: DS.attr(),
 	stored_as: DS.attr('string'),
-	rating:    DS.attr(),
-	noteID:    DS.attr(),
-	owner:     DS.attr(),
-	contents:  DS.attr('string')
+	file_name: DS.attr('string'),
+	owner: DS.attr(),
+	rating:    DS.attr()
 });
 
 //Stub data for notes
