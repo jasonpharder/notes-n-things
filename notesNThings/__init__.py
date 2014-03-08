@@ -21,7 +21,7 @@ headers = {'Content-Type': 'application/json'}
 app = Flask(__name__)
 app.debug = True
 # need to find a way to dynamically find the config file's path
-app.config.from_pyfile("/opt/apps/notes-n-things/config/config.py")
+app.config.from_pyfile("/opt/apps/notes-n-things-env/notes-n-things/config/config.py")
 
 db.init_app(app)
 
