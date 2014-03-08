@@ -62,7 +62,7 @@
       <div class="bs-sidebar affix">
         <ul class="nav bs-sidenav" id="notes-list">
           {{#each}}
-            <li>{{#link-to 'note' this.noteID}}{{file_name}}{{/link-to}}</li>
+            <li>{{#link-to 'note' this.id}}{{file_name}}{{/link-to}}</li>
           {{/each}}
         </ul>
       </div>
@@ -82,7 +82,7 @@
       <div class="bs-sidebar affix">
         <ul class="nav bs-sidenav" id="user-list">
           {{#each}}
-            <li>{{#link-to 'user' this.uid}}{{username}}{{/link-to}}</li>
+            <li>{{#link-to 'user' this.id}}{{username}}{{/link-to}}</li>
           {{/each}}
         </ul>
       </div>
@@ -92,7 +92,18 @@
     </script>
 
     <script type="text/x-handlebars" id="user">
-    {{username}}
+      {{#if isEditing}}
+        {{partial 'user/edit'}}
+        <button {{action 'doneEditing'}}>Done</button>
+      {{else}}
+        <button {{action 'edit'}}>Edit</button>
+      {{/if}}
+
+      <h1>{{username}}</h1>
+    </script>
+
+    <script type="text/x-handlebars" id="user/_edit">
+      <p>{{input type="text" value=username}}</p>
     </script>
 
     <!--Courses Template-->
@@ -139,5 +150,6 @@
     <script src="js/models/note.js"></script>
     <script src="js/models/course.js"></script>
     <script src="js/models/user.js"></script>
+    <script src="js/controllers/user_controller.js"></script>
   </body>
 </html>

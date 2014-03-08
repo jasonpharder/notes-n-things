@@ -14,7 +14,7 @@ class NotesController:
 		return notes_model.getAllNotes()
 
 def api_post_get_many(result=None, **kw):
-	print "api_post_get_many"
+	print "NOTE: api_post_get_many"
 	print result['objects']
 	result['notes'] = result['objects']
 	for key in result.keys():
@@ -23,7 +23,7 @@ def api_post_get_many(result=None, **kw):
 		if key != 'notes': 
 			del result[key]
 	for test in result['notes']:
-		test['id'] = test['noteID']
+		test['id'] = test['uid']
 		#DEBUG Print
 		print test
 
@@ -36,7 +36,7 @@ def create_note_api(restless_manager):
 		url_prefix='/api',
 		collection_name='notes',
 		postprocessors={
-	        'GET_MANY': [api_post_get_many],
+	        'GET_MANY': [api_post_get_many]
 	        #'POST': [api_post_get_many],
 	        #'PUT_SINGLE': [api_post_get_many]
 	    },

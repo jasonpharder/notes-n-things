@@ -1,7 +1,7 @@
 from flask import Flask
 from notesNThings.application.models import courses_model
 from notesNThings.application.models.courses_model import Course
-
+from notesNThings.application.models.notes_model import Note
 import json
 
 class CoursesController:
@@ -15,7 +15,7 @@ class CoursesController:
 		return courses_model.getAllCourses()
 
 def api_post_get_many(result=None, **kw):
-	print "api_post_get_many"
+	print "COURSE: api_post_get_many"
 	print result['objects']
 	result['courses'] = result['objects']
 	for key in result.keys():
@@ -24,7 +24,7 @@ def api_post_get_many(result=None, **kw):
 		if key != 'courses': 
 			del result[key]
 	for test in result['courses']:
-		test['id'] = test['courseID']
+		test['id'] = test['courseid']
 		#DEBUG Print
 		print test
 
@@ -37,7 +37,7 @@ def create_course_api(restless_manager):
 		url_prefix='/api',
 		collection_name='courses',
 		postprocessors={
-	        'GET_MANY': [api_post_get_many],
+	        'GET_MANY': [api_post_get_many]
 	        #'POST': [api_post_get_many],
 	        #'PUT_SINGLE': [api_post_get_many]
 	    },

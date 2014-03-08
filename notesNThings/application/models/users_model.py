@@ -1,9 +1,7 @@
-from flask.ext.sqlalchemy import SQLAlchemy
+from notesNThings.application.models import db
 from notesNThings.application.models.stub_database import stubUsers
 
 import json
-
-db = SQLAlchemy()
 
 ROLE_USER = 0
 ROLE_ADMIN = 1
