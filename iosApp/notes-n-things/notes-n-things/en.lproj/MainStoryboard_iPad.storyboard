@@ -93,15 +93,30 @@
             </objects>
             <point key="canvasLocation" x="2265" y="-1248"/>
         </scene>
-        <!--View Controller-->
+        <!--Course Controller-->
         <scene sceneID="x1M-Ds-Lan">
             <objects>
-                <viewController id="LK2-g8-CtT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="courseControllerView" id="LK2-g8-CtT" customClass="courseController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xDu-Yh-veA">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, test test" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J5-wE-4rN">
+                                <rect key="frame" x="230" y="293" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5J5-wE-4rN" firstAttribute="top" secondItem="xDu-Yh-veA" secondAttribute="top" constant="293" id="9Ni-Lf-mf3"/>
+                            <constraint firstItem="5J5-wE-4rN" firstAttribute="leading" secondItem="xDu-Yh-veA" secondAttribute="leading" constant="230" id="BRu-cK-wQj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="courseLabel" destination="5J5-wE-4rN" id="McK-hj-Hs9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBq-Db-hid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,6 +155,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ra-zB-tsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2261" y="-57"/>
+        </scene>
+        <!--Note Controller-->
+        <scene sceneID="lsX-1a-oGn">
+            <objects>
+                <viewController storyboardIdentifier="noteControllerView" id="cbV-tM-Ets" customClass="noteController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gOp-0p-hyU">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stuffz happeningz?!?!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZH-Z9-vsC">
+                                <rect key="frame" x="195" y="195" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6ZH-Z9-vsC" firstAttribute="top" secondItem="gOp-0p-hyU" secondAttribute="top" constant="195" id="Lve-Qr-Ouc"/>
+                            <constraint firstItem="6ZH-Z9-vsC" firstAttribute="leading" secondItem="gOp-0p-hyU" secondAttribute="leading" constant="195" id="ZCk-3c-fkB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="noteLabel" destination="6ZH-Z9-vsC" id="4vo-3n-irP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axS-Fs-R8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3149" y="-31"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5d3-uK-go3">

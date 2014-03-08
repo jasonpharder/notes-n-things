@@ -14,6 +14,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
     coursesList.text = @"Courses:";
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -43,6 +45,7 @@
             UIButton *courseBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [courseBtn setTitle:[NSString stringWithFormat:@" %@\n", course[@"name"]]forState:UIControlStateNormal];
             [courseBtn setFrame:CGRectMake(10, _y, 200, _height)];
+            [courseBtn addTarget:self action:@selector(courseDetail) forControlEvents:UIControlEventTouchUpInside];
   
             [self.view addSubview:courseBtn];
             _y = _y + _height;
@@ -60,6 +63,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)courseDetail
+{
+    courseController *courseControllerView = [self.storyboard instantiateViewControllerWithIdentifier:@"courseControllerView"];
+    [self.navigationController pushViewController:courseControllerView animated:YES];
+    
 }
 
 

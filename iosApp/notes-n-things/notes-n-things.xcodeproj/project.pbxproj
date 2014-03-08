@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17CD844D18C83B8C00D9EF10 /* courseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CD844C18C83B8C00D9EF10 /* courseController.m */; };
+		17CD845018C83C5C00D9EF10 /* noteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CD844F18C83C5C00D9EF10 /* noteController.m */; };
 		17DDE07518C58374006C7622 /* coursesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DDE07418C58374006C7622 /* coursesController.m */; };
 		17DDE07E18C58624006C7622 /* notesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DDE07D18C58624006C7622 /* notesController.m */; };
 		F9F88AD518BE743600045786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD418BE743600045786 /* UIKit.framework */; };
@@ -38,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17CD844B18C83B8C00D9EF10 /* courseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courseController.h; sourceTree = "<group>"; };
+		17CD844C18C83B8C00D9EF10 /* courseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courseController.m; sourceTree = "<group>"; };
+		17CD844E18C83C5C00D9EF10 /* noteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noteController.h; sourceTree = "<group>"; };
+		17CD844F18C83C5C00D9EF10 /* noteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noteController.m; sourceTree = "<group>"; };
 		17DDE07318C58374006C7622 /* coursesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coursesController.h; sourceTree = "<group>"; };
 		17DDE07418C58374006C7622 /* coursesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = coursesController.m; sourceTree = "<group>"; };
 		17DDE07C18C58624006C7622 /* notesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notesController.h; sourceTree = "<group>"; };
@@ -133,6 +139,10 @@
 				17DDE07418C58374006C7622 /* coursesController.m */,
 				17DDE07C18C58624006C7622 /* notesController.h */,
 				17DDE07D18C58624006C7622 /* notesController.m */,
+				17CD844B18C83B8C00D9EF10 /* courseController.h */,
+				17CD844C18C83B8C00D9EF10 /* courseController.m */,
+				17CD844E18C83C5C00D9EF10 /* noteController.h */,
+				17CD844F18C83C5C00D9EF10 /* noteController.m */,
 			);
 			path = "notes-n-things";
 			sourceTree = "<group>";
@@ -281,7 +291,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F88AE118BE743600045786 /* main.m in Sources */,
+				17CD845018C83C5C00D9EF10 /* noteController.m in Sources */,
 				F9F88AE518BE743600045786 /* AppDelegate.m in Sources */,
+				17CD844D18C83B8C00D9EF10 /* courseController.m in Sources */,
 				17DDE07E18C58624006C7622 /* notesController.m in Sources */,
 				17DDE07518C58374006C7622 /* coursesController.m in Sources */,
 				F9F88AF418BE743600045786 /* ViewController.m in Sources */,

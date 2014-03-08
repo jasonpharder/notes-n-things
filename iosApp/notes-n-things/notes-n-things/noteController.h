@@ -1,5 +1,5 @@
 //
-//  courseController.h
+//  noteController.h
 //  notes-n-things
 //
 //  Created by Joshua Drad on 2014-03-05.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface courseController : UIViewController
+@interface noteController : UIViewController
 {
-    IBOutlet UILabel* courseLabel;
-    IBOutlet NSString *courseTitle;
-    
+    IBOutlet UILabel* noteLabel;
 }
 @end
