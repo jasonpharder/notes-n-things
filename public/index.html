@@ -74,7 +74,13 @@
     <script type="text/x-handlebars" id="note">
       <h1>Test title:{{file_name}}</h1>
       stored as:{{stored_as}}
-      {{contents}}
+      {{#if isEditing}}
+        <textarea>{{contents}}</textarea>
+        <button {{action 'doneEditing'}}>Done</button>
+      {{else}}
+        <p>{{contents}}</p>
+        <button {{action 'edit'}}>Edit</button>
+      {{/if}}
     </script>
 
     <!--Courses Template-->
