@@ -1,11 +1,3 @@
-// put app in qunit-fixture
-window.App = Ember.Application.create({
-  rootElement: '#qunit-fixture'
-});
-
-// turn on testing mode
-window.App.setupForTesting();
-
 module("Testing the homepage", {
 	setup: function() {
 		App.reset();
@@ -20,10 +12,25 @@ test("App Instantiation", function() {
 	);
 });
 
-test("Does the index template load properly", function() {
+test("Do the templates load correctly", function() {
 	visit("/")
-		.find("h3.masthead-brand")
+		.find("p#homepage")
 		.then(function(header) {
-			equal(header.length, 1, 'found title');
+			equal(header.length, 1, 'found contents');
+		});
+	visit("/notes")
+		.find("ul#notes-list")
+		.then(function(list) {
+			equal(list.length, 1, 'found notes list');
+		});
+	visit("/courses")
+		.find("ul#courses-list")
+		.then(function(header) {
+			equal(header.length, 1, 'found courses list');
+		});
+	visit("/login")
+		.find("form.form-signin")
+		.then(function(form) {
+			equal(form.length, 1, 'found login');
 		});
 });
