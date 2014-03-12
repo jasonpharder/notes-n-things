@@ -6,19 +6,24 @@ window.App = Ember.Application.create({
 // turn on testing mode
 window.App.setupForTesting();
 
-test( "hello test", function() {
-  ok( 1 == "1", "Passed!" );
+module("Testing the homepage", {
+	setup: function() {
+		App.reset();
+		App.injectTestHelpers();
+	}
 });
 
 test("App Instantiation", function() {
-  equal(
-    App.constructor, Ember.Application,
-    'App is an Ember App!'
-  );
+	equal(
+		App.constructor, Ember.Application,
+		'App is an Ember App!'
+	);
 });
 
-//test( "", function () {
-//	var courses = this.store.find('course');/
-//	alert(courses);
-//	ok( 1== "1", "Passed!");
-//})
+test("Does the index template load properly", function() {
+	visit("/")
+		.find("h3.masthead-brand")
+		.then(function(header) {
+			equal(header.length, 1, 'found title');
+		});
+});
