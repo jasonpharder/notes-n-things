@@ -10,6 +10,8 @@
 
 @interface noteController : UIViewController
 {
-    IBOutlet UILabel* noteLabel;
 }
+
+@property (nonatomic, strong) IBOutlet UILabel *noteLabel;
+
 @end

@@ -10,8 +10,9 @@
 
 @interface courseController : UIViewController
 {
-    IBOutlet UILabel* courseLabel;
     IBOutlet NSString *courseTitle;
     
 }
+@property (nonatomic, strong) IBOutlet UILabel *courseLabel;
+
 @end

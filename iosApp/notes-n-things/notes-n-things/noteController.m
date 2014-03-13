@@ -8,14 +8,19 @@
 
 #import "noteController.h"
 
+extern NSString *noteTitle;
+
 @implementation noteController
+
+@synthesize noteLabel;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.navigationItem.title = @"title";
-    noteLabel.text = @"hello";
+    self.navigationItem.title = noteTitle;
+
+    noteLabel.text = @"Where the note context will be displayed";
 }
 @end

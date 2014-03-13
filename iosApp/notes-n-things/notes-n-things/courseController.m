@@ -8,14 +8,21 @@
 
 #import "courseController.h"
 
+extern NSString *courseName;
+
 @implementation courseController
+
+@synthesize courseLabel;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.navigationItem.title = @"title";
-    courseLabel.text = @"hello";
+    courseLabel.text = @"A list of all notes belonging to this course will be displayed";
+    
+    self.navigationItem.title = courseName;
+
+    
 }
 @end

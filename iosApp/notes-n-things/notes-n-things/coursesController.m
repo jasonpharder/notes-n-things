@@ -10,6 +10,9 @@
 
 @implementation coursesController
 
+NSString *courseName = @"";
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -45,7 +48,7 @@
             UIButton *courseBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [courseBtn setTitle:[NSString stringWithFormat:@" %@\n", course[@"name"]]forState:UIControlStateNormal];
             [courseBtn setFrame:CGRectMake(10, _y, 200, _height)];
-            [courseBtn addTarget:self action:@selector(courseDetail) forControlEvents:UIControlEventTouchUpInside];
+            [courseBtn addTarget:self action:@selector(courseDetail:)  forControlEvents:UIControlEventTouchUpInside];
   
             [self.view addSubview:courseBtn];
             _y = _y + _height;
@@ -65,11 +68,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)courseDetail
+- (IBAction)courseDetail:(id)sender
 {
+    courseName = [(UIButton *)sender currentTitle];
     courseController *courseControllerView = [self.storyboard instantiateViewControllerWithIdentifier:@"courseControllerView"];
     [self.navigationController pushViewController:courseControllerView animated:YES];
-    
 }
 
 
