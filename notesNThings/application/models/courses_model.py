@@ -12,8 +12,7 @@ class Course (db.Model):
     alt_name = db.Column(db.String(255))
     professor = db.Column(db.Integer)
 
-    def __init__(self, courseid, name, alt_name, professor):
-        self.courseid = courseid
+    def __init__(self, name, alt_name, professor):
         self.name = name
         self.alt_name = alt_name
         self.professor = professor

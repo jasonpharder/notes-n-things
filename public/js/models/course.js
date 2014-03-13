@@ -1,10 +1,7 @@
 App.Course = DS.Model.extend({
 	name:      DS.attr('string'),
 	alt_name:  DS.attr('string'),
-	term:      DS.attr(),
-	proffesor: DS.attr(),
-	uid:       DS.attr('string'),
-	contents:  DS.attr('string')
+	professor: DS.attr()
 })
 
 //stub Data for courses

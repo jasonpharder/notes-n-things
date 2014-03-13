@@ -5,6 +5,7 @@ App.Router.map(function() {
 	});
 	this.resource('courses', function() {
 		this.resource('course', { path : ':course_id' } );
+		this.resource('courseadd');
 	});
 	this.resource('users', function() {
 		this.resource('user', { path : ':user_id' } );
@@ -12,12 +13,19 @@ App.Router.map(function() {
 	this.resource('login');
 });
 
+App.CourseaddRoute = Ember.Route.extend({
+  model: function(){
+    // the model for this route is a new empty Ember.Object
+    return Em.Object.create({});
+  }
+ });
+
 App.HomeRoute = Ember.Route.extend(
 {
 	model: function() {
 		return this.store.find('course');
 	}
-})
+});
 
 App.UsersRoute = Ember.Route.extend({
 	model: function() {
