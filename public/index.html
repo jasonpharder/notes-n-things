@@ -127,6 +127,7 @@
             <li>{{#link-to 'course' this.id}}{{name}}{{/link-to}}</li>
           {{/each}}
         </ul>
+        <button class="btn btn-primary">{{#link-to 'courseadd'}}Create Course{{/link-to}}</button>
       </div>
       <div id="course-container">
         {{outlet}}
@@ -134,7 +135,17 @@
     </script>
 
     <script type="text/x-handlebars" id="course">
-      {{alt_name}}
+      {{name}}
+    </script>
+
+    <script type="text/x-handlebars" id="courseadd">
+      <div id="course-container">
+        <p>Name: <font color="black">{{input type="text" value=name}}</font></p>
+        <p>Alt Name: <font color="black">{{input type="text" value=alt_name}}</font></p>
+        <button class="btn btn-lg btn-primary" {{action 'add' name alt_name}}>
+           Create Course
+        </button>
+      </div>
     </script>
 
     <!--Login Template-->
@@ -164,5 +175,6 @@
     <script src="js/models/course.js"></script>
     <script src="js/models/user.js"></script>
     <script src="js/controllers/user_controller.js"></script>
+    <script src="js/controllers/course_controller.js"></script>
   </body>
 </html>

@@ -4,17 +4,7 @@ from notesNThings.application.models.users_model import User
 
 import json
 
-class UsersController:
-
-	@staticmethod
-	def getAll():
-		return users_model.getAllUsers()
-
-	@staticmethod
-	def getByName(name):
-		return users_model.getAllUsers()
-
-def api_post_get_many(result=None, **kw):
+def api_get_many(result=None, **kw):
 	print "USER: api_post_get_many"
 	print result
 	result['users'] = result['objects']
@@ -64,7 +54,7 @@ def create_user_api(restless_manager):
 		url_prefix='/api',
 		collection_name='users',
 		postprocessors={
-	        'GET_MANY': [api_post_get_many],
+	        'GET_MANY': [api_get_many],
 	        #'POST': [api_post_post],
 	        'PUT_SINGLE': [patch_single_postprocessor]
 	    },
