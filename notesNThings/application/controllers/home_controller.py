@@ -3,8 +3,6 @@ from notesNThings.application.models import courses_model
 from notesNThings.application.models.courses_model import Course
 import json
 
-class HomeController:
-
 def api_post_get_many(result=None, **kw):
 	print "COURSE: api_post_get_many"
 	print result['objects']
