@@ -51,7 +51,20 @@
     </script>
 
     <script type="text/x-handlebars" id="home">
-     home page
+      <div class="bs-sidebar affix">
+        <ul class="nav bs-sidenav" id="course-list">
+          {{#each}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div id="course-container">
+        {{outlet}}
+      </div>
+    </script>
+
+     <script type="text/x-handlebars" id="course_home">
+      <h1>{{name}}</h1>
     </script>
 
     <!--Notes Template-->
@@ -90,7 +103,7 @@
         {{outlet}}
       </div>
     </script>
-
+    
     <script type="text/x-handlebars" id="user">
       {{#if isEditing}}
         {{partial 'user/edit'}}
