@@ -14,15 +14,6 @@
 
 @implementation ViewController
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        // Initialize self.
-        
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

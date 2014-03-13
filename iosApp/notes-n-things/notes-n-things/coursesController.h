@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "courseController.h"
+
 @interface coursesController : UIViewController
 {
     IBOutlet UILabel* coursesList;
-    
 }
+
 @end

@@ -10,10 +10,14 @@
 
 @implementation notesController
 
+NSString *noteTitle = @"";
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
     notesList.text = @"Notes:";
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -42,6 +46,7 @@
             UIButton *noteBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [noteBtn setTitle:[NSString stringWithFormat:@" %@\n", note[@"file_name"]]forState:UIControlStateNormal];
             [noteBtn setFrame:CGRectMake(10, _y, 200, _height)];
+            [noteBtn addTarget:self action:@selector(noteDetail:) forControlEvents:UIControlEventTouchUpInside];
             
             [self.view addSubview:noteBtn];
             _y = _y + _height;
@@ -59,6 +64,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)noteDetail:(id)sender
+{
+    noteTitle = [(UIButton *)sender currentTitle];
+    noteController *noteControllerView = [self.storyboard instantiateViewControllerWithIdentifier:@"noteControllerView"];
+    [self.navigationController pushViewController:noteControllerView animated:YES];
 }
 
 @end
