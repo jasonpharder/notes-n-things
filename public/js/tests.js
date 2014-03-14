@@ -14,7 +14,7 @@ test("App Instantiation", function() {
 
 test("Do the templates load correctly", function() {
 	visit("/")
-		.find("p#homepage")
+		.find("ul#course-list")
 		.then(function(header) {
 			equal(header.length, 1, 'found contents');
 		});
@@ -25,12 +25,17 @@ test("Do the templates load correctly", function() {
 		});
 	visit("/courses")
 		.find("ul#courses-list")
-		.then(function(header) {
-			equal(header.length, 1, 'found courses list');
+		.then(function(list) {
+			equal(list.length, 1, 'found courses list');
 		});
 	visit("/login")
 		.find("form.form-signin")
 		.then(function(form) {
 			equal(form.length, 1, 'found login');
+		});
+	visit("/users")
+		.find("ul#user-list")
+		.then(function(list) {
+			equal(list.length, 1, 'found user list');
 		});
 });

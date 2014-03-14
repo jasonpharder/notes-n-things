@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>QUnit Example</title>
+  <title>QUnit Tests (Ensure tests.html contains the latest markup from index.html before running)</title>
   <link rel="stylesheet" href="css/qunit-1.14.0.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 
             <div class="masthead clearfix">
               <div class="inner">
-                <h3 class="masthead-brand">Notes-n-Things</h3>
+                <h3 class="masthead-brand" id="header">Notes-n-Things</h3>
                 <ul class="nav masthead-nav">
                   <li>{{#link-to 'home'}}Home{{/link-to}}</li>
                   <li>{{#link-to 'notes'}}Notes{{/link-to}}</li>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="inner cover">
-            	{{outlet}}
+              {{outlet}}
             </div>
 
             <div class="mastfoot">
@@ -42,10 +42,23 @@
     </script>
 
     <script type="text/x-handlebars" id="home">
-    	<p id="homepage">homepage</p>
+      <div class="bs-sidebar affix">
+        <ul class="nav bs-sidenav" id="course-list">
+          {{#each}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div id="course-container">
+        {{outlet}}
+      </div>
     </script>
 
-     <!--Notes Template-->
+     <script type="text/x-handlebars" id="course_home">
+      <h1>{{name}}</h1>
+    </script>
+
+    <!--Notes Template-->
     <script type="text/x-handlebars" id="notes">
       <button class="btn btn-lg btn-primary btn-block" id="create-note" {{action "create-note"}}>
       Create Note
@@ -81,7 +94,7 @@
         {{outlet}}
       </div>
     </script>
-
+    
     <script type="text/x-handlebars" id="user">
       {{#if isEditing}}
         {{partial 'user/edit'}}
@@ -105,6 +118,7 @@
             <li>{{#link-to 'course' this.id}}{{name}}{{/link-to}}</li>
           {{/each}}
         </ul>
+        <button class="btn btn-primary">{{#link-to 'courseadd'}}Create Course{{/link-to}}</button>
       </div>
       <div id="course-container">
         {{outlet}}
@@ -112,7 +126,17 @@
     </script>
 
     <script type="text/x-handlebars" id="course">
-      {{alt_name}}
+      {{name}}
+    </script>
+
+    <script type="text/x-handlebars" id="courseadd">
+      <div id="course-container">
+        <p>Name: <font color="black">{{input type="text" value=name}}</font></p>
+        <p>Alt Name: <font color="black">{{input type="text" value=alt_name}}</font></p>
+        <button class="btn btn-lg btn-primary" {{action 'add' name alt_name}}>
+           Create Course
+        </button>
+      </div>
     </script>
 
     <!--Login Template-->
