@@ -14,7 +14,7 @@ def api_get_many(result=None, **kw):
 			del result[key]
 	for test in result['courses']:
 		test['id'] = test['courseid']
-	print test
+	print result
 
 def patch_single_preprocessor(instance_id=None, data=None, **kw):
 	"""Accepts two arguments, `instance_id`, the primary key of the
