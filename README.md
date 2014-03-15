@@ -71,6 +71,15 @@ postgres# means the command is run from within the postgres rdbms
   $exit
 </code></pre>
 
+<pre><code>
+  To set up test database:
+  #su postgres
+  $psql
+  postgres=# CREATE DATABASE notes_n_things_testdb WITH TEMPLATE notes_n_things OWNER postgres;
+  postgres=# \q
+  $exit
+</code></pre>
+
 ###SqlALchemy
 
 <pre><code>
