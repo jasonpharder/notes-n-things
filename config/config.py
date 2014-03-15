@@ -4,7 +4,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 DB_DIALECT = 'postgresql'
 DB_DRIVER  = '' #If a dirver is defined this sting must be of the format '+diver'
 DB_USER    = 'postgres'
-DB_PASS    = 'testpass'
+DB_PASS    = 'password'
 DB_HOST    = 'localhost'
 DB_DB      = 'notes_n_things'
 
