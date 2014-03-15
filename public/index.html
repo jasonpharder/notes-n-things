@@ -51,16 +51,35 @@
     </script>
 
     <script type="text/x-handlebars" id="home">
-      <div class="bs-sidebar affix">
-        <ul class="nav bs-sidenav" id="course-list">
+      <h2>Subscribed courses</h2>
+      <div class="list-group">
           {{#each}}
-            <li>{{name}}</li>
+            <li>{{#link-to 'mycourse' this.id}}{{name}}{{/link-to}}</li>
           {{/each}}
-        </ul>
       </div>
       <div id="course-container">
         {{outlet}}
       </div>
+    </script>
+
+    <script type="text/x-handlebars" id="mycourse">
+      <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="create-message" {{action "addMessage" messageTxt}}>
+        Post!
+        </button>
+      </span>
+      {{input type="text" value=messageTxt}}
+      </div><!-- /input-group -->
+      <br>
+
+      {{#each}}
+        <div class="alert alert-info">{{message}}</div>
+        
+        <li>{{posttime}}</li>
+        <li>User name: {{user.username}}</li>
+        <li>Course name: {{course.alt_name}}</li>
+      {{/each}}
     </script>
 
      <script type="text/x-handlebars" id="course_home">
@@ -174,7 +193,9 @@
     <script src="js/models/note.js"></script>
     <script src="js/models/course.js"></script>
     <script src="js/models/user.js"></script>
+    <script src="js/models/message.js"></script>
     <script src="js/controllers/user_controller.js"></script>
+    <script src="js/controllers/message_controller.js"></script>
     <script src="js/controllers/course_controller.js"></script>
   </body>
 </html>

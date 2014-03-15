@@ -13,6 +13,8 @@ def api_get_many(result=None, **kw):
 			del result[key]
 	for test in result['users']:
 		test['id'] = test['uid']
+	print "after parsing:" 
+	print result
 
 def patch_single_preprocessor(instance_id=None, data=None, **kw):
 	"""Accepts two arguments, `instance_id`, the primary key of the

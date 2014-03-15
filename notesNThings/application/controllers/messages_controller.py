@@ -1,18 +1,17 @@
 from flask import Flask
-from notesNThings.application.models import courses_model
-from notesNThings.application.models.courses_model import Course
+from notesNThings.application.models.message_model import Message
 import json
 
 def api_get_many(result=None, **kw):
-	print "COURSE: api_get_many"
+	print "MESSAGE: api_get_many"
 	print result['objects']
-	result['courses'] = result['objects']
+	result['messages'] = result['objects']
 	for key in result.keys():
 		print key 
-		if key != 'courses': 
+		if key != 'messages': 
 			del result[key]
-	for test in result['courses']:
-		test['id'] = test['courseid']
+	for test in result['messages']:
+		test['id'] = test['messageid']
 	print test
 
 def patch_single_preprocessor(instance_id=None, data=None, **kw):
@@ -20,13 +19,14 @@ def patch_single_preprocessor(instance_id=None, data=None, **kw):
 	instance of the model to patch, and `data`, the dictionary of fields
 	to change on the instance.
 	"""
-	print "COURSE------------------->patch single preprocessor"
+	print "MESSAGE------------------->patch single preprocessor"
 	print data
 	#data = data['user'].copy()
-	data['name'] = data['course']['name']
-	data['alt_name'] = data['course']['alt_name']
-	data['professor'] = data['course']['professor']
-	del data['course']
+	data['message'] = data['message']['message']
+	data['posttime'] = data['message']['postime']
+	data['userid'] = data['message']['userid']
+	data['courseid'] = data['message']['courseid']
+	del data['message']
 	print "DATA AFTER PARSING "+instance_id
 	print data
 
@@ -35,13 +35,13 @@ def patch_single_postprocessor(result=None, **kw):
 	representation of the requested instance of the model.
 
 	"""
-	print "COURSE------------------->patch single postprocessor"
-	result['course'] = result.copy()
+	print "MESSAGE------------------->patch single postprocessor"
+	result['message'] = result.copy()
 	for key in result.keys():
-		if key != 'course': 
+		if key != 'message': 
 			del result[key]
 	
-	result['course']['id'] = result['course']['courseid']
+	result['message']['id'] = result['message']['messageid']
 	print result	
 	pass
 
@@ -50,13 +50,15 @@ def post_preprocessor(data=None, **kw):
 	fields to set on the new instance of the model.
 
 	"""
-	print "COURSE------------------->POST  preprocessor"
+	print "MESSAGE------------------->POST  preprocessor"
 	print data
 	#data = data['user'].copy()
-	data['name'] = data['course']['name']
-	data['alt_name'] = data['course']['alt_name']
-	data['professor'] = data['course']['professor']
-	del data['course']
+	data['message'] = data['message']['message']
+	data['posttime'] = data['message']['posttime']
+	data['userid'] = data['message']['userid']
+	data['courseid'] = data['message']['courseid']
+
+	del data['message']
 	print data
 
 	pass
@@ -66,24 +68,25 @@ def post_postprocessor(result=None, **kw):
 	representation of the created instance of the model.
 
 	"""
-	print "COURSE------------------->POST postprocessor"
-	result['course'] = result.copy()
+	print "MESSAGE------------------->POST postprocessor"
+	result['message'] = result.copy()
 	for key in result.keys():
-		if key != 'course': 
+		if key != 'message': 
 			del result[key]
 
-	result['course']['id'] = result['course']['courseid']
+	result['message']['id'] = result['message']['messageid']
 	print result	
 	pass
 
-def create_course_api(restless_manager):
+def create_message_api(restless_manager):
 	# Create API endpoints, which will be available at /api/<tablename> by
 	# default. Allowed HTTP methods can be specified as well.
 	restless_manager.create_api(
-		Course,  
+		Message, 
+		include_methods=['course', 'user'], 
 		methods=['GET', 'POST', 'DELETE', 'PUT'], 
 		url_prefix='/api',
-		collection_name='courses',
+		collection_name='messages',
 		postprocessors={
 	        'GET_MANY': [api_get_many],
 	        'POST': [post_postprocessor],
