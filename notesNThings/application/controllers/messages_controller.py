@@ -53,12 +53,14 @@ def post_preprocessor(data=None, **kw):
 	print "MESSAGE------------------->POST  preprocessor"
 	print data
 	#data = data['user'].copy()
-	data['message'] = data['message']['message']
+	data['messagetxt'] = data['message']['message']
 	data['posttime'] = data['message']['posttime']
 	data['userid'] = data['message']['userid']
 	data['courseid'] = data['message']['courseid']
 
 	del data['message']
+	data['message'] = data['messagetxt']
+	del data['messagetxt']
 	print data
 
 	pass

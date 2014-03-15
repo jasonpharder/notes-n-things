@@ -14,7 +14,7 @@ class Message (db.Model):
     def __init__(self, message, posttime, courseid, userid):
         self.message = message
         self.posttime = posttime
-        self.course = courseid
+        self.courseid = courseid
         self.userid = userid
 
     def course(self):

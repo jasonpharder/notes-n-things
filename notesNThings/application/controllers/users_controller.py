@@ -15,13 +15,10 @@ def api_get_many(result=None, **kw):
 		test['id'] = test['uid']
 	print "after parsing:" 
 	print result
+	pass
 
 def patch_single_preprocessor(instance_id=None, data=None, **kw):
-	"""Accepts two arguments, `instance_id`, the primary key of the
-	instance of the model to patch, and `data`, the dictionary of fields
-	to change on the instance.
-	"""
-	print "------------------->patch single preprocessor"
+	print "patch single preprocessor"
 	print data
 	#data = data['user'].copy()
 	data['username'] = data['user']['username']
@@ -31,13 +28,10 @@ def patch_single_preprocessor(instance_id=None, data=None, **kw):
 	del data['user']
 	print "DATA AFTER PARSING "+instance_id
 	print data
+	pass
 
 def patch_single_postprocessor(result=None, **kw):
-	"""Accepts a single argument, `result`, which is the dictionary
-	representation of the requested instance of the model.
-
-	"""
-	print "------------------->patch single postprocessor"
+	print "patch single postprocessor"
 	result['user'] = result.copy()
 	for key in result.keys():
 		if key != 'user': 
@@ -57,11 +51,10 @@ def create_user_api(restless_manager):
 		collection_name='users',
 		postprocessors={
 	        'GET_MANY': [api_get_many],
-	        #'POST': [api_post_post],
+	        'GET_SINGLE': [patch_single_postprocessor],
 	        'PUT_SINGLE': [patch_single_postprocessor]
 	    },
 	    preprocessors={
-	        #'POST': [api_post_post],
 	        'PUT_SINGLE': [patch_single_preprocessor]
 	    }
 	)
