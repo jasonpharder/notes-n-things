@@ -1,4 +1,4 @@
-stubNotes = { 'notes': [ 
+ stubNotes = { 'notes': [ 
 	{'id' : 0, 'noteID': '0', "file_name": "someFile", "contents": "test content please ignore"}, 
 	{'id' : 1, 'noteID': '1', "file_name": "OthrFile", "contents": "the other test content"} ]
 }

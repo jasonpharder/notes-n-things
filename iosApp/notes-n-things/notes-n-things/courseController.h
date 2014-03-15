@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "noteController.h"
 
 @interface courseController : UIViewController
 {

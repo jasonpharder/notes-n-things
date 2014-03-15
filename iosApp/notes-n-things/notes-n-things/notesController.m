@@ -11,6 +11,7 @@
 @implementation notesController
 
 NSString *noteTitle = @"";
+NSString *noteId = @"";
 
 - (void)viewDidLoad
 {
@@ -18,10 +19,8 @@ NSString *noteTitle = @"";
 	// Do any additional setup after loading the view, typically from a nib.
     
     
-    notesList.text = @"Notes:";
-    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://www.notes-n-things.tk/notes"]];
+    [request setURL:[NSURL URLWithString:@"http://dev1.notes-n-things.tk/api/notes"]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     
@@ -45,7 +44,9 @@ NSString *noteTitle = @"";
            
             UIButton *noteBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [noteBtn setTitle:[NSString stringWithFormat:@" %@\n", note[@"file_name"]]forState:UIControlStateNormal];
-            [noteBtn setFrame:CGRectMake(10, _y, 200, _height)];
+            [noteBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+            [noteBtn setFrame:CGRectMake(75, _y, 300, _height)];
+            [noteBtn setTag:(NSInteger)[note[@"id"] intValue]];
             [noteBtn addTarget:self action:@selector(noteDetail:) forControlEvents:UIControlEventTouchUpInside];
             
             [self.view addSubview:noteBtn];
@@ -54,6 +55,7 @@ NSString *noteTitle = @"";
             NSLog(@"---");
             NSLog(@"name %@", note[@"file_name"]);
             NSLog(@"alt Name %@", note[@"contents"]);
+            NSLog(@"id %@", note[@"id"]);
             NSLog(@"---");
             
         }
@@ -69,6 +71,7 @@ NSString *noteTitle = @"";
 - (IBAction)noteDetail:(id)sender
 {
     noteTitle = [(UIButton *)sender currentTitle];
+    noteId = [NSString stringWithFormat:@"%i",((UIButton *)sender).tag ];
     noteController *noteControllerView = [self.storyboard instantiateViewControllerWithIdentifier:@"noteControllerView"];
     [self.navigationController pushViewController:noteControllerView animated:YES];
 }

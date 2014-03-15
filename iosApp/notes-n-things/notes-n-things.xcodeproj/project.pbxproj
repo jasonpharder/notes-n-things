@@ -225,8 +225,14 @@
 		F9F88AC918BE743600045786 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Comp4350;
+				TargetAttributes = {
+					F9F88AD018BE743600045786 = {
+						DevelopmentTeam = 98CS97VCGJ;
+					};
+				};
 			};
 			buildConfigurationList = F9F88ACC18BE743600045786 /* Build configuration list for PBXProject "notes-n-things" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -407,6 +413,7 @@
 		F9F88B0D18BE743700045786 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "notes-n-things/notes-n-things-Prefix.pch";
 				INFOPLIST_FILE = "notes-n-things/notes-n-things-Info.plist";
@@ -418,6 +425,7 @@
 		F9F88B0E18BE743700045786 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "notes-n-things/notes-n-things-Prefix.pch";
 				INFOPLIST_FILE = "notes-n-things/notes-n-things-Info.plist";
