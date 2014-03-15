@@ -26,7 +26,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bqZ-LY-dAA" kind="push" identifier="showCourses" id="eiz-gW-YZP"/>
+                                    <segue destination="bqZ-LY-dAA" kind="push" identifier="" id="eiz-gW-YZP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmG-xv-Z4e">
@@ -41,7 +41,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hEt-6z-13P" kind="push" identifier="showNotes" id="lhH-M6-11M"/>
+                                    <segue destination="hEt-6z-13P" kind="push" id="HTW-1t-Ve5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -119,27 +119,10 @@
                     <view key="view" contentMode="scaleToFill" id="yZ2-fY-heB">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV0-n6-LVv">
-                                <rect key="frame" x="83" y="66" width="547" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="547" id="Ptu-Cn-ruk"/>
-                                    <constraint firstAttribute="height" constant="32" id="QQ0-G4-FOe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wV0-n6-LVv" firstAttribute="top" secondItem="yZ2-fY-heB" secondAttribute="top" constant="66" id="4vD-i8-QgY"/>
-                            <constraint firstItem="wV0-n6-LVv" firstAttribute="leading" secondItem="yZ2-fY-heB" secondAttribute="leading" constant="83" id="eSz-hF-Xm1"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="ojG-C8-omg"/>
                     <connections>
-                        <outlet property="notesList" destination="wV0-n6-LVv" id="tXu-Wd-p6M"/>
                         <segue destination="cbV-tM-Ets" kind="push" identifier="showNoteName" id="bZl-iy-nMX"/>
                     </connections>
                 </viewController>
@@ -187,6 +170,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3IJ-gp-2Hh"/>
+        <segue reference="bZl-iy-nMX"/>
     </inferredMetricsTieBreakers>
 </document>

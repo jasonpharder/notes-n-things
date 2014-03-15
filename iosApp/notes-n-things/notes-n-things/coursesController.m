@@ -36,6 +36,15 @@ NSString *courseId = @"";
     if (error) {
         
         NSLog(@"%@", [error localizedDescription]);
+        
+        CGRect labelFrame = CGRectMake(75, 125, 618, 20);
+        UILabel *noteLabel = [[UILabel alloc] initWithFrame:labelFrame];
+        
+        [noteLabel setText:@"error loading courses; please try again"];
+        [noteLabel setNumberOfLines:0];
+        [noteLabel setTextAlignment:NSTextAlignmentCenter];
+        [noteLabel setTextColor:[UIColor redColor]];
+        [self.view addSubview:noteLabel];
     }
     
     else {
