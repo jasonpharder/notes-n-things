@@ -75,5 +75,46 @@ class NotesTestCase(unittest.TestCase):
 
                                 self.assertEqual(db.session.query(Note).get(1), None)
 
+		def testSubscriptionRelation(self):
+			with app.app_context():
+				professor = User(uid=1, username="Bob", password="dinosaur",
+					email="email@email.com", admin = True)
+				db.session.add(professor)
+				db.session.flush()
+
+				student = User(uid = 2, username= "Susan", password = "dinsaur",
+					email = "student@email.com", admin = False)
+				db.session.add(student)
+				db.session.flush()
+
+				newCourse = Course(name='COMP 1010', alt_name='Computer science',
+					professor = 1)
+				db.session.add(newCourse)
+				db.session.flush()
+
+				student.courses.append(newCourse)
+				db.session.flush()
+
+				self.assertEqual(len(newCourse.users), 1)
+				self.assertEqual(len(student.courses), 1)
+
+				self.assertEqual(newCourse.users.pop(), student)
+				db.session.flush()
+
+				self.assertEqual(len(newCourse.users), 0)
+				self.assertEqual(len(student.courses), 0)
+
+				newCourse.users.append(student)
+				db.session.flush()
+
+				self.assertEqual(len(newCourse.users), 1)
+				self.assertEqual(len(student.courses), 1)
+
+				self.assertEqual(newCourse.users.pop(), student)
+				db.session.flush()
+
+				self.assertEqual(len(newCourse.users), 0)
+				self.assertEqual(len(student.courses), 0)
+
 if __name__ == '__main__':
 	unittest.main()
