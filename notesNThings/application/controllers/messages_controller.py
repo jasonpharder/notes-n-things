@@ -4,6 +4,7 @@ import json
 
 def api_get_many(result=None, **kw):
 	print "MESSAGE: api_get_many"
+	#print search_params
 	print result['objects']
 	result['messages'] = result['objects']
 	for key in result.keys():
@@ -12,7 +13,11 @@ def api_get_many(result=None, **kw):
 			del result[key]
 	for test in result['messages']:
 		test['id'] = test['messageid']
-	print test
+		print test
+
+def api_get_many_pre(search_params=None, **kw):
+	print "MESSAGE: api_get_many preprocessor"
+	print search_params
 
 def patch_single_preprocessor(instance_id=None, data=None, **kw):
 	"""Accepts two arguments, `instance_id`, the primary key of the
@@ -95,6 +100,7 @@ def create_message_api(restless_manager):
 	        'PUT_SINGLE': [patch_single_postprocessor]
 	    },
 	    preprocessors={
+	    	'GET_MANY': [api_get_many_pre],
 	        'POST': [post_preprocessor],
 	        'PUT_SINGLE': [patch_single_preprocessor]
 	    }
