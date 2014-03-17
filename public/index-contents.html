@@ -33,10 +33,12 @@
 
     <script type="text/x-handlebars" id="home">
       <h2>Subscribed courses</h2>
-      <div class="list-group">
+      <div class="bs-sidebar affix">
+        <ul class="nav bs-sidenav" id="subscribe-list">
           {{#each}}
             <li>{{#link-to 'mycourse' this.id}}{{name}}{{/link-to}}</li>
           {{/each}}
+        </ul>
       </div>
       <div id="course-container">
         {{outlet}}
@@ -44,22 +46,23 @@
     </script>
 
     <script type="text/x-handlebars" id="mycourse">
-      <div class="input-group">
-      <span class="input-group-btn">
         <button class="btn btn-default" type="button" id="create-message" {{action "addMessage" messageTxt}}>
         Post!
         </button>
-      </span>
       {{input type="text" value=messageTxt}}
-      </div><!-- /input-group -->
-      <br>
+      <br><br>
 
       {{#each}}
-        <div class="alert alert-info">{{message}}</div>
+        <b>{{message}}</b>
         
         <li>{{posttime}}</li>
         <li>User name: {{user.username}}</li>
         <li>Course name: {{course.alt_name}}</li>
+        <h4>Comments:</h4>
+        {{#each comments}}
+          <li>{{comment}}</li>
+        {{/each}}
+        <br>
       {{/each}}
     </script>
 
