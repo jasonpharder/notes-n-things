@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="3mP-7R-fZo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="3mP-7R-fZo">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Home-->
+        <!--View Controller - Notes-n-Things-->
         <scene sceneID="4">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bqZ-LY-dAA" kind="push" id="eiz-gW-YZP"/>
+                                    <segue destination="bqZ-LY-dAA" kind="push" identifier="" id="eiz-gW-YZP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmG-xv-Z4e">
@@ -41,7 +41,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hEt-6z-13P" kind="push" id="lhH-M6-11M"/>
+                                    <segue destination="hEt-6z-13P" kind="push" id="HTW-1t-Ve5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,7 +53,7 @@
                             <constraint firstItem="Kwn-3J-zMw" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="98" id="pgg-vq-OHE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="Hod-cs-d9e"/>
+                    <navigationItem key="navigationItem" title="Notes-n-Things" id="Hod-cs-d9e"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,29 +101,16 @@
                     <view key="view" contentMode="scaleToFill" id="xDu-Yh-veA">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfa-Z1-Zn5">
-                                <rect key="frame" x="140" y="73" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="qfa-Z1-Zn5" firstAttribute="top" secondItem="xDu-Yh-veA" secondAttribute="top" constant="73" id="YUE-zs-1Lu"/>
-                            <constraint firstItem="qfa-Z1-Zn5" firstAttribute="leading" secondItem="xDu-Yh-veA" secondAttribute="leading" constant="140" id="cbV-p5-mAw"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u2T-Wg-2Ll"/>
                     <connections>
-                        <outlet property="courseLabel" destination="qfa-Z1-Zn5" id="bel-f3-egk"/>
+                        <segue destination="cbV-tM-Ets" kind="push" identifier="showCourseNote" id="3IJ-gp-2Hh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBq-Db-hid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3135" y="-1248"/>
+            <point key="canvasLocation" x="3131" y="-1236"/>
         </scene>
         <!--Notes Controller - Notes-->
         <scene sceneID="qbj-TK-eEw">
@@ -132,33 +119,16 @@
                     <view key="view" contentMode="scaleToFill" id="yZ2-fY-heB">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV0-n6-LVv">
-                                <rect key="frame" x="83" y="66" width="547" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="547" id="Ptu-Cn-ruk"/>
-                                    <constraint firstAttribute="height" constant="32" id="QQ0-G4-FOe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wV0-n6-LVv" firstAttribute="top" secondItem="yZ2-fY-heB" secondAttribute="top" constant="66" id="4vD-i8-QgY"/>
-                            <constraint firstItem="wV0-n6-LVv" firstAttribute="leading" secondItem="yZ2-fY-heB" secondAttribute="leading" constant="83" id="eSz-hF-Xm1"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" id="ojG-C8-omg"/>
                     <connections>
-                        <outlet property="notesList" destination="wV0-n6-LVv" id="tXu-Wd-p6M"/>
                         <segue destination="cbV-tM-Ets" kind="push" identifier="showNoteName" id="bZl-iy-nMX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ra-zB-tsl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2261" y="-57"/>
+            <point key="canvasLocation" x="2721" y="-1"/>
         </scene>
         <!--Note Controller-->
         <scene sceneID="lsX-1a-oGn">
@@ -167,28 +137,13 @@
                     <view key="view" contentMode="scaleToFill" id="gOp-0p-hyU">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZH-Z9-vsC">
-                                <rect key="frame" x="118" y="72" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="6ZH-Z9-vsC" firstAttribute="leading" secondItem="gOp-0p-hyU" secondAttribute="leading" constant="118" id="2z2-xm-aWP"/>
-                            <constraint firstItem="6ZH-Z9-vsC" firstAttribute="top" secondItem="gOp-0p-hyU" secondAttribute="top" constant="72" id="UPw-19-GeS"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TkL-lZ-eya"/>
-                    <connections>
-                        <outlet property="noteLabel" destination="6ZH-Z9-vsC" id="Bdc-MY-ShL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axS-Fs-R8n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3149" y="-31"/>
+            <point key="canvasLocation" x="4132" y="-60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5d3-uK-go3">
@@ -214,4 +169,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="bZl-iy-nMX"/>
+    </inferredMetricsTieBreakers>
 </document>
