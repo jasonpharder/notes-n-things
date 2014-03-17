@@ -10,6 +10,7 @@ class Message (db.Model):
     posttime = db.Column(db.DateTime)
     courseid = db.Column(db.Integer, db.ForeignKey('courses.courseid'))
     userid = db.Column(db.Integer, db.ForeignKey('users.uid'))
+    comments = db.relationship('Comment', backref='message',lazy='dynamic')
 
     def __init__(self, message, posttime, courseid, userid):
         self.message = message
@@ -22,3 +23,7 @@ class Message (db.Model):
 
     def user(self):
         return self.userid
+
+    def comments(self):
+        list1 = ["2"]
+        return list1

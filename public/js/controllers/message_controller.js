@@ -4,8 +4,8 @@ App.MycourseController = Ember.ArrayController.extend({
                 addMessage: function(messageText) {
                         var message = messageText;
                         
-                        var c = this.store.find('course', 4);
-                        var u = this.store.find('user', 1);
+                        //var c = this.store.find('course', 4);
+                        //var u = this.store.find('user', 1);
 
                         var messageAdd =this.store.createRecord('message', {
                                 message: message,

@@ -12,6 +12,7 @@ from application.controllers import notes_controller
 from application.controllers import courses_controller
 from application.controllers import home_controller
 from application.controllers import messages_controller
+from application.controllers import comments_controller
 
 import json
 
@@ -36,6 +37,7 @@ home_controller.create_home_api(restless_manager)
 users_controller.create_user_api(restless_manager)
 notes_controller.create_note_api(restless_manager)
 courses_controller.create_course_api(restless_manager)
+comments_controller.create_comment_api(restless_manager)
 
 @app.route('/')
 def index():

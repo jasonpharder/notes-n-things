@@ -23,9 +23,10 @@ App.CourseaddRoute = Ember.Route.extend({
  });
 
 App.MycourseRoute = Ember.Route.extend({
-  	model: function(){
+  	model: function(params) {
     	// the model for this route is a new empty Ember.Object
-    	return this.store.find('message');
+    	var string = '{"filters":[{"name":"courseid","op":"eq","val":'+params.course_id+'}]}'
+    	return this.store.find('message', { q: string });
   	}
  });
 
