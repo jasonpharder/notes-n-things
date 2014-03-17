@@ -2,9 +2,9 @@ from notesNThings.application.models import db
 from sqlalchemy import Table, Column, Integer, ForeignKey, UniqueConstraint
 
 subscriptionTable = Table(
-    'association',
+    'subscriptions',
     db.Model.metadata,
-    Column('userID', Integer, ForeignKey('users.uid')),
-    Column('courseID', Integer, ForeignKey('courses.courseid')),
-    UniqueConstraint('userID', 'courseID')
+    Column('userid', Integer, ForeignKey('users.uid')),
+    Column('courseid', Integer, ForeignKey('courses.courseid')),
+    UniqueConstraint('userid', 'courseid')
 )
