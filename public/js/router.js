@@ -13,7 +13,15 @@ App.Router.map(function() {
 		this.resource('user', { path : ':user_id' } );
 	});
 	this.resource('login');
+	this.resource('createaccount');
 });
+
+App.CreateaccountRoute = Ember.Route.extend({
+	model: function() {
+	//the model for this route is a new empty Ember.Object
+	return Em.Object.create({});
+	}
+ });
 
 App.CourseaddRoute = Ember.Route.extend({
   	model: function(){

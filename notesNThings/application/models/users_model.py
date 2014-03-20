@@ -20,8 +20,7 @@ class User (db.Model):
     admin    = db.Column(db.Boolean)
     courses = relationship("Course", secondary = subscriptionTable, backref="users")
 
-    def __init__(self, uid, username, password, email, admin):
-        self.uid = uid
+    def __init__(self, username, password, email, admin):
         self.username = username
         self.password = password
         self.email = email

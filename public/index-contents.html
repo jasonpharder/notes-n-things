@@ -13,7 +13,8 @@
                   <li>{{#link-to 'notes'}}Notes{{/link-to}}</li>
                   <li>{{#link-to 'courses'}}Courses{{/link-to}}</li>
                   <li>{{#link-to 'users'}}Users{{/link-to}}</li>
-                  <li>{{#link-to 'login'}}Sign In/Register{{/link-to}}</li>
+                  <li>{{#link-to 'login'}}Sign In{{/link-to}}</li>
+                  <li>{{#link-to 'createaccount'}}Register{{/link-to}}</li>
                 </ul>
               </div>
             </div>
@@ -93,7 +94,7 @@
       {{contents}}
     </script>
 
-    <!--Courses Template-->
+    <!--Users Template-->
     <script type="text/x-handlebars" id="users">
       <div class="bs-sidebar affix">
         <ul class="nav bs-sidenav" id="user-list">
@@ -119,7 +120,7 @@
     </script>
 
     <script type="text/x-handlebars" id="user/_edit">
-      <p>{{input type="text" value=username}}</p>
+      <p><font color="black">{{input type="text" value=username}}</font></p>
     </script>
 
     <!--Courses Template-->
@@ -161,5 +162,21 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+     	<button class="btn btn-lg btn-primary btn-block">{{#link-to 'createaccount'}}Create Account{{/link-to}}</button>
+      </form>
+      <div>
+	{{outlet}} 
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="createaccount">
+      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Create an Account</h2>
+        <p>Name: <font color="black">{{input type="text" value=name}}</font></p>
+ 	<p>Email: <font color="black">{{input type="email" value=email}}</font></p>
+	<p>Password <font colot="black">{{input type="password" value=password}}</font></p>
+	<button class="btn btn-lg btn-primary btn-block" {{action 'add' name email password}}>
+	   Create Account
+	</button>
       </form>
     </script>

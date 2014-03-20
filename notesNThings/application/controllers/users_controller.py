@@ -41,6 +41,38 @@ def patch_single_postprocessor(result=None, **kw):
 	print result	
 	pass
 
+def post_preprocessor(data=None, **kw):
+        """Accepts a single argument, `data`, which is the dictionary of
+        fields to set on the new instance of the model.
+
+        """
+        print "USER------------------->POST  preprocessor"
+        print data
+        #data = data['user'].copy()
+        data['username'] = data['user']['username']
+        data['password'] = data['user']['password']
+        data['email'] = data['user']['email']
+	data['admin'] = data['user']['admin']
+        del data['user']
+        print data
+        pass
+
+def post_postprocessor(result=None, **kw):
+        """Accepts a single argument, `result`, which is the dictionary
+        representation of the created instance of the model.
+
+        """
+        print "USER------------------->POST postprocessor"
+        result['user'] = result.copy()
+        for key in result.keys():
+                if key != 'user':
+                        del result[key]
+
+        result['user']['id'] = result['user']['uid']
+        print result
+        pass
+
+
 def create_user_api(restless_manager):
 	# Create API endpoints, which will be available at /api/<tablename> by
 	# default. Allowed HTTP methods can be specified as well.
@@ -52,9 +84,11 @@ def create_user_api(restless_manager):
 		postprocessors={
 	        'GET_MANY': [api_get_many],
 	        'GET_SINGLE': [patch_single_postprocessor],
+		'POST': [post_postprocessor],
 	        'PUT_SINGLE': [patch_single_postprocessor]
 	    },
 	    preprocessors={
+		'POST': [post_preprocessor],
 	        'PUT_SINGLE': [patch_single_preprocessor]
 	    }
 	)
