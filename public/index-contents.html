@@ -33,7 +33,7 @@
     <script type="text/x-handlebars" id="home">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
+          <ul class="nav nav-sidebar" id="home-sidebar">
             {{#each}}
             <li>{{#link-to 'mycourse' this.id}}{{name}}{{/link-to}}</li>
             {{/each}}
@@ -41,7 +41,7 @@
         </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Subscribed Courses:</h1>
+        <h1 class="page-header" id="home-header">Subscribed Courses:</h1>
         {{outlet}}
         </div>
       </div>
@@ -78,7 +78,7 @@
       Create Note
       </button>
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <div class="col-sm-3 col-md-2 sidebar" id="notes-sidebar">
           <ul class="nav nav-sidebar">
             {{#each}}
             <li>{{#link-to 'note' this.id}}{{file_name}}{{/link-to}}</li>
@@ -87,7 +87,7 @@
         </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Notes</h1>
+        <h1 class="page-header" id="notes-header">Notes</h1>
         {{outlet}}
         </div>
       </div>
@@ -103,7 +103,7 @@
     <script type="text/x-handlebars" id="users">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
+          <ul class="nav nav-sidebar" id="users-sidebar">
             {{#each}}
             <li>{{#link-to 'user' this.id}}{{username}}{{/link-to}}</li>
             {{/each}}
@@ -111,7 +111,7 @@
         </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Users</h1>
+        <h1 class="page-header" id="users-header">Users</h1>
         {{outlet}}
         </div>
       </div>
@@ -120,9 +120,9 @@
     <script type="text/x-handlebars" id="user">
       {{#if isEditing}}
         {{partial 'user/edit'}}
-        <button {{action 'doneEditing'}}>Done</button>
+        <button {{action 'doneEditing'}} id="done-button">Done</button>
       {{else}}
-        <button {{action 'edit'}}>Edit</button>
+        <button {{action 'edit'}} id="edit-button">Edit</button>
       {{/if}}
 
       <h1>{{username}}</h1>
@@ -136,7 +136,7 @@
     <script type="text/x-handlebars" id="courses">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
+          <ul class="nav nav-sidebar" id="courses-sidebar">
             {{#each}}
             <li>{{#link-to 'course' this.id}}{{name}}{{/link-to}}</li>
             {{/each}}
@@ -146,7 +146,7 @@
         </div>
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Courses</h1>
+        <h1 class="page-header" id="courses-header">Courses</h1>
         {{outlet}}
         </div>
       </div>
@@ -160,7 +160,7 @@
       <div id="course-container">
         <p>Name: <font color="black">{{input type="text" value=name}}</font></p>
         <p>Alt Name: <font color="black">{{input type="text" value=alt_name}}</font></p>
-        <button class="btn btn-lg btn-primary" {{action 'add' name alt_name}}>
+        <button class="btn btn-lg btn-primary" id="create-course-submit" {{action 'add' name alt_name}}>
            Create Course
         </button>
       </div>
@@ -168,15 +168,15 @@
 
     <!--Login Template-->
     <script type="text/x-handlebars" id="login">
-      <form class="form-signin" role="form">
+      <form class="form-signin" role="form" id="signin-form">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
+        <input type="email" class="form-control" placeholder="Email address" required autofocus id="email-field">
+        <input type="password" class="form-control" placeholder="Password" required id="password-field">
         <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
+          <input type="checkbox" value="remember-me" id="remember-checkbox"> Remember me
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-     	<button class="btn btn-lg btn-primary btn-block">{{#link-to 'createaccount'}}Create Account{{/link-to}}</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="signin-button">Sign in</button>
+     	<button class="btn btn-lg btn-primary btn-block" id="register-link">{{#link-to 'createaccount'}}Create Account{{/link-to}}</button>
       </form>
       <div>
 	{{outlet}} 
@@ -184,12 +184,12 @@
     </script>
 
     <script type="text/x-handlebars" id="createaccount">
-      <form class="form-signin" role="form">
+      <form class="form-signin" role="form" id="register-form">
         <h2 class="form-signin-heading">Create an Account</h2>
-        <p>Name: <font color="black">{{input type="text" value=name}}</font></p>
- 	<p>Email: <font color="black">{{input type="email" value=email}}</font></p>
-	<p>Password <font colot="black">{{input type="password" value=password}}</font></p>
-	<button class="btn btn-lg btn-primary btn-block" {{action 'add' name email password}}>
+        <p>Name: <font color="black">{{input type="text" value=name id="new-name-field"}}</font></p>
+ 	<p>Email: <font color="black">{{input type="email" value=email id="new-email-field"}}</font></p>
+	<p>Password <font colot="black">{{input type="password" value=password id="new-password-field"}}</font></p>
+	<button class="btn btn-lg btn-primary btn-block" {{action 'add' name email password}} id="register-button">
 	   Create Account
 	</button>
       </form>
