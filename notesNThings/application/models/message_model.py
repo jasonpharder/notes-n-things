@@ -1,4 +1,5 @@
 from notesNThings.application.models import db
+from notesNThings.application.models.comment_model import Comment
 import json
 
 class Message (db.Model): 
@@ -24,6 +25,12 @@ class Message (db.Model):
     def user(self):
         return self.userid
 
-    def comments(self):
-        list1 = ["2"]
-        return list1
+    def comment_ids(self):
+        a = Comment.query.filter(Comment.userid == self.userid)
+        a = a.filter(Comment.messageid == self.messageid)
+
+        commentids_list = []
+        for item in a:
+            print item.comment
+            commentids_list.append(str(item.commentid))
+        return commentids_list

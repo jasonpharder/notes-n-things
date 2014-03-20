@@ -4,21 +4,47 @@ import json
 
 def api_get_many(result=None, **kw):
 	print "MESSAGE: api_get_many"
-	#print search_params
 	print result['objects']
+
+	# create new key in dictionary with <modelname> and copy 
+	# all objects from <objects> as defaulted by sqlAlchemy
 	result['messages'] = result['objects']
+
+	# delete all items in root dictionary except 'messages'
+	# remember we already have moved the data to 'messages'
+	# we are just getting rid of extra items in the dictnary 
+	# which are added by sqlAlchemy
 	for key in result.keys():
-		print key 
 		if key != 'messages': 
 			del result[key]
+
+	# this adds 'ids' to the messages as ember.js does not 
+	# like any different name for ids
+	# essentially id == messageid here
 	for test in result['messages']:
 		test['id'] = test['messageid']
-		print test
 
+	# tricky part!! one to many relationship format conversion
+	# create another item in root dictionary named 'comments'
 	result['comments'] = []
-	dict1 = { 'id': 2, 'comment' : 'test comment', 'commentid': 2, 'userid' :1, 'messageid': 6, 'posttime':'2011-05-16 15:36:38' };
-	result['comments'].append(dict1)
-	#result['messages']['comments']
+	list = result['messages']
+	for item in list:
+		# since flask sqlAlchemy puts related data within each <message> item
+		# need to move that to the 'comments' in the root dictionary
+		result['comments'].extend(item['comments'])
+
+		# this is just adding id field because ember doesnt like any other name
+		for com in result['comments']:
+			com['id'] = com['commentid']
+
+		# cleaning up 
+		del item['comments']
+
+		# comment_ids is created within Message model
+		# look at function comment_ids() in Message model
+		item['comments'] = item['comment_ids']
+		del item['comment_ids']
+
 	print "result after:"
 	print result
 
@@ -31,7 +57,7 @@ def post_preprocessor(data=None, **kw):
 	fields to set on the new instance of the model.
 
 	"""
-	print "MESSAGE------------------->POST  preprocessor"
+	print "MESSAGE: POST  preprocessor"
 	print data
 	#data = data['user'].copy()
 	data['messagetxt'] = data['message']['message']
@@ -51,7 +77,7 @@ def post_postprocessor(result=None, **kw):
 	representation of the created instance of the model.
 
 	"""
-	print "MESSAGE------------------->POST postprocessor"
+	print "MESSAGE: result['comments']POST postprocessor"
 	result['message'] = result.copy()
 	for key in result.keys():
 		if key != 'message': 
@@ -66,7 +92,10 @@ def create_message_api(restless_manager):
 	# default. Allowed HTTP methods can be specified as well.
 	restless_manager.create_api(
 		Message, 
-		include_methods=['course', 'user', 'comments'], 
+
+		# these are the names of methods that are defined in 
+		# the Message model
+		include_methods=['course', 'user', 'comment_ids'], 
 		methods=['GET', 'POST', 'DELETE', 'PUT'], 
 		url_prefix='/api',
 		collection_name='messages',
