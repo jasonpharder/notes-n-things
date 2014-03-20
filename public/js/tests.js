@@ -12,7 +12,7 @@ test("App Instantiation", function() {
 	);
 });
 
-test("Do the templates load correctly", function() {
+test("Does the homepage work correctly", function() {
 	visit("/")
 		.find("ul#home-sidebar")
 		.then(function(sidebar) {
@@ -24,6 +24,10 @@ test("Do the templates load correctly", function() {
 		.then(function(header){
 			equal(header.length, 1, 'found homepage header');
 		});
+
+});
+
+test("Does the notes page work correctly", function() {
 
 	visit("/notes")
 		.find("button#create-note")
@@ -43,6 +47,10 @@ test("Do the templates load correctly", function() {
 			equal(header.length, 1, "found notes header");
 		});
 
+});
+
+test("Does the courses page work correctly", function(){
+
 	visit("/courses")
 		.find("ul#courses-sidebar")
 		.then(function(sidebar) {
@@ -50,10 +58,20 @@ test("Do the templates load correctly", function() {
 		});
 
 	visit("/courses")
+		.click("a[href$=\"courseadd\"]")
+		.find("div#course-container")
+		.then(function(form){
+			equal(form.length, 1, 'add course form successfully loads')
+		});
+
+	visit("/courses")
 		.find("h1#courses-header")
 		.then(function(header){
 			equal(header.length, 1, "found courses header");
 		});
+});
+
+test("Does the login page work correctly", function(){
 
 	visit("/login")
 		.find("form#signin-form")
@@ -90,6 +108,10 @@ test("Do the templates load correctly", function() {
 		.then(function(button) {
 			equal(button.length, 1, "found register link");
 		});
+
+});
+
+test("Does the users page work correctly", function(){
 
 	visit("/users")
 		.find("ul#users-sidebar")
