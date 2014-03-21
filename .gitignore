@@ -1,3 +1,5 @@
 #makes it so the repo doesn't track *.pyc files
 *.pyc
+*.swp
+*.swo
 
