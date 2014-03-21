@@ -14,115 +14,68 @@ test("App Instantiation", function() {
 
 test("Does the homepage work correctly", function() {
 	visit("/")
-		.find("ul#home-sidebar")
-		.then(function(sidebar) {
-			equal(sidebar.length, 1, 'found homepage course sidebar');
-		});
+		.assertElementExists("ul#home-sidebar", "found homepage course sidebar");
 
 	visit("/")
-		.find("h1#home-header")
-		.then(function(header){
-			equal(header.length, 1, 'found homepage header');
-		});
+		.assertElementExists("h1#home-header", "found homepage header");
 
 });
 
 test("Does the notes page work correctly", function() {
 
 	visit("/notes")
-		.find("button#create-note")
-		.then(function(button) {
-			equal(button.length, 1, 'found create note button');
-		});
+		.assertElementExists("button#create-note", "found create note button");
 
 	visit("/notes")
-		.find("div#notes-sidebar")
-		.then(function(sidebar){
-			equal(sidebar.length, 1, 'found notes sidebar');
-		});
+		.assertElementExists("div#notes-sidebar", "found notes sidebar");
 
 	visit("/notes")
-		.find("h1#notes-header")
-		.then(function(header){
-			equal(header.length, 1, "found notes header");
-		});
+		.assertElementExists("h1#notes-header", "found notes header");
 
 });
 
 test("Does the courses page work correctly", function(){
 
 	visit("/courses")
-		.find("ul#courses-sidebar")
-		.then(function(sidebar) {
-			equal(sidebar.length, 1, 'found courses sidebar');
-		});
+		.assertElementExists("ul#courses-sidebar", "found courses sidebar");
 
 	visit("/courses")
 		.click("a[href$=\"courseadd\"]")
-		.find("div#course-container")
-		.then(function(form){
-			equal(form.length, 1, 'add course form successfully loads')
-		});
+		.assertElementExists("div#course-container", "add course form successfully loads");
 
 	visit("/courses")
-		.find("h1#courses-header")
-		.then(function(header){
-			equal(header.length, 1, "found courses header");
-		});
+		.assertElementExists("h1#courses-header", "found courses header");
 });
 
 test("Does the login page work correctly", function(){
 
 	visit("/login")
-		.find("form#signin-form")
-		.then(function(form) {
-			equal(form.length, 1, 'found login form');
-		});
+		.assertElementExists("form#signin-form", "found login form");
 
 	visit("/login")
-		.find("input#email-field")
-		.then(function(field) {
-			equal(field.length, 1, 'found email field');
-		});
+		.assertElementExists("input#email-field", "found email field");
 
 	visit("/login")
-		.find("input#password-field")
-		.then(function(field) {
-			equal(field.length, 1, 'found password field');
-		});
+		.assertElementExists("input#password-field", "found password field");
 
 	visit("/login")
-		.find("input#remember-checkbox")
-		.then(function(checkbox) {
-			equal(checkbox.length, 1, 'found remember me checkbox');
-		});
+		.assertElementExists("input#remember-checkbox", "found remember me checkbox");
 
 	visit("/login")
-		.find("button#signin-button")
-		.then(function(button) {
-			equal(button.length, 1, "found signin button");
-		});
+		.assertElementExists("button#signin-button", "found signin button");
 
 	visit("/login")
-		.find("button#register-link")
-		.then(function(button) {
-			equal(button.length, 1, "found register link");
-		});
+		.assertElementExists("button#register-link", "found register link");
 
 });
 
 test("Does the users page work correctly", function(){
 
 	visit("/users")
-		.find("ul#users-sidebar")
-		.then(function(sidebar) {
-			equal(sidebar.length, 1, 'found users sidebar');
-		});
+		.assertElementExists("ul#users-sidebar", "found users sidebar");
 
 	visit("/users")
-		.find("h1#users-header")
-		.then(function(header) {
-			equal(header.length, 1, "found users header");
-		});
+		.assertElementExists("h1#users-header", "found users header");
 
 });
+

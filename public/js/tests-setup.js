@@ -10,5 +10,13 @@ App.Store = DS.Store.extend({
     })
 });
 
+Ember.Test.registerHelper('assertElementExists', function(app, selector, message){
+	return wait()
+		.find(selector)
+		.then(function(elements){
+			notEqual(elements.length, 0, message);
+		});
+});
+
 // turn on testing mode
 window.App.setupForTesting();
