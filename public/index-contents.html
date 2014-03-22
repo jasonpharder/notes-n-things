@@ -141,7 +141,7 @@
             <li>{{#link-to 'course' this.id}}{{name}}{{/link-to}}</li>
             {{/each}}
 
-            <li>{{#link-to 'courseadd'}}Create Course{{/link-to}}</li>
+            <li>{{#link-to 'courseadd' classNames="btn btn-lg btn-primary btn-block"}}Create Course{{/link-to}}</li>
           </ul>
         </div>
 
@@ -176,7 +176,7 @@
           <input type="checkbox" value="remember-me" id="remember-checkbox"> Remember me
         </label>
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="signin-button">Sign in</button>
-     	<button class="btn btn-lg btn-primary btn-block" id="register-link">{{#link-to 'createaccount'}}Create Account{{/link-to}}</button>
+     	{{#link-to 'createaccount' classNames="btn btn-lg btn-primary btn-block"}}Create Account{{/link-to}}
       </form>
       <div>
 	{{outlet}} 
