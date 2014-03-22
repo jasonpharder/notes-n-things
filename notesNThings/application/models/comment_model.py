@@ -16,9 +16,3 @@ class Comment (db.Model):
         self.posttime = posttime
         self.messageid = messageid
         self.userid = userid
-
-    def course(self):
-        return self.courseid
-
-    def message(self):
-        return self.messageid

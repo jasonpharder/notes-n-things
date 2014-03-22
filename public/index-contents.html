@@ -18,6 +18,7 @@
             <li>{{#link-to 'courses'}}Courses{{/link-to}}</li>
             <li>{{#link-to 'users'}}Users{{/link-to}}</li>
             <li>{{#link-to 'login'}}Sign In/Register{{/link-to}}</li>
+            <li>{{#link-to 'messages'}}Message Board{{/link-to}}</li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -67,8 +68,35 @@
       {{/each}}
     </script>
 
-     <script type="text/x-handlebars" id="course_home">
-      <h1>{{name}}</h1>
+     <!--Messages Template-->
+    <script type="text/x-handlebars" id="messages">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            {{#each}}
+            <li>{{#link-to 'message' this.id}}{{course.name}}{{/link-to}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Messages</h1>
+        {{outlet}}
+        </div>
+      </div>
+    </script>
+
+     <!--Message Template-->
+    <script type="text/x-handlebars" id="message">
+      <button class="btn btn-default" type="button" id="create-comment" {{action "addComment" commentTxt}}>
+        Post!
+        </button>
+      {{input type="text" value=commentTxt}}
+      <br><br>
+      {{message}}
+      {{#each comments}}
+          <li>{{comment}}</li>
+      {{/each}}
     </script>
 
     <!--Notes Template-->

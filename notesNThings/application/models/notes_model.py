@@ -1,6 +1,4 @@
 from notesNThings.application.models import db
-from notesNThings.application.models.stub_database import stubNotes
-
 import json
 
 class Note (db.Model):
@@ -19,6 +17,3 @@ class Note (db.Model):
         self.file_name = file_name
         self.owner = owner
         self.rating = rating
-
-def getAllNotes():
-    return json.dumps(stubNotes)

@@ -1,6 +1,5 @@
 from notesNThings.application.models import db
 from notesNThings.application.models.subscriptions_model import subscriptionTable
-from notesNThings.application.models.stub_database import stubCourses
 from sqlalchemy.orm import relationship, backref
 
 import json
@@ -18,7 +17,4 @@ class Course (db.Model):
         self.name = name
         self.alt_name = alt_name
         self.professor = professor
-
-def getAllCourses():
-    return json.dumps(stubCourses)
 

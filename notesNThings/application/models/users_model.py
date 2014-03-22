@@ -1,6 +1,5 @@
 from notesNThings.application.models import db
 from notesNThings.application.models.subscriptions_model import subscriptionTable
-from notesNThings.application.models.stub_database import stubUsers
 from notesNThings.application.models.courses_model import Course
 from sqlalchemy.orm import relationship, backref
 
@@ -26,6 +25,3 @@ class User (db.Model):
         self.password = password
         self.email = email
         self.admin = admin
-
-def getAllUsers():
-    return json.dumps(stubUsers)
