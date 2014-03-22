@@ -49,6 +49,17 @@ def patch_single_postprocessor(result=None, **kw):
 			del result[key]
 	
 	result['user']['id'] = result['user']['uid']
+
+	result['courses'] = []
+
+	for course in result['user']['courses']:
+		result['courses'].append(course)
+		course['id'] = course['courseid']
+
+	del result['user']['courses']
+	result['user']['courses'] = result['user']['course_ids']
+	del result['user']['course_ids']
+
 	print result	
 	pass
 
