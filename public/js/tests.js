@@ -12,30 +12,70 @@ test("App Instantiation", function() {
 	);
 });
 
-test("Do the templates load correctly", function() {
+test("Does the homepage work correctly", function() {
 	visit("/")
-		.find("ul#course-list")
-		.then(function(header) {
-			equal(header.length, 1, 'found contents');
-		});
-	visit("/notes")
-		.find("ul#notes-list")
-		.then(function(list) {
-			equal(list.length, 1, 'found notes list');
-		});
-	visit("/courses")
-		.find("ul#courses-list")
-		.then(function(list) {
-			equal(list.length, 1, 'found courses list');
-		});
-	visit("/login")
-		.find("form.form-signin")
-		.then(function(form) {
-			equal(form.length, 1, 'found login');
-		});
-	visit("/users")
-		.find("ul#user-list")
-		.then(function(list) {
-			equal(list.length, 1, 'found user list');
-		});
+		.assertElementExists("ul#home-sidebar", "found homepage course sidebar");
+
+	visit("/")
+		.assertElementExists("h1#home-header", "found homepage header");
+
 });
+
+test("Does the notes page work correctly", function() {
+
+	visit("/notes")
+		.assertElementExists("button#create-note", "found create note button");
+
+	visit("/notes")
+		.assertElementExists("div#notes-sidebar", "found notes sidebar");
+
+	visit("/notes")
+		.assertElementExists("h1#notes-header", "found notes header");
+
+});
+
+test("Does the courses page work correctly", function(){
+
+	visit("/courses")
+		.assertElementExists("ul#courses-sidebar", "found courses sidebar");
+
+	visit("/courses")
+		.click("a[href$=\"courseadd\"]")
+		.assertElementExists("div#course-container", "add course form successfully loads");
+
+	visit("/courses")
+		.assertElementExists("h1#courses-header", "found courses header");
+});
+
+test("Does the login page work correctly", function(){
+
+	visit("/login")
+		.assertElementExists("form#signin-form", "found login form");
+
+	visit("/login")
+		.assertElementExists("input#email-field", "found email field");
+
+	visit("/login")
+		.assertElementExists("input#password-field", "found password field");
+
+	visit("/login")
+		.assertElementExists("input#remember-checkbox", "found remember me checkbox");
+
+	visit("/login")
+		.assertElementExists("button#signin-button", "found signin button");
+
+	visit("/login")
+		.assertElementExists("button#register-link", "found register link");
+
+});
+
+test("Does the users page work correctly", function(){
+
+	visit("/users")
+		.assertElementExists("ul#users-sidebar", "found users sidebar");
+
+	visit("/users")
+		.assertElementExists("h1#users-header", "found users header");
+
+});
+

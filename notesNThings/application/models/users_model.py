@@ -19,9 +19,16 @@ class User (db.Model):
     admin    = db.Column(db.Boolean)
     courses = relationship("Course", secondary = subscriptionTable, backref="users")
 
-    def __init__(self, uid, username, password, email, admin):
-        self.uid = uid
+    def __init__(self, username, password, email, admin):
         self.username = username
         self.password = password
         self.email = email
         self.admin = admin
+
+    def course_ids(self):
+        course_id_list = []
+
+        for course in self.courses:
+            course_id_list.append( str(course.courseid) )
+
+        return course_id_list

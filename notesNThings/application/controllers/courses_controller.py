@@ -7,12 +7,24 @@ def api_get_many(result=None, **kw):
 	print "COURSE: api_get_many"
 	print result['objects']
 	result['courses'] = result['objects']
+
 	for key in result.keys():
 		print key 
 		if key != 'courses': 
 			del result[key]
-	for test in result['courses']:
-		test['id'] = test['courseid']
+
+	result['users'] = []
+
+	for course in result['courses']:
+		course['id'] = course['courseid']
+		for user in course['users']:
+			result['users'].append(user)
+			user['id'] = user['uid']
+
+		del course['users']
+		course['users'] = course['user_ids']
+		del course['user_ids']
+
 	print result
 
 def patch_single_preprocessor(instance_id=None, data=None, **kw):
@@ -80,7 +92,9 @@ def create_course_api(restless_manager):
 	# Create API endpoints, which will be available at /api/<tablename> by
 	# default. Allowed HTTP methods can be specified as well.
 	restless_manager.create_api(
-		Course,  
+		Course, 
+
+		include_methods=['user_ids'],
 		methods=['GET', 'POST', 'DELETE', 'PUT'], 
 		url_prefix='/api',
 		collection_name='courses',
