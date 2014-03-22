@@ -18,6 +18,16 @@ class Course (db.Model):
         self.name = name
         self.alt_name = alt_name
         self.professor = professor
+        self.user_ids = []
+
+    def user_ids(self):
+
+	user_id_list = []
+
+        for user in self.users:
+            user_id_list.append( str(user.uid) )
+
+	return user_id_list
 
 def getAllCourses():
     return json.dumps(stubCourses)

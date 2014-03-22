@@ -11,8 +11,19 @@ def api_get_many(result=None, **kw):
 	for key in result.keys():
 		if key != 'users': 
 			del result[key]
-	for test in result['users']:
-		test['id'] = test['uid']
+
+	result['courses'] = []
+
+	for user in result['users']:
+		user['id'] = user['uid']
+		for course in user['courses']:
+			result['courses'].append(course)
+			course['id'] = course['courseid']
+		
+		del user['courses']
+		user['courses'] = user['course_ids']
+		del user['course_ids']
+
 	print "after parsing:" 
 	print result
 	pass
@@ -77,7 +88,9 @@ def create_user_api(restless_manager):
 	# Create API endpoints, which will be available at /api/<tablename> by
 	# default. Allowed HTTP methods can be specified as well.
 	restless_manager.create_api(
-		User,  
+		User, 
+
+		include_methods=['course_ids'],
 		methods=['GET', 'POST', 'DELETE', 'PUT'], 
 		url_prefix='/api',
 		collection_name='users',

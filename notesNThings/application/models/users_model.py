@@ -26,5 +26,13 @@ class User (db.Model):
         self.email = email
         self.admin = admin
 
+    def course_ids(self):
+        course_id_list = []
+
+        for course in self.courses:
+            course_id_list.append( str(course.courseid) )
+
+        return course_id_list
+
 def getAllUsers():
     return json.dumps(stubUsers)
