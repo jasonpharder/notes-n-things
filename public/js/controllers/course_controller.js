@@ -11,5 +11,32 @@ App.CourseaddController = Ember.ObjectController.extend({
                         });
                         courseAdd.save();
                 }
+
         }
+});
+
+App.CourseController = Ember.ObjectController.extend({
+	needs: "user",
+	actions: {
+		subscribe: function(){
+			console.log(this.get('name'));
+			//var course = this.get('model');
+
+			console.log(this.get('users'));
+
+			var users = this.get('users');
+
+			users.addObject(this.get("controllers.user.content"));
+			this.set('users', users);
+
+			this.save();
+
+			//console.log(userList);
+                },
+
+		unsubscribe: function(){
+
+		}
+	}
+
 });
