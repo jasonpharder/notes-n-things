@@ -30,7 +30,7 @@ class NotesTestCase(unittest.TestCase):
 
 		def testCoursesModel(self):
 			with app.app_context():
-				professor = User(uid=1, username="Bob", password="dinosaur", email="email@email.com",
+				professor = User(username="Bob", password="dinosaur", email="email@email.com",
 					admin = True)
 				db.session.add(professor)
 				db.session.flush()
@@ -47,7 +47,7 @@ class NotesTestCase(unittest.TestCase):
 
 		def testUsersModel(self):
 			with app.app_context():
-                                newUser = User(uid=1, username="Bob", password="dinosaur", email="email@email.com",
+                                newUser = User(username="Bob", password="dinosaur", email="email@email.com",
                                         admin = False)
                                 db.session.add(newUser)
                                 db.session.flush()
@@ -60,7 +60,7 @@ class NotesTestCase(unittest.TestCase):
 
 		def testNotesModel(self):
 			with app.app_context():
-				notetaker = User(uid=1, username="Bob", password="dinosaur", email="email@email.com",
+				notetaker = User(username="Bob", password="dinosaur", email="email@email.com",
                                         admin = False)
                                 db.session.add(notetaker)
                                 db.session.flush()
@@ -77,12 +77,12 @@ class NotesTestCase(unittest.TestCase):
 
 		def testSubscriptionRelation(self):
 			with app.app_context():
-				professor = User(uid=1, username="Bob", password="dinosaur",
+				professor = User(username="Bob", password="dinosaur",
 					email="email@email.com", admin = True)
 				db.session.add(professor)
 				db.session.flush()
 
-				student = User(uid = 2, username= "Susan", password = "dinsaur",
+				student = User(username= "Susan", password = "dinsaur",
 					email = "student@email.com", admin = False)
 				db.session.add(student)
 				db.session.flush()

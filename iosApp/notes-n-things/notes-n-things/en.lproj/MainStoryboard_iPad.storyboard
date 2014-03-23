@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="3mP-7R-fZo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="3mP-7R-fZo">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--View Controller - Notes-n-Things-->
@@ -53,7 +53,13 @@
                             <constraint firstItem="Kwn-3J-zMw" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="98" id="pgg-vq-OHE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notes-n-Things" id="Hod-cs-d9e"/>
+                    <navigationItem key="navigationItem" title="Notes-n-Things" id="Hod-cs-d9e">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="VqK-4Y-CmG">
+                            <connections>
+                                <segue destination="oPF-AU-7Gc" kind="push" id="qdd-GG-mbJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,6 +117,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBq-Db-hid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3131" y="-1236"/>
+        </scene>
+        <!--Login Controller - Login-->
+        <scene sceneID="Aiw-4z-DW5">
+            <objects>
+                <viewController id="oPF-AU-7Gc" customClass="LoginController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X4f-nK-Gbi">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf3-Nh-oUv">
+                                <rect key="frame" x="193" y="397" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGX-C7-6Bh">
+                                <rect key="frame" x="193" y="447" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uf3-Nh-oUv" firstAttribute="top" secondItem="X4f-nK-Gbi" secondAttribute="top" constant="397" id="Mhl-Qi-Sid"/>
+                            <constraint firstItem="TGX-C7-6Bh" firstAttribute="top" secondItem="X4f-nK-Gbi" secondAttribute="top" constant="447" id="hvJ-tS-36m"/>
+                            <constraint firstItem="TGX-C7-6Bh" firstAttribute="leading" secondItem="uf3-Nh-oUv" secondAttribute="leading" type="default" id="nMF-3V-OKW"/>
+                            <constraint firstItem="uf3-Nh-oUv" firstAttribute="leading" secondItem="X4f-nK-Gbi" secondAttribute="leading" constant="193" id="pLe-SE-yH5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="aI8-dG-KaI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rE2-Zv-n3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2317" y="1257"/>
         </scene>
         <!--Notes Controller - Notes-->
         <scene sceneID="qbj-TK-eEw">
