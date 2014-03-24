@@ -37,9 +37,9 @@ App.LoginController = Ember.ObjectController.extend({
 					document.getElementById("wrongInput").innerHTML = "<li>Successfully logged in</li>";					
 					document.getElementById("currUser").innerHTML = "User: " + user.get('username');
 					document.getElementById('login').style.display = "none";
+					document.getElementById('register').style.display = "none";
 					document.getElementById('logout').style.display = "inline";
 					document.getElementById('currUser').style.display = "inline";
-				        document.getElementById('addCourseBtn').style.display = "inline";
 				}
 				else {
 					document.getElementById("wrongInput").innerHTML="<li>Wrong Email or Password was entered</li>";
