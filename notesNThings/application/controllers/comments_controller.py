@@ -18,7 +18,8 @@ def api_get_many(result=None, **kw):
 def post_preprocessor(data=None, **kw):
 	print "COMMENT: POST  preprocessor"
 	print data
-	data['commenttxt'] = data['comment']['name']
+	data['commenttxt'] = data['comment']['comment']
+	data['posttime'] = data['comment']['posttime']
 	data['userid'] = data['comment']['userid']
 	data['messageid'] = data['comment']['messageid']
 	del data['comment']
@@ -34,7 +35,8 @@ def post_postprocessor(result=None, **kw):
 		if key != 'comment': 
 			del result[key]
 
-	result['comment']['id'] = result['comment']['courseid']
+	del result['comment']['message']
+	result['comment']['id'] = result['comment']['commentid']
 	print result	
 	pass
 

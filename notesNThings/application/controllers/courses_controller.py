@@ -100,6 +100,7 @@ def create_course_api(restless_manager):
 		collection_name='courses',
 		postprocessors={
 	        'GET_MANY': [api_get_many],
+	        'GET_SINGLE': [patch_single_postprocessor],
 	        'POST': [post_postprocessor],
 	        'PUT_SINGLE': [patch_single_postprocessor]
 	    },

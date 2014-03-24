@@ -101,6 +101,7 @@ def create_message_api(restless_manager):
 		collection_name='messages',
 		postprocessors={
 	        'GET_MANY': [api_get_many],
+	        #'GET_SINGLE' : [api_get_many],
 	        'POST': [post_postprocessor],
 	    },
 	    preprocessors={

@@ -64,3 +64,12 @@ App.CourseaddController = Ember.ObjectController.extend({
                 }
         }
 });
+
+// App.HomeController = Ember.ObjectController.extend({
+//   messages: function() {
+//     var messageId = this.get('id');
+//     return this.get('store').filter('message', function(message) {
+//       return message.get('message.id') == messageId;
+//     });
+//   }.property('messages')
+// });

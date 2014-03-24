@@ -66,7 +66,7 @@ CREATE TABLE todo (
 CREATE TABLE comments (
         commentID serial PRIMARY KEY,
         comment VARCHAR(255),
-        userID integer NOT NULL REFERENCES users(uid),
         postTime TIMESTAMP NOT NULL,
+        userID integer NOT NULL REFERENCES users(uid),
         messageID integer NOT NULL REFERENCES messages(messageID)
 );
