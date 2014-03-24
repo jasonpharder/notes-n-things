@@ -19,8 +19,21 @@ App.Router.map(function() {
 		this.resource('user', { path : ':user_id' } );
 	});
 	this.resource('login');
+	this.resource('logout');
 	this.resource('createaccount');
 });
+
+App.LogoutRoute = Ember.Route.extend({
+	model: function() {
+	return Em.Object.create({});
+	}
+ });
+
+App.LoginRoute = Ember.Route.extend({
+	model: function() {
+	return Em.Object.create({});
+	}
+ });
 
 App.CreateaccountRoute = Ember.Route.extend({
 	model: function() {
@@ -104,3 +117,4 @@ App.NoteRoute = Ember.Route.extend({
 		return this.store.find('note', params.note_id);
 	}
 })
+

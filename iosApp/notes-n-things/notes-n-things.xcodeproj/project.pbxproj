@@ -11,6 +11,7 @@
 		17CD845018C83C5C00D9EF10 /* noteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CD844F18C83C5C00D9EF10 /* noteController.m */; };
 		17DDE07518C58374006C7622 /* coursesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DDE07418C58374006C7622 /* coursesController.m */; };
 		17DDE07E18C58624006C7622 /* notesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DDE07D18C58624006C7622 /* notesController.m */; };
+		F9658D1F18DFD53600904A35 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9658D1E18DFD53600904A35 /* LoginController.m */; };
 		F9F88AD518BE743600045786 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD418BE743600045786 /* UIKit.framework */; };
 		F9F88AD718BE743600045786 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD618BE743600045786 /* Foundation.framework */; };
 		F9F88AD918BE743600045786 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F88AD818BE743600045786 /* CoreGraphics.framework */; };
@@ -48,6 +49,8 @@
 		17DDE07418C58374006C7622 /* coursesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = coursesController.m; sourceTree = "<group>"; };
 		17DDE07C18C58624006C7622 /* notesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notesController.h; sourceTree = "<group>"; };
 		17DDE07D18C58624006C7622 /* notesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notesController.m; sourceTree = "<group>"; };
+		F9658D1D18DFD53600904A35 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
+		F9658D1E18DFD53600904A35 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
 		F9F88AD118BE743600045786 /* notes-n-things.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "notes-n-things.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F88AD418BE743600045786 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9F88AD618BE743600045786 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,8 @@
 				17CD844C18C83B8C00D9EF10 /* courseController.m */,
 				17CD844E18C83C5C00D9EF10 /* noteController.h */,
 				17CD844F18C83C5C00D9EF10 /* noteController.m */,
+				F9658D1D18DFD53600904A35 /* LoginController.h */,
+				F9658D1E18DFD53600904A35 /* LoginController.m */,
 			);
 			path = "notes-n-things";
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F88AE118BE743600045786 /* main.m in Sources */,
+				F9658D1F18DFD53600904A35 /* LoginController.m in Sources */,
 				17CD845018C83C5C00D9EF10 /* noteController.m in Sources */,
 				F9F88AE518BE743600045786 /* AppDelegate.m in Sources */,
 				17CD844D18C83B8C00D9EF10 /* courseController.m in Sources */,
