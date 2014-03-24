@@ -1,8 +1,11 @@
 App.MycourseController = Ember.ArrayController.extend({
+        currCourse : -1,
+
         actions: {
 
                 addMessage: function(messageText) {
                         var message = messageText;
+                        var currCourse = this.get('currCourse');
 
                         var messageAdd =this.store.createRecord('message', {
                                 message: message,

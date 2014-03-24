@@ -20,11 +20,10 @@ class Course (db.Model):
         self.user_ids = []
 
     def user_ids(self):
-
-	user_id_list = []
+        user_id_list = []
 
         for user in self.users:
             user_id_list.append( str(user.uid) )
 
-	return user_id_list
+        return user_id_list
 

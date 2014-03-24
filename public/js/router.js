@@ -38,12 +38,13 @@ App.CourseaddRoute = Ember.Route.extend({
 
 App.MycourseRoute = Ember.Route.extend({
   	model: function(params) {
+  		console.log(this.get('currCourse'));
+  		this.set('currCourse', params.course_id);
+  		console.log(this.get('currCourse'));
     	var string = '{"filters":[{"name":"courseid","op":"eq","val":'+params.course_id+'}]}'
-    	return this.store.find('message', { q: string });
-
-    	// return this.store.filter('message', { q: string }, function(message) {
-     	//  		return message.get('');
-   		// });
+    	return this.store.filter('message', { q: string }, function(message) {
+      		return message.get('courseid')==params.course_id;
+    	});
   	}
  });
 
