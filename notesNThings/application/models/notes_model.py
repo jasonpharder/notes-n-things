@@ -1,6 +1,6 @@
 from notesNThings.application.models import db
 import json
-import random
+from random import *
 
 class Note (db.Model):
     # Setting the table name and
