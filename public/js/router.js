@@ -10,7 +10,7 @@ App.Router.map(function() {
 	});
 	this.resource('notes', function() {
 		this.resource('note', { path : ':note_id' } );
-		this.resource('notesadd');
+		this.resource('noteadd');
 	});
 	this.resource('courses', function() {
 		this.resource('course', { path : ':course_id' } );
