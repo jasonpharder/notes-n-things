@@ -27,6 +27,36 @@ def api_post_get_many(result=None, **kw):
 		#DEBUG Print
 		print test
 
+def post_preprocessor(data=None, **kw):
+	"""Accepts a single argument, `data`, which is the dictionary of
+	fields to set on the new instance of the model.
+
+	"""
+	print "NOTE------------------->POST  preprocessor"
+	print data
+	#data = data['user'].copy()
+	data['stored_as'] = data['note']['stored_as']
+	data['owner'] = data['note']['owner']
+	del data['note']
+	print data
+
+	pass
+
+def post_postprocessor(result=None, **kw):
+	"""Accepts a single argument, `result`, which is the dictionary
+	representation of the created instance of the model.
+
+	"""
+	print "NOTE------------------->POST postprocessor"
+	result['note'] = result.copy()
+	for key in result.keys():
+		if key != 'note': 
+			del result[key]
+
+	result['note']['id'] = result['note']['uid']
+	print result	
+	pass
+
 def create_note_api(restless_manager):
 	# Create API endpoints, which will be available at /api/<tablename> by
 	# default. Allowed HTTP methods can be specified as well.
@@ -37,11 +67,11 @@ def create_note_api(restless_manager):
 		collection_name='notes',
 		postprocessors={
 	        'GET_MANY': [api_post_get_many]
-	        #'POST': [api_post_get_many],
+	        'POST': [post_postprocessor],
 	        #'PUT_SINGLE': [api_post_get_many]
 	    },
 	    preprocessors={
-	        #'POST': [api_post_get_many],
+	        'POST': [post_preprocessor],
 	        #'PUT_SINGLE': [api_post_get_many]
 	    }
 	)
