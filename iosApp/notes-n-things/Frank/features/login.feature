@@ -18,7 +18,7 @@ Then I should see a label marked "Incorrect Email"
 Scenario: Failing login with incorrect password
 Then I should see a navigation bar titled "Login"
 When I clear the text fields
-When I use the keyboard to fill in the textfield marked "Email Field" with "kyle@kyle.com"
+When I use the keyboard to fill in the textfield marked "Email Field" with "guest@guest.com"
 When I use the keyboard to fill in the textfield marked "Password Field" with "test"
 When I attempt to login
 Then I should see a navigation bar titled "Login"
@@ -27,8 +27,8 @@ Then I should see a label marked "Incorrect Password"
 Scenario: Successful login
 Then I should see a navigation bar titled "Login"
 When I clear the text fields
-When I use the keyboard to fill in the textfield marked "Email Field" with "kyle@kyle.com"
-When I use the keyboard to fill in the textfield marked "Password Field" with "kyle"
+When I use the keyboard to fill in the textfield marked "Email Field" with "guest@guest.com"
+When I use the keyboard to fill in the textfield marked "Password Field" with "guest"
 When I attempt to login
 Then I should be on the Home screen
 
