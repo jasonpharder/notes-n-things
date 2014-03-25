@@ -20,7 +20,7 @@ NSString *noteId = @"";
     
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://dev1.notes-n-things.tk/api/notes"]];
+    [request setURL:[NSURL URLWithString:@"http://dev5.notes-n-things.tk/api/notes"]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     
