@@ -11,6 +11,38 @@ Dev Server 3: dev3.notes-n-things.tk<br />
 Dev Server 4: dev4.notes-n-things.tk<br />
 Dev Server 5: dev5.notes-n-things.tk<br />
 
+## Running Frank Tests
+
+###Getting the most recent build for frank
+<pre><code>
+  Starting in notes-n-things git repo
+  $cd iosApp/notes-n-things
+  $frank build
+</code></pre>
+
+###Starting and running the tests
+<pre><code>
+  Starting in notes-n-things git repo
+  $cd iosApp/notes-n-things/Frank
+  $cucumber
+  when the iOS simulator opens it needs to have the hardware switched to iPad
+  select the iOS simulator and go to the Hardware menu then Devices then select iPad
+  then once the new simulator loads find app named Frankify and start
+  this needs to be done for every feature file
+</code></pre>
+
+###Notes about failing tests
+
+Some tests have a chance to fail if the app fails to grab data from the server this can happen in login.feature or navaigation.feature
+If this happens for one of the features it is easier to change what cucumber runs to just that file
+<pre><code>
+  change
+  $cucumber
+  to
+  $cucumber features/*.feature
+  where * is navigation or login depending on which had a fail
+</code></pre>
+
 ## Server Maintenance
 
 ###Adding python modules
