@@ -17,11 +17,11 @@ App.NoteaddController = Ember.ObjectController.extend({
 
 					notes.then(function() {
 		                var noteAdd = store.createRecord('note', {
-                    		name:      name,
+                    		name:  name,
 	        			    owner: userID
         				});
 
-            			courseAdd.save();
+            			noteAdd.save();
                    		document.getElementById('notesMsg').innerHTML = "Successfully added note";
 					});
 				} else {
