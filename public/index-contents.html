@@ -174,7 +174,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar" id="courses-sidebar">
             {{#each}}
-            <li>{{#link-to 'course' this.id}}{{name}}{{/link-to}}</li>
+            <li onClick="clearButton()">{{#link-to 'course' this.id}}{{name}}{{/link-to}}</li>
             {{/each}}
             <li id="addCourseBtn">{{#link-to 'courseadd' classNames="btn btn-lg btn-primary btn-block" id="create-course-button"}}Create Course{{/link-to}}</li>
           </ul>
@@ -193,6 +193,15 @@
       </button>
       <br>
       {{name}}
+    </script>
+ 
+    <script>
+	function clearButton(){
+		var temp = document.getElementById('subscribe-button')
+		if (temp != null){
+	            document.getElementById('subscribe-button').innerHTML = "Subscribe";
+		}
+	}
     </script>
 
     <script type="text/x-handlebars" id="courseadd">

@@ -97,6 +97,7 @@ App.CourseController = Ember.ObjectController.extend({
                 });
                 console.log("Subscribed");
                 document.getElementById('subscribe-button').innerHTML = "Subscribed";
+		
             }else {
                 alert("Please Login");
             }
