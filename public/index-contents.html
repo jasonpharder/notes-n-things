@@ -17,11 +17,11 @@
             <li>{{#link-to 'notes' id='notes-link'}}Notes{{/link-to}}</li>
             <li>{{#link-to 'courses' id='courses-link'}}Courses{{/link-to}}</li>
             <li>{{#link-to 'users' id='users-link'}}Users{{/link-to}}</li>
-	    <li>{{#link-to 'messages' id='messages-link'}}Message Board{{/link-to}}</li>
+	          <li>{{#link-to 'messages' id='messages-link'}}Message Board{{/link-to}}</li>
             <li id="register" style="display:inline">{{#link-to 'createaccount' id='register-link'}}Register{{/link-to}}<li>
-    	    <li id="logout" style="display: none">{{#link-to 'logout' id='logout-link'}}Sign Out{{/link-to}}</li>
-	    <li id="currUser" style="display: none; color:white;">tesing stuffz</li>     		
-    	    <li id="login" style="display: inline">{{#link-to 'login' id='login-link'}}Sign In{{/link-to}}</li> 
+    	      <li id="logout" style="display: none">{{#link-to 'logout' id='logout-link'}}Sign Out{{/link-to}}</li>
+	          <li id="currUser" style="display: none; color:white;">test</li>     		
+    	      <li id="login" style="display: inline">{{#link-to 'login' id='login-link'}}Sign In{{/link-to}}</li> 
           </ul>
 	</div>
         <!--/.nav-collapse -->
@@ -158,7 +158,9 @@
         <button {{action 'edit'}} id="edit-button">Edit</button>
       {{/if}}
 
-      <h1>{{username}}</h1>
+      <h1>username: {{username}}</h1>
+      <h2>email: {{email}}</h2>
+      <h2>password: {{password}}</h2>
     </script>
 
     <script type="text/x-handlebars" id="user/_edit">
@@ -185,6 +187,10 @@
     </script>
 
     <script type="text/x-handlebars" id="course">
+      <button class="btn btn-lg btn-primary" id="subscribe-button" {{action 'subscribe'}}>
+        Subscribe
+      </button>
+      <br>
       {{name}}
     </script>
 

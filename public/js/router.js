@@ -51,21 +51,36 @@ App.CourseaddRoute = Ember.Route.extend({
 
 App.MycourseRoute = Ember.Route.extend({
   	model: function(params) {
-  		console.log(this.get('currCourse'));
   		this.set('currCourse', params.course_id);
-  		console.log(this.get('currCourse'));
+
     	var string = '{"filters":[{"name":"courseid","op":"eq","val":'+params.course_id+'}]}'
     	return this.store.filter('message', { q: string }, function(message) {
       		return message.get('courseid')==params.course_id;
     	});
+  	},
+
+	setupController: function (controller, model) 
+  	{
+  		controller.set('model', model);
+     	controller.set('currCourse', this.get('currCourse'));
   	}
  });
 
 App.HomeRoute = Ember.Route.extend(
 {
 	model: function() {
-		return this.store.find('user', 1);
+		var userID = 1;	// guest user
+		var cookie = document.cookie;                   
+	    if (cookie.length != 0)
+	    {
+	            var cookieUID = cookie.split(';');
+	            var temp = cookieUID[1].split('=');
+	            var userID = temp[1];
+	    }
+
+	 	return this.store.find('user', userID);  
 	}
+
 });
 
 App.MessagesRoute = Ember.Route.extend(
@@ -103,7 +118,16 @@ App.CoursesRoute = Ember.Route.extend({
 App.CourseRoute = Ember.Route.extend({
 	model: function(params) {
 		return this.store.find('course', params.course_id);
-	}
+	},
+
+	setupController: function (controller, model) 
+  	{
+  		//var user = this.store.find('user', 1);
+  		//console.log(user.get('username'));
+  		//console.log(user);
+  		controller.set('model', model);
+     	controller.set('currUser', this.store.find('user', 1));
+  	}
 });
 
 App.NotesRoute = Ember.Route.extend({
