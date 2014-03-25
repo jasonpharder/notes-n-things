@@ -28,6 +28,10 @@ module("Testing the templates", {
 			uid:		1
 		}];
 
+		App.Comment.FIXTURES=[{
+			comment: "asdasdas"
+		}];
+
 		App.Message.FIXTURES=[{
 			course:		1,
 			courseid:	1,
@@ -39,7 +43,6 @@ module("Testing the templates", {
 			userid:		1,
 			comments:	[]
 		}];
-
 
 	}
 });
