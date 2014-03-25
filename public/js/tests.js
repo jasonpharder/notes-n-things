@@ -1,4 +1,4 @@
-module("Testing the homepage", {
+module("Testing the templates", {
 	setup: function() {
 		App.reset();
 		App.injectTestHelpers();
@@ -59,13 +59,10 @@ test("Does the login page work correctly", function(){
 		.assertElementExists("input#password-field", "found password field");
 
 	visit("/login")
-		.assertElementExists("input#remember-checkbox", "found remember me checkbox");
+		.assertElementExists("button#login-button", "found signin button");
 
 	visit("/login")
-		.assertElementExists("button#signin-button", "found signin button");
-
-	visit("/login")
-		.assertElementExists("button#register-link", "found register link");
+		.assertElementExists("a#create-account-button", "found register link");
 
 });
 
