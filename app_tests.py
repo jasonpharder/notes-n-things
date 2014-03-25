@@ -2,7 +2,9 @@ import unittest
 import os
 import tempfile
 import sqlalchemy
+import flask
 from notesNThings import app, db
+from datetime import datetime
 
 from notesNThings.application.models.users_model import User
 from notesNThings.application.models.courses_model import Course
@@ -10,7 +12,7 @@ from notesNThings.application.models.notes_model import Note
 from notesNThings.application.models.message_model import Message
 from notesNThings.application.models.comment_model import Comment
 
-TEST_DB = 'postgresql://postgres:password@localhost/notes_n_things_testdb'
+TEST_DB = 'postgresql://postgres:testpass@localhost/notes_n_things_testdb'
 
 class NotesTestCase(unittest.TestCase):
 		def setUp(self):
@@ -131,13 +133,22 @@ class NotesTestCase(unittest.TestCase):
 
 				self.assertEqual(len(Course.query.all()), 1)
 
-				message = Message(message="Hello this is message", postTime="12:00", courseID=newCourse.courseid, userID = user.uid)
+				message = Message(message="Hello this is message", posttime=datetime.utcnow(), courseid=newCourse.courseid, userid = user.uid)
 				db.session.add(message)
 				db.session.commit()
 
 				self.assertEqual(len(Message.query.all()), 1)
 
-				
+				largeStr = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+				message = Message(message=largeStr, posttime=datetime.utcnow(), courseid=newCourse.courseid, userid = user.uid)
+				db.session.add(message)
+				db.session.commit()
+
+				self.assertEqual(len(Message.query.all()), 2)
+
+				with app.test_request_context('/?name=Peter'):
+					assert flask.request.path == '/'
+					assert flask.request.args['name'] == 'Peter'
 
 if __name__ == '__main__':
 	unittest.main()
