@@ -8,17 +8,18 @@ App.CourseaddController = Ember.ObjectController.extend({
                 var cookie = document.cookie;			
 
     			if (cookie.length != 0)
-                {
+                	{
     				if(courseName.length < 10)
-                    {
+                    		{
     	    				var cookieUID = cookie.split(';');
-        					var temp = cookieUID[1].split('=');
-        					var userID = temp[1];
+        				var temp = cookieUID[1].split('=');
+        				var userID = temp[1];
 
-        					var foundCourse = new Boolean();
-        					foundCourse = false;
-        			
-    	    				var store = this.store;
+        				var foundCourse = new Boolean();
+        				foundCourse = false;
+        					
+					if (userID != '1'){ 
+	    	    				var store = this.store;
         					var courses = DS.PromiseArray.create({
         						promise: this.store.find('course')
         					});	
@@ -51,20 +52,23 @@ App.CourseaddController = Ember.ObjectController.extend({
         						if (foundCourse){
         							document.getElementById('coursesMsg').innerHTML = "Course name is already being used";
         						}
-    	    					else {
-            			                	var courseAdd =store.createRecord('course', {
+    	    						else {
+            			        	        	var courseAdd =store.createRecord('course', {
         	                        				name: name,
-    				    	                        alt_name: altName,
+    					    	                        alt_name: altName,
         			        			        professor: userID
                         				});
                             			courseAdd.save();
     		                       		document.getElementById('coursesMsg').innerHTML = "Successfully added course";
         						}
         					});
+					}else{
+						document.getElementById('coursesMsg').innerHTML = "Guests can not create a course";
+					}
         			}else {
 				    	document.getElementById('coursesMsg').innerHTML = "Course name has to be 9 or less characters long";
 			     	}	
-                }else {
+	                }else {
     				document.getElementById('coursesMsg').innerHTML = "Please register or signin to create a course";
     			}
             }
