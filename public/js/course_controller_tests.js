@@ -3,7 +3,9 @@ module("Testing the course controller", {
 		App.reset();
 		App.injectTestHelpers();
 
-
+		controller = App.__container__.lookup('controller:course');
+                model = App.Course;
+                controller.set('model', model);
 
 		App.Course.FIXTURES = [{
 			alt_name:	"This is test data",
