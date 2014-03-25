@@ -8,6 +8,7 @@ from notesNThings.application.models.users_model import User
 from notesNThings.application.models.courses_model import Course
 from notesNThings.application.models.notes_model import Note
 from notesNThings.application.models.message_model import Message
+from notesNThings.application.models.comment_model import Comment
 
 TEST_DB = 'postgresql://postgres:password@localhost/notes_n_things_testdb'
 
@@ -115,6 +116,28 @@ class NotesTestCase(unittest.TestCase):
 
 				self.assertEqual(len(newCourse.users), 0)
 				self.assertEqual(len(student.courses), 0)
+
+		def testMessageModel(self):
+			with app.app_context():
+				user = User(username="Bob", password="dinosaur", email="email@email.com", admin = True)
+				db.session.add(user)
+				db.session.commit()
+
+				self.assertEqual(len(User.query.all()), 1)
+
+				newCourse = Course(name='COMP 1010', alt_name='Computer science', professor = 1)
+				db.session.add(newCourse)
+				db.session.commit()
+
+				self.assertEqual(len(Course.query.all()), 1)
+
+				message = Message(message="Hello this is message", postTime="12:00", courseID=newCourse.courseid, userID = user.uid)
+				db.session.add(message)
+				db.session.commit()
+
+				self.assertEqual(len(Message.query.all()), 1)
+
+				
 
 if __name__ == '__main__':
 	unittest.main()

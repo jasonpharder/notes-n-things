@@ -23,11 +23,20 @@ App.CourseaddController = Ember.ObjectController.extend({
         }
 });
 
-// App.HomeController = Ember.ObjectController.extend({
-//   messages: function() {
-//     var messageId = this.get('id');
-//     return this.get('store').filter('message', function(message) {
-//       return message.get('message.id') == messageId;
-//     });
-//   }.property('messages')
-// });
+App.CourseController = Ember.ObjectController.extend({
+    needs: "user",
+    actions: {
+        subscribe: function() {
+            var course = this.get('model');
+            var user = this.get('controllers.user.content');
+            console.log(user);
+            course.get('users').addObject(user);
+            course.save();
+        },
+
+        unsubscribe: function(){
+
+        }
+    }
+
+});

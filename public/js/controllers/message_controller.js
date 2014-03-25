@@ -1,16 +1,15 @@
 App.MycourseController = Ember.ArrayController.extend({
-        currCourse : -1,
-
         actions: {
 
                 addMessage: function(messageText) {
                         var message = messageText;
-                        var currCourse = this.get('currCourse');
+                        var currCourse = this.get('currCourse');        
 
+                        console.log(this.get('currCourse'));
                         var messageAdd =this.store.createRecord('message', {
                                 message: message,
                                 posttime: "12:00pm",
-                                courseid: 4,
+                                courseid: this.get('currCourse'),
                                 userid: 1
                         });
 
@@ -28,7 +27,7 @@ App.MessageController = Ember.ObjectController.extend({
                 addComment: function(commentText) {
                         var comment = commentText;
                         var message = this.get('controllers.message.content');
-
+                        console.log(message);
                         var commentAdd =this.store.createRecord('comment', {
                                 comment: comment,
                                 posttime: "12:00pm",
