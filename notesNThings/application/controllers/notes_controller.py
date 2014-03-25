@@ -66,7 +66,7 @@ def create_note_api(restless_manager):
 		url_prefix='/api',
 		collection_name='notes',
 		postprocessors={
-	        'GET_MANY': [api_post_get_many]
+	        'GET_MANY': [api_post_get_many],
 	        'POST': [post_postprocessor],
 	        #'PUT_SINGLE': [api_post_get_many]
 	    },
