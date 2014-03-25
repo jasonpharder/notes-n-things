@@ -17,8 +17,8 @@ App.NoteaddController = Ember.ObjectController.extend({
 
 					notes.then(function() {
 		                var noteAdd = store.createRecord('note', {
-                    		name:  name,
-	        			    owner: userID
+                    		file_name: name,
+	        			    owner:     userID
         				});
 
             			noteAdd.save();
