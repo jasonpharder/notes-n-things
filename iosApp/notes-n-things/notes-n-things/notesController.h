@@ -11,6 +11,5 @@
 
 @interface notesController : UIViewController
 {
-    IBOutlet UILabel* notesList;
 }
 @end

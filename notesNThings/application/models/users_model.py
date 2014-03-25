@@ -1,5 +1,7 @@
 from notesNThings.application.models import db
-from notesNThings.application.models.stub_database import stubUsers
+from notesNThings.application.models.subscriptions_model import subscriptionTable
+from notesNThings.application.models.courses_model import Course
+from sqlalchemy.orm import relationship, backref
 
 import json
 
@@ -15,13 +17,18 @@ class User (db.Model):
     email    = db.Column(db.String(64), unique=True)
     password = db.Column(db.String())
     admin    = db.Column(db.Boolean)
+    courses = relationship("Course", secondary = subscriptionTable, backref="users")
 
-    def __init__(self, uid, username, password, email, admin):
-        self.uid = uid
+    def __init__(self, username, password, email, admin):
         self.username = username
         self.password = password
         self.email = email
         self.admin = admin
 
-def getAllUsers():
-    return json.dumps(stubUsers)
+    def course_ids(self):
+        course_id_list = []
+
+        for course in self.courses:
+            course_id_list.append( str(course.courseid) )
+
+        return course_id_list

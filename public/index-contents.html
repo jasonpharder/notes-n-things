@@ -1,0 +1,242 @@
+    <script type="text/x-handlebars">
+
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Notes-N-Things</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>{{#link-to 'home' id='home-link'}}Home{{/link-to}}</li>
+            <li>{{#link-to 'notes' id='notes-link'}}Notes{{/link-to}}</li>
+            <li>{{#link-to 'courses' id='courses-link'}}Courses{{/link-to}}</li>
+            <li>{{#link-to 'users' id='users-link'}}Users{{/link-to}}</li>
+	          <li>{{#link-to 'messages' id='messages-link'}}Message Board{{/link-to}}</li>
+            <li id="register" style="display:inline">{{#link-to 'createaccount' id='register-link'}}Register{{/link-to}}<li>
+    	      <li id="logout" style="display: none">{{#link-to 'logout' id='logout-link'}}Sign Out{{/link-to}}</li>
+	          <li id="currUser" style="display: none; color:white;">test</li>     		
+    	      <li id="login" style="display: inline">{{#link-to 'login' id='login-link'}}Sign In{{/link-to}}</li> 
+          </ul>
+	</div>
+        <!--/.nav-collapse -->
+      </div>
+      </div>
+      
+      <div class="container-fluid">
+          {{outlet}}
+      </div>
+      <!-- /.container -->
+      
+    </script>
+
+    <script type="text/x-handlebars" id="home">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar" id="home-sidebar">
+            {{#each courses}}
+            <li>{{#link-to 'mycourse' this.id}}{{name}}{{/link-to}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header" id="home-header">Subscribed Courses:</h1>
+         {{outlet}}
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="mycourse">
+        <button class="btn btn-default" type="button" id="create-message" {{action "addMessage" messageTxt}}>
+        Post!
+        </button>
+	<p id="errorMsg"></p>
+      {{input type="text" value=messageTxt id="message-field"}}
+      <br><br>
+
+      {{#each}}
+        <b>{{message}}</b>
+        
+        <li>{{posttime}}</li>
+        <li>User name: {{user.username}}</li>
+        <li>Course name: {{course.alt_name}}</li>
+        <h4>Comments:</h4>
+        {{#each comments}}
+          <li>{{comment}}</li>
+        {{/each}}
+        <br>
+      {{/each}}
+    </script>
+
+     <!--Messages Template-->
+    <script type="text/x-handlebars" id="messages">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul id="messages-sidebar" class="nav nav-sidebar">
+            {{#each}}
+            <li>{{#link-to 'message' this.id}}{{course.name}}{{/link-to}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Messages</h1>
+        {{outlet}}
+        </div>
+      </div>
+    </script>
+
+     <!--Message Template-->
+    <script type="text/x-handlebars" id="message">
+      <button class="btn btn-default" type="button" id="create-comment" {{action "addComment" commentTxt}}>
+        Post!
+        </button>
+      {{input type="text" value=commentTxt id="comment-field"}}
+      <br><br>
+      {{message}}
+      {{#each comments}}
+          <li>{{comment}}</li>
+      {{/each}}
+    </script>
+
+    <!--Notes Template-->
+    <script type="text/x-handlebars" id="notes">
+      <button class="btn btn-lg btn-primary btn-block" id="create-note" {{action 'createNote'}}>
+      Create Note
+      </button>
+      <p id="notesMsg"></p>
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" id="notes-sidebar">
+          <ul class="nav nav-sidebar">
+            {{#each}}
+            <li>{{#link-to 'note' this.id}}{{file_name}}{{/link-to}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header" id="notes-header">Notes</h1>
+        {{outlet}}
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="note">
+      <h1>Test title:{{file_name}}</h1>
+      stored as:{{stored_as}}
+      {{contents}}
+    </script>
+
+    <!--Users Template-->
+    <script type="text/x-handlebars" id="users">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar" id="users-sidebar">
+            {{#each}}
+            <li>{{#link-to 'user' this.id}}{{username}}{{/link-to}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header" id="users-header">Users</h1>
+        {{outlet}}
+        </div>
+      </div>
+    </script>
+    
+    <script type="text/x-handlebars" id="user">
+      {{#if isEditing}}
+        {{partial 'user/edit'}}
+        <button {{action 'doneEditing'}} id="done-button">Done</button>
+      {{else}}
+        <button {{action 'edit'}} id="edit-button">Edit</button>
+      {{/if}}
+
+      <h1>username: {{username}}</h1>
+      <h2>email: {{email}}</h2>
+      <h2>password: {{password}}</h2>
+    </script>
+
+    <script type="text/x-handlebars" id="user/_edit">
+      <p><font color="black">{{input type="text" value=username id="user-edit-field"}}</font></p>
+    </script>
+
+    <!--Courses Template-->
+    <script type="text/x-handlebars" id="courses">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar" id="courses-sidebar">
+            {{#each}}
+            <li>{{#link-to 'course' this.id}}{{name}}{{/link-to}}</li>
+            {{/each}}
+            <li id="addCourseBtn">{{#link-to 'courseadd' classNames="btn btn-lg btn-primary btn-block" id="create-course-button"}}Create Course{{/link-to}}</li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header" id="courses-header">Courses</h1>
+        {{outlet}}
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="course">
+      <button class="btn btn-lg btn-primary" id="subscribe-button" {{action 'subscribe'}}>
+        Subscribe
+      </button>
+      <br>
+      {{name}}
+    </script>
+
+    <script type="text/x-handlebars" id="courseadd">
+      <div id="course-container">
+        <p>Name: <font color="black">{{input type="text" value=name id="course-name-field"}}</font></p>
+        <p>Alt Name: <font color="black">{{input type="text" value=alt_name id="alt_name-field"}}</font></p>
+        <button class="btn btn-lg btn-primary" id="create-course-submit" {{action 'add' name alt_name}}>
+           Create Course
+        </button>
+	<p id="coursesMsg"></p>
+      </div>
+    </script>
+
+    <!--Login Template-->
+    <script type="text/x-handlebars" id="login">
+      <form class="form-signin" role="form" id="signin-form">
+        <h2 class="form-signin-heading">Please sign in</h2>
+	<p>Email: <font color="black">{{input type="email" value=email id="email-field"}}</font></p>
+	<p>Password: <font color="black">{{input type="password" value=password id="password-field"}}</font></p>
+	<button class="btn btn-lg btn-primary btn-block"{{action 'login' email password}} id="login-button">Login</button>
+     	{{#link-to 'createaccount' classNames="btn btn-lg btn-primary btn-block" id="create-account-button"}}Create Account{{/link-to}}
+	<p id="wrongInput"></p>
+      </form>
+      <div>
+	{{outlet}} 
+      </div>
+    </script>
+    
+    <!-- Register Template -->
+    <script type="text/x-handlebars" id="createaccount">
+      <form class="form-signin" role="form" id="register-form">
+        <h2 class="form-signin-heading">Create an Account</h2>
+        <p>Name: <font color="black">{{input type="text" value=name id="new-name-field"}}</font></p>
+ 	<p>Email: <font color="black">{{input type="email" value=email id="new-email-field"}}</font></p>
+	<p>Password <font colot="black">{{input type="password" value=password id="new-password-field"}}</font></p>
+	<button class="btn btn-lg btn-primary btn-block" {{action 'add' name email password}} id="register-button">
+	   Create Account
+	</button>
+	<p id="badInput"></p>
+      </form>
+    </script>
+
+    <!-- Logout Template-->
+    <script type="text/x-handlebars" id="logout">
+      <button class="btn btn-lg btn-primary btn-block" {{action 'logout'}} id="sign-out-button">Sign Out</button>
+      <p id="signout"></p>        
+    </script>

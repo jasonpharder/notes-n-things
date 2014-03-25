@@ -10,16 +10,17 @@
 
 @implementation notesController
 
+NSString *noteTitle = @"";
+NSString *noteId = @"";
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
     
-    notesList.text = @"Notes:";
-    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://www.notes-n-things.tk/notes"]];
+    [request setURL:[NSURL URLWithString:@"http://dev1.notes-n-things.tk/api/notes"]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     
@@ -32,6 +33,15 @@
     if (error) {
         
         NSLog(@"%@", [error localizedDescription]);
+        
+        CGRect labelFrame = CGRectMake(75, 125, 618, 20);
+        UILabel *noteLabel = [[UILabel alloc] initWithFrame:labelFrame];
+        
+        [noteLabel setText:@"error loading notes; please try again"];
+        [noteLabel setNumberOfLines:0];
+        [noteLabel setTextAlignment:NSTextAlignmentCenter];
+        [noteLabel setTextColor:[UIColor redColor]];
+        [self.view addSubview:noteLabel];
     }
     
     else {        
@@ -43,8 +53,10 @@
            
             UIButton *noteBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [noteBtn setTitle:[NSString stringWithFormat:@" %@\n", note[@"file_name"]]forState:UIControlStateNormal];
-            [noteBtn setFrame:CGRectMake(10, _y, 200, _height)];
-            [noteBtn addTarget:self action:@selector(noteDetail) forControlEvents:UIControlEventTouchUpInside];
+            [noteBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+            [noteBtn setFrame:CGRectMake(75, _y, 300, _height)];
+            [noteBtn setTag:(NSInteger)[note[@"id"] intValue]];
+            [noteBtn addTarget:self action:@selector(noteDetail:) forControlEvents:UIControlEventTouchUpInside];
             
             [self.view addSubview:noteBtn];
             _y = _y + _height;
@@ -52,6 +64,7 @@
             NSLog(@"---");
             NSLog(@"name %@", note[@"file_name"]);
             NSLog(@"alt Name %@", note[@"contents"]);
+            NSLog(@"id %@", note[@"id"]);
             NSLog(@"---");
             
         }
@@ -64,9 +77,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)noteDetail
+- (IBAction)noteDetail:(id)sender
 {
-    
+    noteTitle = [(UIButton *)sender currentTitle];
+    noteId = [NSString stringWithFormat:@"%i",((UIButton *)sender).tag ];
     noteController *noteControllerView = [self.storyboard instantiateViewControllerWithIdentifier:@"noteControllerView"];
     [self.navigationController pushViewController:noteControllerView animated:YES];
 }

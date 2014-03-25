@@ -7,8 +7,11 @@ App.NotesController = Ember.ArrayController.extend({
 			this.set('isEditing', false);
 			//var record = this.get('model');
 		    //record.save();
-		}
+		},
+		createNote: function () {
+
+  		}
 	},
 
-	isEditing: false,
+	isEditing: false,    
 });

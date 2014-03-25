@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>5F6B85A0-8833-41E0-9F01-DB900EB19BE3</string>
+	<string>E64F3BBA-09EA-46AA-A183-B8190FBF5C28</string>
 	<key>IDESourceControlProjectName</key>
 	<string>notes-n-things</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>D3C4C908-587B-4DE6-8088-004398421AF4</key>
+		<key>F4270B30-590B-41C5-921D-D20A0461380D</key>
 		<string>https://github.com/jasonpharder/notes-n-things</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iosApp/notes-n-things/notes-n-things.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>D3C4C908-587B-4DE6-8088-004398421AF4</key>
+		<key>F4270B30-590B-41C5-921D-D20A0461380D</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>D3C4C908-587B-4DE6-8088-004398421AF4</string>
+	<string>F4270B30-590B-41C5-921D-D20A0461380D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>D3C4C908-587B-4DE6-8088-004398421AF4</string>
+			<string>F4270B30-590B-41C5-921D-D20A0461380D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>notes-n-things</string>
 		</dict>

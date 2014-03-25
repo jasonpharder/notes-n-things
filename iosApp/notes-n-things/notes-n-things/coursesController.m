@@ -10,6 +10,10 @@
 
 @implementation coursesController
 
+NSString *courseName = @"";
+NSString *courseId = @"";
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -19,7 +23,7 @@
     coursesList.text = @"Courses:";
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://www.notes-n-things.tk/courses"]];
+    [request setURL:[NSURL URLWithString:@"http://dev1.notes-n-things.tk/api/courses"]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     
@@ -32,6 +36,15 @@
     if (error) {
         
         NSLog(@"%@", [error localizedDescription]);
+        
+        CGRect labelFrame = CGRectMake(75, 125, 618, 20);
+        UILabel *noteLabel = [[UILabel alloc] initWithFrame:labelFrame];
+        
+        [noteLabel setText:@"error loading courses; please try again"];
+        [noteLabel setNumberOfLines:0];
+        [noteLabel setTextAlignment:NSTextAlignmentCenter];
+        [noteLabel setTextColor:[UIColor redColor]];
+        [self.view addSubview:noteLabel];
     }
     
     else {
@@ -45,7 +58,8 @@
             UIButton *courseBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             [courseBtn setTitle:[NSString stringWithFormat:@" %@\n", course[@"name"]]forState:UIControlStateNormal];
             [courseBtn setFrame:CGRectMake(10, _y, 200, _height)];
-            [courseBtn addTarget:self action:@selector(courseDetail) forControlEvents:UIControlEventTouchUpInside];
+            [courseBtn setTag:(NSInteger)[course[@"id"] intValue]];
+            [courseBtn addTarget:self action:@selector(courseDetail:)  forControlEvents:UIControlEventTouchUpInside];
   
             [self.view addSubview:courseBtn];
             _y = _y + _height;
@@ -53,9 +67,9 @@
             NSLog(@"---");
             NSLog(@"name %@", course[@"name"]);
             NSLog(@"alt Name %@", course[@"alt_name"]);
+            NSLog(@"courseid %@", course[@"id"]);
             NSLog(@"---");
         }
-        //coursesList.text = courses;
     }
 }
 
@@ -65,11 +79,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)courseDetail
+- (IBAction)courseDetail:(id)sender
 {
+    courseName = [(UIButton *)sender currentTitle];
+    courseId = [NSString stringWithFormat:@"%i",((UIButton *)sender).tag ];
     courseController *courseControllerView = [self.storyboard instantiateViewControllerWithIdentifier:@"courseControllerView"];
     [self.navigationController pushViewController:courseControllerView animated:YES];
-    
 }
 
 

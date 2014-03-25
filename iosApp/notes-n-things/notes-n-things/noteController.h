@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#ifndef NOTECONTROLLER_H
+#define NOTECONTROLLER_H
+
 
 @interface noteController : UIViewController
 {
-    IBOutlet UILabel* noteLabel;
 }
+
+#endif /* NOTECONTROLLER_H */
+
 @end
