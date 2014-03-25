@@ -34,7 +34,7 @@ def post_preprocessor(data=None, **kw):
 	"""
 	print "NOTE------------------->POST  preprocessor"
 	print data
-	#data = data['user'].copy()
+
 	data['stored_as'] = data['note']['stored_as']
 	data['owner'] = data['note']['owner']
 	del data['note']
@@ -66,7 +66,7 @@ def create_note_api(restless_manager):
 		url_prefix='/api',
 		collection_name='notes',
 		postprocessors={
-	        'GET_MANY': [api_post_get_many]
+	        'GET_MANY': [api_post_get_many],
 	        'POST': [post_postprocessor],
 	        #'PUT_SINGLE': [api_post_get_many]
 	    },

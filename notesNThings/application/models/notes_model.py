@@ -1,5 +1,6 @@
 from notesNThings.application.models import db
 import json
+import random
 
 class Note (db.Model):
     # Setting the table name and
@@ -7,13 +8,10 @@ class Note (db.Model):
     __tablename__ = 'notes' 
     uid = db.Column(db.Integer, primary_key = True)
     stored_as = db.Column(db.String(64), unique=True)
-    file_name = db.Column(db.String(32), unique=True)
+    file_name = db.Column(db.String(32))
     owner = db.Column(db.Integer, db.ForeignKey('users.uid'))
-    rating = db.Column(db.Integer)
 
-    def __init__(self, uid, stored_as, file_name, owner, rating):
-        self.uid = uid
+    def __init__(self, stored_as, owner):
         self.stored_as = stored_as
-        self.file_name = file_name
+        self.file_name = randint(10000000000000000000,100000000000000000000)
         self.owner = owner
-        self.rating = rating
