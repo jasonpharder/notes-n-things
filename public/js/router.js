@@ -69,7 +69,16 @@ App.MycourseRoute = Ember.Route.extend({
 App.HomeRoute = Ember.Route.extend(
 {
 	model: function() {
-	 	return this.store.find('user', 1);  
+		var userID = 1;	// guest user
+		var cookie = document.cookie;                   
+	    if (cookie.length != 0)
+	    {
+	            var cookieUID = cookie.split(';');
+	            var temp = cookieUID[1].split('=');
+	            var userID = temp[1];
+	    }
+
+	 	return this.store.find('user', userID);  
 	}
 
 });
