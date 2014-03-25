@@ -34,7 +34,7 @@ def post_preprocessor(data=None, **kw):
 	"""
 	print "NOTE------------------->POST  preprocessor"
 	print data
-	#data = data['user'].copy()
+
 	data['stored_as'] = data['note']['stored_as']
 	data['owner'] = data['note']['owner']
 	del data['note']
