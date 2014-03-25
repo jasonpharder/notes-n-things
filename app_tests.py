@@ -131,7 +131,7 @@ class NotesTestCase(unittest.TestCase):
 
 				self.assertEqual(len(Course.query.all()), 1)
 
-				message = Message(message="Hello this is message", postTime="12:00", courseID=newCourse.courseid, userID = user.uid)
+				message = Message(message="Hello this is message", posttime="1999-Jan-08", courseid=newCourse.courseid, userid = user.uid)
 				db.session.add(message)
 				db.session.commit()
 
