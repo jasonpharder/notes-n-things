@@ -22,8 +22,11 @@ def api_get_many(result=None, **kw):
 			user['id'] = user['uid']
 
 		del course['users']
-		course['users'] = course['user_ids']
-		del course['user_ids']
+		#course['users'] = course['user_ids']
+		#del course['user_ids']
+
+	#TESTING temporary remove users sideloaded data
+	del result['users']
 
 	print result
 
@@ -38,6 +41,8 @@ def patch_single_preprocessor(instance_id=None, data=None, **kw):
 	data['name'] = data['course']['name']
 	data['alt_name'] = data['course']['alt_name']
 	data['professor'] = data['course']['professor']
+	userId = data['course']['users'][0]
+	data['users'] = {"add" : { "uid" : int(userId)}}
 	del data['course']
 	print "DATA AFTER PARSING "+instance_id
 	print data
@@ -53,6 +58,8 @@ def patch_single_postprocessor(result=None, **kw):
 		if key != 'course': 
 			del result[key]
 	
+	del result['course']['users']
+	#del result['course']['user_ids']
 	result['course']['id'] = result['course']['courseid']
 	print result	
 	pass
@@ -94,12 +101,13 @@ def create_course_api(restless_manager):
 	restless_manager.create_api(
 		Course, 
 
-		include_methods=['user_ids'],
+		#include_methods=['user_ids'],
 		methods=['GET', 'POST', 'DELETE', 'PUT'], 
 		url_prefix='/api',
 		collection_name='courses',
 		postprocessors={
 	        'GET_MANY': [api_get_many],
+	        'GET_SINGLE': [patch_single_postprocessor],
 	        'POST': [post_postprocessor],
 	        'PUT_SINGLE': [patch_single_postprocessor]
 	    },

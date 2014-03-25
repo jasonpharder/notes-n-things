@@ -1,6 +1,5 @@
 from notesNThings.application.models import db
 from notesNThings.application.models.subscriptions_model import subscriptionTable
-from notesNThings.application.models.stub_database import stubCourses
 from sqlalchemy.orm import relationship, backref
 
 import json
@@ -21,14 +20,10 @@ class Course (db.Model):
         self.user_ids = []
 
     def user_ids(self):
-
-	user_id_list = []
+        user_id_list = []
 
         for user in self.users:
             user_id_list.append( str(user.uid) )
 
-	return user_id_list
-
-def getAllCourses():
-    return json.dumps(stubCourses)
+        return user_id_list
 
