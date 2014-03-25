@@ -18,10 +18,9 @@
 </script>
 
 <script type="text/x-handlebars" id="noteadd">
-  <div id="notes-container">
-  	<h3>Create Note</h3>
+  <div id="note-container">
     <p>Name: <font color="black">{{input type="text" value=name id="note-name-field"}}</font></p>
-    <button class="btn btn-lg btn-primary" id="create-course-submit" {{action 'add' name}}>
+    <button class="btn btn-lg btn-primary" id="create-note-submit" {{action 'add' name}}>
       Create Note
     </button>
     <p id="notesMsg"></p>
