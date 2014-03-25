@@ -1,4 +1,4 @@
-App.NotesaddController = Ember.ObjectController.extend({
+App.NoteaddController = Ember.ObjectController.extend({
     actions: {
         add: function(noteName) {
             var name   = noteName;
