@@ -143,3 +143,10 @@ App.NoteRoute = Ember.Route.extend({
 	}
 })
 
+App.NoteaddRoute = Ember.Route.extend({
+  	model: function(){
+    	// the model for this route is a new empty Ember.Object
+    	return Em.Object.create({});
+  	}
+ });
+
