@@ -108,11 +108,11 @@ def create_user_api(restless_manager):
 		postprocessors={
 	        'GET_MANY': [api_get_many],
 	        'GET_SINGLE': [patch_single_postprocessor],
-		'POST': [post_postprocessor],
+			'POST': [post_postprocessor],
 	        'PUT_SINGLE': [patch_single_postprocessor]
 	    },
 	    preprocessors={
-		'POST': [post_preprocessor],
+			'POST': [post_preprocessor],
 	        'PUT_SINGLE': [patch_single_preprocessor]
 	    }
 	)
