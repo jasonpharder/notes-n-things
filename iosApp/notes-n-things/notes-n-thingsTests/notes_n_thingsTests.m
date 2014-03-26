@@ -81,4 +81,32 @@
     }
 }
 
+// test getting the notes once it is up and running
+- (void)testGettingNotes
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:@"http://dev3.notes-n-things.tk/api/notes"]];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLResponse *response;
+    NSData *allNotesData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    
+    NSError *error;
+    NSMutableDictionary *allNotes = [NSJSONSerialization JSONObjectWithData:allNotesData options:NSJSONReadingMutableContainers error:&error];
+    
+    if (error) {
+        
+        NSLog(@"%@", [error localizedDescription]);
+
+    }
+    
+    else {
+        NSArray *notesArray = allNotes[@"notes"];
+        NSString *firstNote = notesArray[0][@"file_name"];
+        STAssertTrue([firstNote isEqualToString:@"Lecture 1"], @"Make sure we get the note used as a test");
+    }
+}
+
+
 @end
