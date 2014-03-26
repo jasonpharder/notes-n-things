@@ -39,10 +39,11 @@ App.NotesController = Ember.ArrayController.extend({
 		editNote: function () {
     		this.set('isEditing')
 		},
-		doneEditing: function() {
+		doneEditing: function(uid, editedText) {
 			this.set('isEditing', false);
-			//var record = this.get('model');
-		    //record.save();
+			
+			var record = this.get('model');
+		    record.save();
 		}
 	},
 
