@@ -24,10 +24,9 @@
     [super tearDown];
 }
 
-- (void)testLogin
+//login relies on NSUserDefaults test them to make sure it works
+- (void)testUsingNSUserDefaults
 {
-    //login relies on NSUserDefaults test them to make sure it works
-    
     //they can be set to empty strings and not remain nil
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"email"];
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"password"];
@@ -51,6 +50,35 @@
     STAssertEquals([[NSUserDefaults standardUserDefaults] stringForKey:@"email"], @"", @"Can't set user default email with string");
     STAssertEquals([[NSUserDefaults standardUserDefaults] stringForKey:@"password"], @"", @"Can't set user default password with empty string");
     STAssertEquals([[NSUserDefaults standardUserDefaults] stringForKey:@"uid"], @"", @"Can't set user default uid with empty string");
+}
+
+//make sure we get the course we know is in the database
+- (void)testGettingCourses
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    //using dev3 the test server
+    [request setURL:[NSURL URLWithString:@"http://dev3.notes-n-things.tk/api/courses"]];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSURLResponse *response;
+    NSData *allCoursesData= [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    
+    NSError *error;
+    NSMutableDictionary *allCourses = [NSJSONSerialization JSONObjectWithData:allCoursesData options:NSJSONReadingMutableContainers error:&error];
+    
+    if (error) {
+        
+        NSLog(@"%@", [error localizedDescription]);
+        
+    }
+    
+    else {
+        
+        NSArray *coursesArray = allCourses[@"courses"];
+        NSString *firstCourse = coursesArray[0][@"name"];
+        STAssertTrue([firstCourse isEqualToString:@"COMP 1010"], @"Make sure we get the course used as a test");
+    }
 }
 
 @end
