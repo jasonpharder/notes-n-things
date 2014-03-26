@@ -19,7 +19,7 @@ extern NSString *noteId;
 	// Do any additional setup after loading the view, typically from a nib.
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSMutableString *url = [NSMutableString stringWithString:@"http://dev5.notes-n-things.tk/api/notes/"];
+    NSMutableString *url = [NSMutableString stringWithString:@"http://notes-n-things.tk/api/notes/"];
     [url appendString:noteId];
     [request setURL:[NSURL URLWithString:[NSString stringWithString:url]]];
     [request setHTTPMethod:@"GET"];
