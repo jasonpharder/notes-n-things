@@ -152,16 +152,8 @@
     </script>
     
     <script type="text/x-handlebars" id="user">
-      {{#if isEditing}}
-        {{partial 'user/edit'}}
-        <button {{action 'doneEditing'}} id="done-button">Done</button>
-      {{else}}
-        <button {{action 'edit'}} id="edit-button">Edit</button>
-      {{/if}}
-
       <h1>username: {{username}}</h1>
       <h2>email: {{email}}</h2>
-      <h2>password: {{password}}</h2>
     </script>
 
     <script type="text/x-handlebars" id="user/_edit">
