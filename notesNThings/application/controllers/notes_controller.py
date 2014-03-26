@@ -27,6 +27,29 @@ def api_post_get_many(result=None, **kw):
 		#DEBUG Print
 		print test
 
+def patch_single_preprocessor(instance_id=None, data=None, **kw):
+	print "patch single preprocessor"
+	print data
+
+	data['file_name'] = data['note']['file_name']
+	data['owner'] = data['note']['owner']
+	data['contents'] = data['note']['contents']
+	del data['note']
+	print "data AFTER PARSING "+instance_id
+	print data
+	pass
+
+def patch_single_postprocessor(result=None, **kw):
+	print "patch single postprocessor"
+	result['note'] = result.copy()
+	for key in result.keys():
+		if key != 'note': 
+			del result[key]
+	
+	result['note']['id'] = result['note']['uid']
+
+	pass
+
 def post_preprocessor(data=None, **kw):
 	"""Accepts a single argument, `data`, which is the dictionary of
 	fields to set on the new instance of the model.
@@ -54,7 +77,7 @@ def post_postprocessor(result=None, **kw):
 			del result[key]
 
 	result['note']['id'] = result['note']['uid']
-	print result	
+	print result
 	pass
 
 def create_note_api(restless_manager):
@@ -68,10 +91,10 @@ def create_note_api(restless_manager):
 		postprocessors={
 	        'GET_MANY': [api_post_get_many],
 	        'POST': [post_postprocessor],
-	        #'PUT_SINGLE': [api_post_get_many]
+	        'PUT_SINGLE': [patch_single_postprocessor]
 	    },
 	    preprocessors={
 	        'POST': [post_preprocessor],
-	        #'PUT_SINGLE': [api_post_get_many]
+	        'PUT_SINGLE': [patch_single_preprocessor]
 	    }
 	)

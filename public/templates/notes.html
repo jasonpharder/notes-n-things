@@ -30,5 +30,15 @@
 <script type="text/x-handlebars" id="note">
 	<h1>Test title:{{file_name}}</h1>
 	stored as:{{stored_as}}
-	{{contents}}
+	{{#if isEditing}}
+    	{{partial 'notes/edit'}}
+    	<button {{action 'doneEditing'}} id="done-button">Done</button>
+    {{else}}
+    	{{contents}}
+    	<button {{action 'edit'}} id="edit-button">Edit</button>
+  	{{/if}}
+</script>
+
+<script type="text/x-handlebars" id="notes/_edit">
+  <p>{{input type="textarea" value=contents id="user-edit-field"}}</p>
 </script>

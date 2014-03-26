@@ -3,5 +3,6 @@ App.Note = DS.Model.extend({
 	stored_as: DS.attr('string'),
 	file_name: DS.attr('string'),
 	owner:     DS.attr(),
-	rating:    DS.attr()
+	rating:    DS.attr(),
+	contents:  DS.attr('string')
 });
