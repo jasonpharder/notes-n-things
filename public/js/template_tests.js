@@ -2,6 +2,10 @@ module("Testing the templates", {
 	setup: function() {
 		App.reset();
 		App.injectTestHelpers();
+
+		$.removeCookie("userID");
+                $.removeCookie("username");
+
 		App.Course.FIXTURES = [{
 			alt_name:	"This is test data",
 			courseid:	1,
@@ -44,6 +48,18 @@ module("Testing the templates", {
 			comments:	[]
 		}];
 
+<<<<<<< HEAD
+=======
+		App.Comment.FIXTURES=[{
+			comment:	"Test comment",
+			commentid:	1,
+			messageid:	1,
+			posttime:	"2014-03-26T12:00:00",
+			user:		1
+		}];
+
+
+>>>>>>> 8da9b8b92ccc62a47b48a7f0cb3d848db70420f5
 	}
 });
 
@@ -66,7 +82,7 @@ test("Does the homepage work correctly", function() {
 test("Does the notes page work correctly", function() {
 
 	visit("/notes")
-		.assertElementExists("button#create-note", "found create note button");
+		.assertElementExists("a#create-note-button", "found create note button");
 
 	visit("/notes")
 		.assertElementExists("div#notes-sidebar", "found notes sidebar");
@@ -131,13 +147,13 @@ test("Does the users page load correctly", function(){
 
 });
 
-//test("Does the message board page load correctly", function(){
-//	visit("/messages")
-//		.assertElementExists(":contains('Messages')", "found messages header");
+test("Does the message board page load correctly", function(){
+	visit("/messages")
+		.assertElementExists(":contains('Messages')", "found messages header");
 
-//	visit("/messages")
-//		.assertElementExists("ul#messages-sidebar", "found messages sidebar");
-//});
+	visit("/messages")
+		.assertElementExists("ul#messages-sidebar", "found messages sidebar");
+});
 
 test("Do individual course pages load correctly", function(){
 	visit("/courses/1")
@@ -157,8 +173,8 @@ test("Do individual user pages load correctly", function(){
 		.assertElementExists(":contains('username: tester')", "found individual user");
 });
 
-//test("Do individual message pages load correctly", function(){
-//	visit("/messages/1")
-//		.assertElementExists(":contains('Hello world')", "found individual message");
-//});
+test("Do individual message pages load correctly", function(){
+	visit("/messages/1")
+		.assertElementExists(":contains('Hello world')", "found individual message");
+});
 
