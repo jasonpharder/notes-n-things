@@ -2,7 +2,7 @@ App.UserController = Ember.ObjectController.extend({
 	isEditing: false,
 
   	actions: {
-		editNote: function() {
+		edit: function() {
 			this.set('isEditing', true);
 		},
 

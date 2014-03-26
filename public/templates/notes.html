@@ -34,11 +34,11 @@
     	{{partial 'note/edit'}}
     	<button {{action 'doneEditing'}} id="done-button">Done</button>
     {{else}}
-    	{{contents}}
+    	<p>{{contents}}</p>
     	<button {{action 'editNote'}} id="edit-button">Edit</button>
   	{{/if}}
 </script>
 
 <script type="text/x-handlebars" id="note/_edit">
-  <p>{{input type="textarea" value=contents id="user-edit-field"}}</p>
+  <p>{{textarea type="textarea" value=contents id="user-edit-field"}}</p>
 </script>

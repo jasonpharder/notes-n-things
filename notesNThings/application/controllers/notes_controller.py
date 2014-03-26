@@ -85,7 +85,7 @@ def create_note_api(restless_manager):
 	# default. Allowed HTTP methods can be specified as well.
 	restless_manager.create_api(
 		Note,  
-		methods=['GET', 'POST', 'DELETE'], 
+		methods=['GET', 'POST', 'PUT', 'DELETE'], 
 		url_prefix='/api',
 		collection_name='notes',
 		postprocessors={

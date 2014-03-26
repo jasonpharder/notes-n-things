@@ -35,10 +35,13 @@ App.NoteaddController = Ember.ObjectController.extend({
 });
 
 App.NotesController = Ember.ArrayController.extend({
+});
+
+App.NoteController = Ember.ObjectController.extend({
 	isEditing: false,   
 	actions: {
 		editNote: function () {
-    		this.set('isEditing')
+    			this.set('isEditing', true);
 		},
 		doneEditing: function(uid, editedText) {
 			this.set('isEditing', false);
