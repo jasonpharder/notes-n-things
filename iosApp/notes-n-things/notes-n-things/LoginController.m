@@ -45,6 +45,7 @@ UILabel *noticeLabel;
     [self.view addSubview:submitBtn];
     
     emailField = [[UITextField alloc] initWithFrame:CGRectMake(292, 393, 267, 30)];
+    emailField.accessibilityLabel = @"Email Field";
     emailField.borderStyle = UITextBorderStyleRoundedRect;
     emailField.font = [UIFont systemFontOfSize:15];
     emailField.placeholder = @"Please enter your Email";
@@ -59,6 +60,7 @@ UILabel *noticeLabel;
     [self.view addSubview:emailField];
     
     passField = [[UITextField alloc] initWithFrame:CGRectMake(292, 443, 267, 30)];
+    passField.accessibilityLabel = @"Password Field";
     passField.borderStyle = UITextBorderStyleRoundedRect;
     passField.font = [UIFont systemFontOfSize:15];
     passField.placeholder = @"Please enter your Password";

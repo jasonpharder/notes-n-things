@@ -44,10 +44,7 @@ App.MessageController = Ember.ObjectController.extend({
         actions: {
 
                 addComment: function(commentText) {
-			var cookie = document.cookie();
-
-
-                        var comment = commentText;
+                    var comment = commentText;
                		var message = this.get('controllers.message.content');
                 	var timestamp = new Date();
 	                console.log(message);
