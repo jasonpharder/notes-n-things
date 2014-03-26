@@ -2,6 +2,10 @@ module("Testing the templates", {
 	setup: function() {
 		App.reset();
 		App.injectTestHelpers();
+
+		$.removeCookie("userID");
+                $.removeCookie("username");
+
 		App.Course.FIXTURES = [{
 			alt_name:	"This is test data",
 			courseid:	1,
