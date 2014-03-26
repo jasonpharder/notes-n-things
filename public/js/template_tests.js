@@ -40,6 +40,14 @@ module("Testing the templates", {
 			comments:	[]
 		}];
 
+		App.Comment.FIXTURES=[{
+			comment:	"Test comment",
+			commentid:	1,
+			messageid:	1,
+			posttime:	"2014-03-26T12:00:00",
+			user:		1
+		}];
+
 
 	}
 });
@@ -128,13 +136,13 @@ test("Does the users page load correctly", function(){
 
 });
 
-//test("Does the message board page load correctly", function(){
-//	visit("/messages")
-//		.assertElementExists(":contains('Messages')", "found messages header");
+test("Does the message board page load correctly", function(){
+	visit("/messages")
+		.assertElementExists(":contains('Messages')", "found messages header");
 
-//	visit("/messages")
-//		.assertElementExists("ul#messages-sidebar", "found messages sidebar");
-//});
+	visit("/messages")
+		.assertElementExists("ul#messages-sidebar", "found messages sidebar");
+});
 
 test("Do individual course pages load correctly", function(){
 	visit("/courses/1")
@@ -154,8 +162,8 @@ test("Do individual user pages load correctly", function(){
 		.assertElementExists(":contains('username: tester')", "found individual user");
 });
 
-//test("Do individual message pages load correctly", function(){
-//	visit("/messages/1")
-//		.assertElementExists(":contains('Hello world')", "found individual message");
-//});
+test("Do individual message pages load correctly", function(){
+	visit("/messages/1")
+		.assertElementExists(":contains('Hello world')", "found individual message");
+});
 
