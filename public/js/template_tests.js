@@ -71,7 +71,7 @@ test("Does the homepage work correctly", function() {
 test("Does the notes page work correctly", function() {
 
 	visit("/notes")
-		.assertElementExists("button#create-note", "found create note button");
+		.assertElementExists("a#create-note-button", "found create note button");
 
 	visit("/notes")
 		.assertElementExists("div#notes-sidebar", "found notes sidebar");
