@@ -7,7 +7,7 @@ notes-n-things is the group Software Development project for Group 6
 Production Server: www.notes-n-things.tk<br  />
 Dev Server 1: dev1.notes-n-things.tk<br />
 Dev Server 2: dev2.notes-n-things.tk<br />
-Dev Server 3: dev3.notes-n-things.tk<br />
+Dev Server 3: dev3.notes-n-things.tk Testing server<br />
 Dev Server 4: dev4.notes-n-things.tk<br />
 Dev Server 5: dev5.notes-n-things.tk<br />
 
@@ -42,6 +42,22 @@ If this happens for one of the features it is easier to change what cucumber run
   $cucumber features/*.feature
   where * is navigation or login depending on which had a fail
 </code></pre>
+
+## Running Selenium Tests
+
+Selenium tests should be run on a clean database (that is with no entries other than a user with id of 1 named guest, and a course with an id of 1 named COMP 1010).
+
+To avoid messing up the database, run CreateUserCheckIfShowsUpInUserTab first.
+
+Selenium Tests should be run on slow mode.
+
+## Running QUnit Tests
+
+Visit the /tests.html path on the production server or on the testing server.
+
+## Running Server Side Tests
+
+Run app_tests.py using the Python from the Notes 'N Things environment's bin.
 
 ## Server Maintenance
 
