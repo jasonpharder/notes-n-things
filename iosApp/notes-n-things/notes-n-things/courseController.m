@@ -26,7 +26,7 @@ extern NSString *noteId;
     self.navigationItem.title = courseName;
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    NSMutableString *url = [NSMutableString stringWithString:@"http://dev5.notes-n-things.tk/api/notes?q={\"filters\":[{\"name\":\"courseid\",\"op\":\"eq\",\"val\":\""];
+    NSMutableString *url = [NSMutableString stringWithString:@"http://notes-n-things.tk/api/notes?q={\"filters\":[{\"name\":\"courseid\",\"op\":\"eq\",\"val\":\""];
     [url appendString:courseId];
     [url appendString:@"\"}]}"];
     NSURL *theurl = [NSURL URLWithString: [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];

@@ -23,7 +23,7 @@ NSString *courseId = @"";
     coursesList.text = @"Courses:";
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://dev5.notes-n-things.tk/api/courses"]];
+    [request setURL:[NSURL URLWithString:@"http://notes-n-things.tk/api/courses"]];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"application/json;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     
