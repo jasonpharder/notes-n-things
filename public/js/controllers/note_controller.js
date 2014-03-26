@@ -35,6 +35,7 @@ App.NoteaddController = Ember.ObjectController.extend({
 });
 
 App.NotesController = Ember.ArrayController.extend({
+	isEditing: false,   
 	actions: {
 		editNote: function () {
     		this.set('isEditing')
@@ -45,7 +46,5 @@ App.NotesController = Ember.ArrayController.extend({
 			var record = this.get('model');
 		    record.save();
 		}
-	},
-
-	isEditing: false,    
+	}, 
 });
