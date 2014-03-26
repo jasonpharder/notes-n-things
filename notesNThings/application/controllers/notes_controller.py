@@ -60,6 +60,7 @@ def post_preprocessor(data=None, **kw):
 
 	data['file_name'] = data['note']['file_name']
 	data['owner'] = data['note']['owner']
+	data['contents'] = ''
 	del data['note']
 	print data
 
