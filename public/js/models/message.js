@@ -1,4 +1,5 @@
 App.Message = DS.Model.extend({
+	title: DS.attr('string'),
 	message: DS.attr('string'),
 	posttime:  DS.attr('string'),
 	course:  DS.belongsTo('course'),

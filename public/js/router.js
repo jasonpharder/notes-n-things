@@ -40,8 +40,8 @@ App.LoginRoute = Ember.Route.extend({
 
 App.CreateaccountRoute = Ember.Route.extend({
 	model: function() {
-	//the model for this route is a new empty Ember.Object
-	return Em.Object.create({});
+		//the model for this route is a new empty Ember.Object
+		return Em.Object.create({});
 	}
  });
 
@@ -76,9 +76,10 @@ App.HomeRoute = Ember.Route.extend(
 		var cookie = document.cookie;                   
 	    if (cookie.length != 0)
 	    {
-	            var cookieUID = cookie.split(';');
-	            var temp = cookieUID[1].split('=');
-	            var userID = temp[1];
+            var cookieUID = cookie.split(';');
+            var temp = cookieUID[1].split('=');
+            var userID = temp[1];
+            console.log("userID: " + userID);
 	    }
 
 	 	return this.store.find('user', userID);  
@@ -96,7 +97,6 @@ App.MessagesRoute = Ember.Route.extend(
 App.MessageRoute = Ember.Route.extend({
 	model: function(params) {
 		return this.store.find('message', params.message_id);
-		//return this.modelFor('messages').comments.findBy('id', params.comment_id);
 	}
 });
 
@@ -125,9 +125,6 @@ App.CourseRoute = Ember.Route.extend({
 
 	setupController: function (controller, model) 
   	{
-  		//var user = this.store.find('user', 1);
-  		//console.log(user.get('username'));
-  		//console.log(user);
   		controller.set('model', model);
      	controller.set('currUser', this.store.find('user', 1));
   	}

@@ -36,23 +36,34 @@
 </script>
 
 <script type="text/x-handlebars" id="mycourse">
-    <button class="btn btn-default" type="button" id="create-message" {{action "addMessage" messageTxt}}>
+    
+    <div class="col-sm-10">
+      {{input type="text" class="form-control" placeholder="title" value=titleTxt id="msgtitle-field"}} 
+      {{input type="text" class="form-control" placeholder="message" value=messageTxt id="message-field"}}
+    </div>
+    
+    <button class="btn btn-primary" type="button" id="create-message" {{action "addMessage" titleTxt messageTxt}}>
     Post!
     </button>
    <p id="errorMsg"></p>
-  {{input type="text" value=messageTxt id="message-field"}}
-  <br><br>
+    <br><br>
 
-  {{#each}}
-    <b>{{message}}</b>
-    
-    <li>{{posttime}}</li>
-    <li>User name: {{user.username}}</li>
-    <li>Course name: {{course.alt_name}}</li>
-    <h4>Comments:</h4>
-    {{#each comments}}
-      <li>{{comment}}</li>
-    {{/each}}
-    <br>
+  {{#each itemController="message"}}
+    <div class="jumbotron">
+      <h2>{{title}}</h2>
+      <h5>by {{user.username}}</h5>
+      <p>{{message}}</p>
+      <h4>Comments:</h4>
+      <ul class="list-group">
+      {{#each comments itemController="comment"}}
+        <li class="list-group-item">{{comment}}</li>
+      {{/each}}
+      </ul>
+      <br>
+      {{input class="form-control" type="text" value=commentTxt}}
+      <button class="btn btn-default" type="button" id="create-comment2" {{action "addComment" commentTxt}}>
+      add comment!
+      </button>
+    </div>
   {{/each}}
 </script>

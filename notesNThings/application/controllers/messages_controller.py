@@ -60,6 +60,7 @@ def post_preprocessor(data=None, **kw):
 	print "MESSAGE: POST  preprocessor"
 	print data
 	#data = data['user'].copy()
+	data['title'] = data['message']['title']
 	data['messagetxt'] = data['message']['message']
 	data['posttime'] = data['message']['posttime']
 	data['userid'] = data['message']['userid']

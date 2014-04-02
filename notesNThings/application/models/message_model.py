@@ -7,13 +7,15 @@ class Message (db.Model):
     # creating columns for various fields
     __tablename__ = 'messages'
     messageid = db.Column(db.Integer, primary_key = True)
-    message = db.Column(db.String(455))
+    title = db.Column(db.String(455))
+    message = db.Column(db.Text())
     posttime = db.Column(db.DateTime)
     courseid = db.Column(db.Integer, db.ForeignKey('courses.courseid'))
     userid = db.Column(db.Integer, db.ForeignKey('users.uid'))
     comments = db.relationship('Comment', backref='message',lazy='dynamic')
 
-    def __init__(self, message, posttime, courseid, userid):
+    def __init__(self, title, message, posttime, courseid, userid):
+        self.title = title
         self.message = message
         self.posttime = posttime
         self.courseid = courseid
