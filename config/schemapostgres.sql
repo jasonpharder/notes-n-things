@@ -11,6 +11,7 @@ CREATE TABLE notes (
         stored_as VARCHAR(64),
         file_name VARCHAR(32),
         owner integer REFERENCES users(uid),
+        contents TEXT,
         rating integer
 );
 
@@ -36,7 +37,8 @@ CREATE TABLE courses (
 
 CREATE TABLE messages (
         messageID serial PRIMARY KEY,
-        message VARCHAR(455) NOT NULL,
+        title VARCHAR(455) NOT NULL,
+        message TEXT NOT NULL,
         postTime TIMESTAMP NOT NULL,
         courseID integer NOT NULL REFERENCES courses(courseID),
         userID integer NOT NULL REFERENCES users(uid)
@@ -65,7 +67,7 @@ CREATE TABLE todo (
 
 CREATE TABLE comments (
         commentID serial PRIMARY KEY,
-        comment VARCHAR(255),
+        comment TEXT,
         postTime TIMESTAMP NOT NULL,
         userID integer NOT NULL REFERENCES users(uid),
         messageID integer NOT NULL REFERENCES messages(messageID)

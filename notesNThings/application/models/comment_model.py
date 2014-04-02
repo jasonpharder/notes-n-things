@@ -6,7 +6,7 @@ class Comment (db.Model):
     # creating columns for various fields
     __tablename__ = 'comments'
     commentid = db.Column(db.Integer, primary_key = True)
-    comment = db.Column(db.String(255))
+    comment = db.Column(db.Text())
     posttime = db.Column(db.DateTime)
     userid = db.Column(db.Integer, db.ForeignKey('users.uid'))
     messageid = db.Column(db.Integer, db.ForeignKey('messages.messageid'))
