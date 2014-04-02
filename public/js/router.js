@@ -2,23 +2,25 @@ App.Router.map(function() {
 	this.resource('home', { path : '/'}, function() {
 		this.resource('mycourse', { path : ':course_id' } );
 	});
+
 	this.resource('messages', function() {
-		this.resource('message', { path : ':message_id' }, function()
-		{
-			this.resource('comments');
-		});
+		this.resource('message', { path : ':message_id' });
 	});
+
 	this.resource('notes', function() {
 		this.resource('note', { path : ':note_id' } );
 		this.resource('noteadd');
 	});
+
 	this.resource('courses', function() {
 		this.resource('course', { path : ':course_id' } );
 		this.resource('courseadd');
 	});
+
 	this.resource('users', function() {
 		this.resource('user', { path : ':user_id' } );
 	});
+
 	this.resource('login');
 	this.resource('logout');
 	this.resource('createaccount');
