@@ -28,7 +28,7 @@
 </script>
 
 <script type="text/x-handlebars" id="note">
-	<h1>Test title:{{file_name}}</h1>
+	<h1>{{file_name}}</h1>
 	stored as:{{stored_as}}
 	{{#if isEditing}}
     	{{partial 'note/edit'}}
@@ -40,5 +40,5 @@
 </script>
 
 <script type="text/x-handlebars" id="note/_edit">
-  <p>{{textarea type="textarea" value=contents id="user-edit-field"}}</p>
+  <p>{{textarea class="input-xlarge" type="textarea" value=contents id="user-edit-field"}}</p>
 </script>

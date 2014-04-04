@@ -16,10 +16,17 @@
         <li>{{#link-to 'notes' id='notes-link'}}Notes{{/link-to}}</li>
         <li>{{#link-to 'courses' id='courses-link'}}Courses{{/link-to}}</li>
         <!-- <li>{{#link-to 'users' id='users-link'}}Users{{/link-to}}</li> -->
-        <li id="register" style="display:inline">{{#link-to 'createaccount' id='register-link'}}Register{{/link-to}}<li>
-	      <li id="logout" style="display: none">{{#link-to 'logout' id='logout-link'}}Sign Out{{/link-to}}</li>
-        <li id="currUser" style="display: none; color:white;">test</li>     		
-	      <li id="login" style="display: inline">{{#link-to 'login' id='login-link'}}Sign In{{/link-to}}</li> 
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="currUser">Guest<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li id="register" style="display:inline">{{#link-to 'createaccount' id='register-link'}}Register{{/link-to}}<li>
+            <li id="login" style="display: inline">{{#link-to 'login' id='login-link'}}Sign In{{/link-to}}</li> 
+            <li id="logout" style="display: none">{{#link-to 'logout' id='logout-link'}}Sign out{{/link-to}}</li>
+          </ul>
+        </li>
       </ul>
      </div>
     <!--/.nav-collapse -->
